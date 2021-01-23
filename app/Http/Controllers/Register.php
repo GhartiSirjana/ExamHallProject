@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\student;
 use Illuminate\Http\Request;
 
-class SRController extends Controller
+class Register extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class SRController extends Controller
      */
     public function index()
     {
-       return view('student.registration'); 
+        //
     }
 
     /**
@@ -41,10 +40,10 @@ class SRController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(student $student)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class SRController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(student $student)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class SRController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, student $student)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class SRController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(student $student)
+    public function destroy($id)
     {
         //
     }

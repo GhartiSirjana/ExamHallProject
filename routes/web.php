@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +27,10 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/home', function(){
-    return view('register');
-});
 
-// Route::get('/student.register', [RegisteredUserController::class, 'create']);
+
+Route::get('/registration', [RegisterController::class, 'index'])->name('register.index');
+Route::post('/store', [RegisterController::class, 'store'])->name('register.store');
+
+Route::get('login', [LoginController::class, 'index'])->name('form.login');
+
