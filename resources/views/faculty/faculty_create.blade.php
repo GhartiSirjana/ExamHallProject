@@ -8,9 +8,21 @@
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <title>Add New Faculty</title>
 </head>
+<style>
+.form-group input{
+    width:50%;
+}
+.form-group .form-select{
+    width:50%;
+}
+.container a{
+    color:blue;
+}
+</style>
 
 <body>
-    <br />
+<div class="container">
+    <br/>
     <a href="faculty_show"> Back </a>
     <form action="faculty_submit" method="post">
         @csrf
@@ -34,7 +46,7 @@
         </div>
         <div class="form-group">
             <label>Select Department </label>
-            <select class="form-select" name="department" class="form-control" aria-label="Default select example">
+            <select class="form-select" name="department" class="form-control"  aria-label="Default select example">
                 <option selected>Bsc.Csit</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -47,9 +59,11 @@
             </div>
             @enderror
         </div>
+        <br/>  <br/>
 
-        <button type="submit" class="btn btn-primary"> Add Department </button>
+        <button type="submit" class="btn btn-primary"> Add Faculty </button>
     </form>
+    </div>
 
 </body>
 
