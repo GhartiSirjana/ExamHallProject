@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SeatManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +32,9 @@ require __DIR__.'/auth.php';
 Route::get('/registration', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/store', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('login', [LoginController::class, 'index'])->name('form.login');
+Route::get('/loginindex', [RegisterController::class, 'loginIndex'])->name('form.login');
+Route::post('/adminlogin', [RegisterController::class, 'login'])->name('form.login');
+
+Route::get('/home', [SeatManagementController::class, 'index'])->name('home');
+Route::get('/seat-test', [SeatManagementController::class, 'seatTest'])->name('examhallproject.seatmanagement');
 

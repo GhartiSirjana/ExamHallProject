@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-header">Login</div>
                 <div class="card-body">
-                        <form method="post" action="">
+                        <form method="post" action="{{route('form.login')}}">
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
