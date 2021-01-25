@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\addcollegecontroller;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
@@ -29,6 +30,7 @@ require __DIR__.'/auth.php';
 
 
 
+
 Route::get('/registration', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/store', [RegisterController::class, 'store'])->name('register.store');
 
@@ -37,4 +39,9 @@ Route::post('/adminlogin', [RegisterController::class, 'login'])->name('form.log
 
 Route::get('/home', [SeatManagementController::class, 'index'])->name('home');
 Route::get('/seat-test', [SeatManagementController::class, 'seatTest'])->name('examhallproject.seatmanagement');
+
+
+
+Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
+
 
