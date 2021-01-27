@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\addcollegecontroller;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-// Route for the Registration
+
+
 Route::get('/registration', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/store', [RegisterController::class, 'store'])->name('register.store');
 // Route for the Login
@@ -109,5 +111,10 @@ Route::get('student-add', [StudentManageController::class, 'studentAdd'])->name(
 
 
 
+
+
+
+
+Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
 
 
