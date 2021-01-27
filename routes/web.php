@@ -118,3 +118,8 @@ Route::get('student-add', [StudentManageController::class, 'studentAdd'])->name(
 Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
 
 
+
+
+Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
+
+
