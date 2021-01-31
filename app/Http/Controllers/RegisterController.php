@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Register;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Validator, redirect, Response;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -14,9 +19,34 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function loginIndex()
+    {
+        return view('RegistrationForm.login');
+    }
+
+
     public function index()
     {
         return view('RegistrationForm.registration');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email'=>'required|string|email|max:255',
+            'password'=>'required|string|max:12'
+        ]);
+
+        if (! Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
+
+            throw ValidationException::withMessages([
+                'email' => __('auth.failed'),
+            ]);
+        }
+       
+        return redirect('/seat-test');
+
     }
 
     /**
@@ -24,38 +54,47 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    // public function create()
+    // {
         
-    }
+    // }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // /**
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
     public function store(Request $request)
     {
         $request->validate([
             'username'=>'required|alpha|min:5|max:255|unique:users',
-            'address'=>'required|alpha|address',
+            'address'=>'required|alpha',
             'email'=>'required|email',
             'password'=>'required|min:6|max:12|confirmed',
-            'cpassword'=>'required',
             'role'=>'required'
         ]);
-        DB::table('register')->insert([
+       
+
+        $user = new User([
             'username'=>$request->username,
             'address'=>$request->address,
             'email'=>$request->email,
-            'password'=>$request->password,
-            'repeat_password'=>$request->cpassword,
+            'password'=>Hash::make($request->password),
+            'repeat_password'=>Hash::make($request->cpassword),
             'role'=>$request->role
         ]);
-        return back()->with('register', 'Register successfully');
 
+        if($user->save()) {
+            return redirect('/loginindex');
+
+        }
+        return redirect()->back()->with('error', 'Something went wrong.');
     }
+
+  
+
+
 
     /**
      * Display the specified resource.

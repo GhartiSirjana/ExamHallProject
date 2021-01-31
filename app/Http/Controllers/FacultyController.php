@@ -52,7 +52,8 @@ class FacultyController extends Controller
    
     public function edit(faculty $faculty, $id)
     {
-        return view('faculty.faculty_edit')->with('facultyarr', faculty::find($id));
+        
+       return view('faculty.faculty_edit')->with('facultyarr', faculty::find($id));
     }
 
     

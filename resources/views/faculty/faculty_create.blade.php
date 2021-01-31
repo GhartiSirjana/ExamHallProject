@@ -1,3 +1,5 @@
+@extends('layouts.admin')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,22 +10,13 @@
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <title>Add New Faculty</title>
 </head>
-<style>
-.form-group input{
-    width:50%;
-}
-.form-group .form-select{
-    width:50%;
-}
-.container a{
-    color:blue;
-}
-</style>
+
 
 <body>
 <div class="container">
     <br/>
     <a href="faculty_show"> Back </a>
+    <div class="form-wrapper">
     <form action="faculty_submit" method="post">
         @csrf
         <div class="form-group">
@@ -64,7 +57,9 @@
         <button type="submit" class="btn btn-primary"> Add Faculty </button>
     </form>
     </div>
+    </div>
 
 </body>
 
 </html>
+@endsection

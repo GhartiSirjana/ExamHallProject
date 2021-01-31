@@ -77,7 +77,7 @@
                             </div>
                             <div class="form-inline mb-3">
                                 <label for="password" class="form-label">Comfirm Password</label>
-                                <input type="password" name="cpassword" class="form-control form-control-sm" id="cpassword">
+                                <input type="password" name="password_confirmation" class="form-control form-control-sm" id="cpassword">
                                 @error('cpassword')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -105,7 +105,7 @@
             <!-- Copyright -->
             <div class="text-center p-3 text-white">
                 © 2020 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                <a class="text-white" href="">Automatic Exam Hall Arrangement</a>
             </div>
             <!-- Copyright -->
         </footer>
