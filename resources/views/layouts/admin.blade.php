@@ -93,7 +93,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="{{route('examhallproject.seatmanagement')}}" class="nav-link">
+            <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Staff Management
@@ -102,7 +102,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{route('examhallproject.seatmanagement')}}" class="nav-link">
+            <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Seat Management
@@ -113,7 +113,7 @@
             
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('examhallproject.department')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Department Manage
@@ -123,7 +123,7 @@
             
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{ route('examhallproject.student') }}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                Student Management
