@@ -34,7 +34,7 @@ class RegisterController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email'=>'required|string|email|max:255',
+            'email'=>'required|email|max:255',
             'password'=>'required|string|max:12'
         ]);
 
@@ -70,7 +70,7 @@ class RegisterController extends Controller
         $request->validate([
             'username'=>'required|alpha|min:5|max:255|unique:users',
             'address'=>'required|alpha',
-            'email'=>'required|email',
+            'email'=>'required|emailunique:users',
             'password'=>'required|min:6|max:12|confirmed',
             'role'=>'required'
         ]);

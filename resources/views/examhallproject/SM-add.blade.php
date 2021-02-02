@@ -35,7 +35,7 @@
                                 <label for="name" class="form-label"><strong>Staff Name</strong> </label>
                                 <input type="text" name="staffname" class="form-control form-control-sm" id="staffname"">
                                 @error('staffname')
-                                    <span class=" text-danger">{{$message}}</span>
+                                    <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>
                             <div class="mb-3">
