@@ -2,10 +2,10 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12 ml-1">
+    <div class="ml-1 col-md-12">
         <h3 class="fs-5">Student Management</h3>
-        <a class="btn btn-info btn-sm mb-3" href="{{ route('examhallproject.studentadd') }}">Add Student</a>
-           
+        <a class="mb-3 btn btn-info btn-sm" href="{{ route('examhallproject.studentadd') }}">Add Student</a>
+
         <table class="table table-bordered">
             <tr>
                 <thead>
