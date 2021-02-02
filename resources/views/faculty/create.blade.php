@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="{{ asset('css/app.css')}}" rel="stylesheet">
-    <title>Add New Faculty</title>
-</head>
-
-<body>
-    <br />
+<div class="container">
+    <br/>
     <a href="faculty_show"> Back </a>
-    <form action="faculty_submit" method="post">
+    <div class="form-wrapper">
+    <form action="{{ route('faculties.store') }}" method="post">
         @csrf
         <div class="form-group">
             <label>Faculty Name </label>
@@ -34,11 +27,10 @@
         </div>
         <div class="form-group">
             <label>Select Department </label>
-            <select class="form-select" name="department" class="form-control" aria-label="Default select example">
-                <option selected>Bsc.Csit</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" name="department_id" class="form-control"  aria-label="Default select example">
+                @foreach($departments as $department)
+                    <option value="{{$department->id}}">{{$department->department_name}}</option>
+                @endforeach
             </select>
 
             @error('department')
@@ -47,10 +39,11 @@
             </div>
             @enderror
         </div>
+        <br/>  <br/>
 
-        <button type="submit" class="btn btn-primary"> Add Department </button>
+        <button type="submit" class="btn btn-primary"> Add Faculty </button>
     </form>
+    </div>
+    </div>
 
-</body>
-
-</html>
+@endsection

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Register;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -44,8 +44,8 @@ class RegisterController extends Controller
                 'email' => __('auth.failed'),
             ]);
         }
-       
-        return redirect('/seat-test');
+
+        return redirect('/departments');
 
     }
 
@@ -56,7 +56,7 @@ class RegisterController extends Controller
      */
     // public function create()
     // {
-        
+
     // }
 
     // /**
@@ -68,13 +68,13 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username'=>'required|alpha|min:5|max:255|unique:users',
-            'address'=>'required|alpha',
-            'email'=>'required|emailunique:users',
+            'username'=>'required|string|min:5|max:255',
+            'address'=>'required|string',
+            'email'=>'required|email',
             'password'=>'required|min:6|max:12|confirmed',
             'role'=>'required'
         ]);
-       
+
 
         $user = new User([
             'username'=>$request->username,
@@ -92,7 +92,7 @@ class RegisterController extends Controller
         return redirect()->back()->with('error', 'Something went wrong.');
     }
 
-  
+
 
 
 

@@ -1,0 +1,23 @@
+.heading{
+    font-weight: bold;
+    padding:30px;
+    font-size: 1.1rem;
+
+}
+.sub-heading{
+    display:flex;
+   justify-content:flex-start;
+   margin-left:30px;
+      
+}
+.sub-heading .column{
+margin-left:50px;
+}
+.sub-heading .date{
+    margin-left: 50px;
+}
+.seat_arrangement{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top:20px;
+}
