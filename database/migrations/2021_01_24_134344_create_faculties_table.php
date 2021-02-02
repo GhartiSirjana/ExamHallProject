@@ -15,11 +15,12 @@ class CreateFacultiesTable extends Migration
     {
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->string('Short_Name');
-            $table->string('Department');
-
+            $table->string('name');
+            $table->string('short_name');
+            $table->unsignedBigInteger('department_id'); // column define gareko
             $table->timestamps();
+
+            $table->foreign('department_id')->on('departments')->references('id'); // relation define gareko
         });
     }
 

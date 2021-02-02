@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Department;
+use App\Models\Department;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use \Validator;
 
 class DepartmentController extends Controller
 {
@@ -14,10 +12,11 @@ class DepartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function departmentIndex()
+    public function index()
     {
-        $departs = DB::table('departments')->get();
-        return view('examhallproject.departmentManage', compact('departs'));
+        $departs = Department::all();
+
+        return view('department.index', compact('departs'));
     }
 
     /**
@@ -25,9 +24,9 @@ class DepartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function departAdd()
+    public function create()
     {
-       return view('examhallproject.DM-add'); 
+       return view('department.create');
     }
 
     /**
@@ -36,22 +35,18 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function departStore(Request $request)
+    public function store(Request $request)
     {
-      
-        $request->validate([
-            'department_name' => 'required|alpha|string|min:5',
-            'department_code' => 'required|min:3|max:10',
-            'description'     => 'required|min:5'
+
+        $data = $request->validate([
+            'department_name' => 'required|string|min:5',
+            'department_code' => 'required|min:2|max:40',
+            'description'     => 'nullable|min:5'
         ]);
 
-       
-        DB::table('departments')->insert([
-            'department_name'=>$request->dmname,
-            'department_code'=>$request->dmcode,
-            'description'=>$request->description
-        ]);
-        return redirect('/department');
+
+        Department::create($data);
+        return redirect('/departments');
     }
 
     /**
@@ -62,7 +57,7 @@ class DepartmentController extends Controller
      */
     public function show(Department $department)
     {
-        //
+
     }
 
     /**
@@ -71,10 +66,9 @@ class DepartmentController extends Controller
      * @param  \App\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function edit(Department $department, $id)
+    public function edit(Department $department)
     {
-        $departs = DB::table('departments')->where('id', $id)->first();
-        return view('examhallproject.DM-edit', compact('deaprts'));
+        return view('department.edit', compact('department'));
     }
 
     /**
@@ -84,13 +78,10 @@ class DepartmentController extends Controller
      * @param  \App\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Department $department, $id)
+    public function update(Request $request, Department $department)
     {
-       DB::table('departments')->where('id', $id)->update([
-           'department_name'=>$request->dmname,
-           'department_code'=>$request->dmcode,
-           'description'=>$request->description
-       ]);
+       $department->update($request->all());
+       return redirect('/departments');
     }
 
     /**
@@ -99,10 +90,10 @@ class DepartmentController extends Controller
      * @param  \App\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Department $department, $id)
+    public function destroy(Department $department)
     {
-        DB::table('departments')->where('id',$id)->delete();
-        // return redirect()->route('examhallproject.department');
-        return redirect('/department');
+        $department->delete();
+
+        return redirect('/departments');
     }
 }
