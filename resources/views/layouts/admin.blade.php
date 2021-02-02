@@ -27,6 +27,8 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -39,18 +41,18 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block active">
-        <a href="index3.html" class="nav-link text-white fw-bold">Automatic Exam Hall Arrangement</a>
+        <a href="index3.html" class="text-white nav-link fw-bold">Automatic Exam Hall Arrangement</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link active text-white">Home</a>
+        <a href="index3.html" class="text-white nav-link active">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link text-white">Contact</a>
+        <a href="#" class="text-white nav-link">Contact</a>
       </li>
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    <form class="ml-3 form-inline">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -90,7 +92,7 @@
                 <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item">
             <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
@@ -110,17 +112,17 @@
                 <span class="badge badge-info right">6</span> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{route('examhallproject.department')}}" class="nav-link">
+            <a href="{{ route('departments.index') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Department Manage
                 <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item has-treeview">
             <a href="{{ route('examhallproject.student') }}" class="nav-link">
@@ -130,17 +132,17 @@
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{route('faculty.faculty_show')}}" class="nav-link">
+            <a href="{{route('faculties.index')}}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Faculty Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('subject.subject_show')}}" class="nav-link">
@@ -150,7 +152,7 @@
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            
+
           </li>
           <!-- <li class="nav-header">EXAMPLES</li> -->
           <li class="nav-item">
@@ -163,7 +165,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 College/Campus Manage
@@ -178,7 +180,7 @@
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            
+
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -188,7 +190,7 @@
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            
+
           </li>
           <!-- <li class="nav-header">LABELS</li> -->
           <li class="nav-item">
@@ -197,7 +199,7 @@
               <p class="text">Logout</p>
             </a>
           </li>
-         
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -261,5 +263,7 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+
+@stack('scripts')
 </body>
 </html>

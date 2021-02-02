@@ -72,19 +72,23 @@ Route::get('staff-show/{id}', [StaffManageController::class, 'show'])->name('exa
 
 
 
+
+// Resource route
+Route::resource('departments', DepartmentController::class);
+
 // Department Management
-Route::get('/department', [DepartmentController::class, 'departmentIndex'])->name('examhallproject.department');
+// Route::get('/department', [DepartmentController::class, 'departmentIndex'])->name('examhallproject.department');
 
-// Add the Details of the Department
-Route::get('/department-add', [DepartmentController::class, 'departAdd'])->name('examhallproject.departmentadd');
-Route::post('/department-store', [DepartmentController::class, 'departStore'])->name('examhallproject.departmentstore');
+// // Add the Details of the Department
+// Route::get('/department-add', [DepartmentController::class, 'departAdd'])->name('examhallproject.departmentadd');
+// Route::post('/department-store', [DepartmentController::class, 'departStore'])->name('examhallproject.departmentstore');
 
-// Department edit
-Route::get('/department-edit/{id}', [DepartmentController::class, 'edit'])->name('examhallproject.departmentedit');
-Route::get('/department-update/{id}', [DepartmentController::class, 'update'])->name('examhallproject.departmentupdate');
+// // Department edit
+// Route::get('/department-edit/{id}', [DepartmentController::class, 'edit'])->name('examhallproject.departmentedit');
+// Route::get('/department-update/{id}', [DepartmentController::class, 'update'])->name('examhallproject.departmentupdate');
 
-// Department delete
-Route::get('/department-delete/{id}', [DepartmentController::class, 'destroy'])->name('examhallproject.departmentdelete');
+// // Department delete
+// Route::get('/department-delete/{id}', [DepartmentController::class, 'destroy'])->name('examhallproject.departmentdelete');
 
 // Student Management
 Route::get('student', [StudentManageController::class, 'studentIndex'])->name('examhallproject.student');
@@ -105,12 +109,14 @@ Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('colle
 Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
 
 
-Route::get('/faculty_show',[FacultyController::class, 'show'])->name('faculty.faculty_show');
-Route::get('/faculty_delete/{id}',[FacultyController::class, 'destroy']);
-Route::get('/faculty_create',[FacultyController::class, 'create'])->name('faculty.faculty_create');
-Route::post('/faculty_submit',[FacultyController::class, 'store'])->name('faculty.faculty_create');
-Route::get('/faculty_edit/{id}', [FacultyController::class, 'edit'])->name('faculty.faculty_edit');
-Route::post('faculty_update/{id}', [FacultyController::class, 'update'])->name('faculty.faculty_edit');
+Route::resource('faculties', FacultyController::class); // faculties.index, faculties.show, faculties.store,
+
+// Route::get('/faculty_show',[FacultyController::class, 'show'])->name('faculty.faculty_show');
+// Route::get('/faculty_delete/{id}',[FacultyController::class, 'destroy']);
+// Route::get('/faculty_create',[FacultyController::class, 'create'])->name('faculty.faculty_create');
+// Route::post('/faculty_submit',[FacultyController::class, 'store'])->name('faculty.faculty_create');
+// Route::get('/faculty_edit/{id}', [FacultyController::class, 'edit'])->name('faculty.faculty_edit');
+// Route::post('faculty_update/{id}', [FacultyController::class, 'update'])->name('faculty.faculty_edit');
 
 
 Route::get('/subject_show',[SubjectController::class, 'show'])->name('subject.subject_show');

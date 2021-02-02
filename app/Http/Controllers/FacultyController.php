@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\faculty;
+use App\Models\Department;
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 
 class FacultyController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,72 +19,66 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        //
+        $faculties = Faculty::all();
+        return view('faculty.index', compact('faculties'));
     }
 
-   
+
     public function create()
     {
-        return view('faculty.faculty_create');
+        $departments = Department::all();
+        return view('faculty.create', compact('departments'));
     }
 
-    
+
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|min:5|max:100|',
             'short_name' => 'required|string',
-            'department' => 'required|string|',
-           
+            'department_id' => 'required|numeric',
         ]);
 
-        $res = new faculty;
-        $res->name=$request->input('name');
-        $res->short_name=$request->input('short_name');
-        $res->department=$request->input('department');
-        $res->save();
- 
+        $faculty = Faculty::create($data);
+
         $request->session()->flash('msg', 'data submitted');
-        return redirect('faculty_show');
+        return redirect('/faculties');
     }
 
-    
-    public function show(faculty $faculty)
+
+    public function show(Faculty $faculty)
     {
-        return view('faculty.faculty_show')->with('facultyarr', faculty::all());
+        return view('faculty.show', compact('faculty'));
     }
 
-   
-    public function edit(faculty $faculty, $id)
+
+    public function edit(Faculty $faculty)
     {
-        
-       return view('faculty.faculty_edit')->with('facultyarr', faculty::find($id));
+        $departments = Department::all();
+        return view('faculty.edit', compact('faculty', 'departments'));
     }
 
-    
-    public function update(Request $request, faculty $faculty)
+
+    public function update(Request $request, Faculty $faculty)
     {
         $request->validate([
             'name' => 'required|string|min:5|max:100|',
             'short_name' => 'required|string',
-            'department' => 'required|string|',
-           
+            'department_id' => 'required|numeric',
         ]);
-        
-        $res = faculty::find($request->id);
-        $res->name=$request->input('name');
-        $res->short_name=$request->input('short_name');
-        $res->department=$request->input('department');
-        $res->save();
- 
+
+        $faculty->name = $request->input('name');
+        $faculty->short_name = $request->input('short_name');
+        $faculty->department_id = $request->input('department_id');
+        $faculty->save();
+
         $request->session()->flash('msg', 'data submitted');
-        return redirect('faculty_show');
+        return redirect('faculties');
     }
 
-    public function destroy(faculty $faculty, $id)
+    public function destroy(Faculty $faculty)
     {
-        faculty::destroy(array('id', $id));
-        return redirect('faculty_show');
-
+        $faculty->delete();
+        return redirect('faculties');
     }
 }
