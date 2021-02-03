@@ -93,7 +93,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="{{route('examhallproject.seatmanagement')}}" class="nav-link">
+            <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Staff Management
@@ -102,7 +102,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{route('examhallproject.seatmanagement')}}" class="nav-link">
+            <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Seat Management
@@ -113,7 +113,7 @@
             
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('examhallproject.department')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Department Manage
@@ -123,7 +123,7 @@
             
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{ route('examhallproject.student') }}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                Student Management
@@ -133,7 +133,7 @@
             
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('faculty.faculty_show')}}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Faculty Management
@@ -143,7 +143,7 @@
             
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('subject.subject_show')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Subject
@@ -154,7 +154,7 @@
           </li>
           <!-- <li class="nav-header">EXAMPLES</li> -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('seatallocation.seatallocation_show')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Seat Allocation

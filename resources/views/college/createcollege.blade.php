@@ -5,21 +5,17 @@
 
         <div class="card-header">Add New College/Campus</div>
         <div class="card-body">
-            <form method="post" action="college_submit">
-            @csrf
+            <form method="POST" action="{{ route('college.stores') }}">
                 <div class="mb-3">
-                    <label>College/Campus Name</label>
-                    <input type="text" name="college" class="form-control" id="collegecampus">
-                    @error('collegename')
-                    <span class = "text-danger">{{$message}}</span>
-                    @enderror
+                    <label for="collegecampus" class="form-label">College/Campus Name</label>
+                    <input type="text"name= "collegecampus" class="form-control" id="collegecampus">
                 </div>
                 <div class="mb-3">
-                    <label>Address</label>
+                    <label for="Address" class="form-label">Address</label>
                     <input type="text" name = "address" class="form-control" id="address">
                 </div>
                 <div class="mb-3">
-                        <label>Description</label>
+                        <label for="productDesc" class="form-label">Description</label>
                         <input type="text" name="description" class="form-control" id="Desc" >
                 </div>
                 

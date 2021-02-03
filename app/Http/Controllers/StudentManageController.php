@@ -2,23 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\SeatManagement;
+use App\Models\StudentManage;
 use Illuminate\Http\Request;
 
-class SeatManagementController extends Controller
+class StudentManageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function studentIndex()
     {
-        return view('examhallproject.home');
-    }
-    public function seatTest()
-    {
-        return view('examhallproject.seatmanagement');
+        return view('examhallproject.studentManage');
     }
 
     /**
@@ -26,9 +22,9 @@ class SeatManagementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function studentAdd()
     {
-        //
+        return view('examhallproject.Student-add');
     }
 
     /**
@@ -45,10 +41,10 @@ class SeatManagementController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SeatManagement  $seatManagement
+     * @param  \App\Models\StudentManage  $studentManage
      * @return \Illuminate\Http\Response
      */
-    public function show(SeatManagement $seatManagement)
+    public function show(StudentManage $studentManage)
     {
         //
     }
@@ -56,10 +52,10 @@ class SeatManagementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SeatManagement  $seatManagement
+     * @param  \App\Models\StudentManage  $studentManage
      * @return \Illuminate\Http\Response
      */
-    public function edit(SeatManagement $seatManagement)
+    public function edit(StudentManage $studentManage)
     {
         //
     }
@@ -68,10 +64,10 @@ class SeatManagementController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SeatManagement  $seatManagement
+     * @param  \App\Models\StudentManage  $studentManage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SeatManagement $seatManagement)
+    public function update(Request $request, StudentManage $studentManage)
     {
         //
     }
@@ -79,10 +75,10 @@ class SeatManagementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SeatManagement  $seatManagement
+     * @param  \App\Models\StudentManage  $studentManage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SeatManagement $seatManagement)
+    public function destroy(StudentManage $studentManage)
     {
         //
     }

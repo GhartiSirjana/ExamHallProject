@@ -8,37 +8,41 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href ="{{ asset('css/app.css')}}" rel="stylesheet">
-    <title>Faculty Show</title>
+    <title>Subject Show</title>
 </head>
 <body>
 <div class="container">
 <br/> <br/><br/>
-<h1> FACULTY </h1> 
+<h1> Subjects </h1> 
 
 
 {{session('msg')}}
 <br/>
-<a href="faculty_create" class="btn btn-primary"> ADD Faculty </a> 
+<a href="subject_create" class="btn btn-primary"> ADD subject </a> 
 <br/><br/>
 <table class="table  table-bordered table-striped table-hover">
 <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Short Name</th>
-    <th>Department</th>
+    <th>SubjectName</th>
+    <th>SubjectCode</th>
+    <th>Semester</th>
+    <th>Faculty</th>
+    <th> Department</th>
     <th>Created_at</th>
     <th>Action</th>
 </tr>
-@foreach($facultyarr as $faculty)
+@foreach($subjectarr as $subject)
 <tr>
-<td> {{$faculty->id}} </td>
-<td> {{$faculty->Name}} </td>
-<td> {{$faculty->Short_Name}} </td>
-<td> {{$faculty->Department}} </td>
-<td> {{$faculty->created_at}} </td>
+<td> {{$subject->id}} </td>
+<td> {{$subject->SubjectName}} </td>
+<td> {{$subject->SubjectCode}} </td>
+<td> {{$subject->Semester}} </td>
+<td> {{$subject->faculty}} </td>
+<td> {{$subject->department}} </td>
+<td> {{$subject->created_at}} </td>
 <td>
-<a href="faculty_delete/{{$faculty->id}}" class="btn btn-primary"> Delete</a>
-<a href="faculty_edit/{{$faculty->id}}" class="btn btn-danger"> edit</a>
+<a href="subject_delete/{{$subject->id}}" class="btn btn-primary"> Delete</a>
+<a href="subject_edit/{{$subject->id}}" class="btn btn-danger"> edit</a>
 </td>
 </tr>
 @endforeach
