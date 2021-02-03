@@ -1,24 +1,14 @@
 @extends('layouts.admin')
-@section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="{{ asset('css/app.css')}}" rel="stylesheet">
+@push('styles')    
     <link href="{{ asset('css/subject.css')}}" rel="stylesheet">
-
-    <title>Subject Create</title>
-</head>
-
-<body>
+@endpush
+@section('content')
     <div class="container">
         <br/> <br/>
-        <a href="subject_show"> Back </a>
+        <a href="index"> Back </a>
         <h1> <b> ADD New Subject </b></h1>
         <div class="form-wrapper">
-    <form action="subject_submit" method="post">
+    <form action="{{ route('subjects.store') }}" method="post">
         @csrf
          <div class="form-group">
         <label>Select Semester </label>
@@ -72,6 +62,5 @@
     </div>
     </div>
     
-</body>
-</html>
+
 @endsection

@@ -118,19 +118,21 @@ Route::resource('faculties', FacultyController::class); // faculties.index, facu
 // Route::get('/faculty_edit/{id}', [FacultyController::class, 'edit'])->name('faculty.faculty_edit');
 // Route::post('faculty_update/{id}', [FacultyController::class, 'update'])->name('faculty.faculty_edit');
 
+Route::resource('subjects', SubjectController::class);
 
-Route::get('/subject_show',[SubjectController::class, 'show'])->name('subject.subject_show');
-Route::get('/subject_delete/{id}',[SubjectController::class, 'destroy']);
-Route::get('/subject_create',[SubjectController::class, 'create'])->name('subject.subject_create');
-Route::post('/subject_submit',[SubjectController::class, 'store'])->name('subject.subject_create');
-Route::get('/subject_edit/{id}', [SubjectController::class, 'edit'])->name('subject.subject_edit');
-Route::post('subject_update/{id}', [SubjectController::class, 'update'])->name('subject.subject_edit');
+// Route::get('/subject_show',[SubjectController::class, 'show'])->name('subject.subject_show');
+// Route::get('/subject_delete/{id}',[SubjectController::class, 'destroy']);
+// Route::get('/subject_create',[SubjectController::class, 'create'])->name('subject.subject_create');
+// Route::post('/subject_submit',[SubjectController::class, 'store'])->name('subject.subject_create');
+// Route::get('/subject_edit/{id}', [SubjectController::class, 'edit'])->name('subject.subject_edit');
+// Route::post('subject_update/{id}', [SubjectController::class, 'update'])->name('subject.subject_edit');
 
-Route::get('/seatallocation_show',[SeatallocationController::class, 'show'])->name('seatallocation.seatallocation_show');
-Route::get('/seatallocation_delete/{id}',[SeatallocationController::class, 'destroy']);
-Route::get('/seatallocation_create', [SeatallocationController::class, 'create'])->name('seatallocation.seatallocation_create');
-Route::post('/seatallocation_submit',[SeatallocationController::class, 'store'])->name('seatallocation.seatallocation_create');
-Route::get('/seatallocation_edit/{id}',[SeatallocationController::class, 'edit'])->name('seatallocation.seatallocation_edit');
-Route::post('/seatallocation_update/{id}',[SeatallocationController::class, 'update'])->name('seatallocation.seatallocation_edit');
+Route::resource('seatallocations', SeatallocationController::class);
+// Route::get('/seatallocation_show',[SeatallocationController::class, 'show'])->name('seatallocation.seatallocation_show');
+// Route::get('/seatallocation_delete/{id}',[SeatallocationController::class, 'destroy']);
+// Route::get('/seatallocation_create', [SeatallocationController::class, 'create'])->name('seatallocation.seatallocation_create');
+// Route::post('/seatallocation_submit',[SeatallocationController::class, 'store'])->name('seatallocation.seatallocation_create');
+// Route::get('/seatallocation_edit/{id}',[SeatallocationController::class, 'edit'])->name('seatallocation.seatallocation_edit');
+// Route::post('/seatallocation_update/{id}',[SeatallocationController::class, 'update'])->name('seatallocation.seatallocation_edit');
 
 

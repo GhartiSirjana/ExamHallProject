@@ -15,9 +15,9 @@ class CreateSeatallocationsTable extends Migration
     {
         Schema::create('seatallocations', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->string('Exam');
-            $table->string('Rooms');
+            $table->string('name');
+            $table->string('exam');
+            $table->string('rooms');
 
             $table->timestamps();
         });

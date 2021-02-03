@@ -1,23 +1,10 @@
 @extends('layouts.admin')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="{{ asset('css/app.css')}}" rel="stylesheet">
-    <title>Add Seat</title>
-</head>
-
-
-<body>
 <div class="container">
     <br/>
-    <a href="seatallocation_show"> Back </a>
+    <a href="show"> Back </a>
     <div class="form-wrapper">
-    <form action="seatallocation_submit" method="post">
+    <form action="{{ route('seatallocations.store') }}" method="post">
         @csrf
         <div class="form-group">
             <label> Name </label>
@@ -68,7 +55,5 @@
     </div>
     </div>
 
-</body>
 
-</html>
 @endsection
