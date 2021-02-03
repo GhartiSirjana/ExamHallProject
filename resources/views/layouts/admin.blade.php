@@ -165,7 +165,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('college.showcollege')}}" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 College/Campus Manage
@@ -173,7 +173,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('exammanagement.showexam')}}" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Exam Management
