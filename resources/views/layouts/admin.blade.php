@@ -71,7 +71,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="" class="brand-link">
       <!-- <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8"> -->
       <span class="brand-text font-weight-bold">Admin Panel</span>
@@ -89,78 +89,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <!-- <i class="right fas fa-angle-left"></i> -->
-              </p>
-            </a>
-
-          </li>
-          <li class="nav-item">
-            <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-               Staff Management
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{route('examhallproject.staffmanagement')}}" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Seat Management
-                <!-- <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span> -->
-              </p>
-            </a>
-
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('departments.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Department Manage
-                <!-- <i class="right fas fa-angle-left"></i> -->
-              </p>
-            </a>
-
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{ route('examhallproject.student') }}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-               Student Management
-                <!-- <i class="fas fa-angle-left right"></i> -->
-              </p>
-            </a>
-
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{route('faculties.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Faculty Management
-                <!-- <i class="fas fa-angle-left right"></i> -->
-              </p>
-            </a>
-
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="{{route('subject.subject_show')}}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Subject
-                <!-- <i class="fas fa-angle-left right"></i> -->
-              </p>
-            </a>
-
-          </li>
-          <!-- <li class="nav-header">EXAMPLES</li> -->
-          <li class="nav-item">
-            <a href="{{route('seatallocation.seatallocation_show')}}" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Seat Allocation
-                <!-- <span class="badge badge-info right">2</span> -->
+                <i class="right fas fa-angle-left ml-5"></i>
               </p>
             </a>
           </li>
@@ -169,29 +98,303 @@
               <i class="nav-icon far fa-image"></i>
               <p>
                 College/Campus Manage
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
           </li>
+
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+            <a href="{{ route('departments.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Exam Management
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                Department Manage
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('departments.create') }}" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('departments.index')}}" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
+          <li class="nav-item has-treeview">
+            <a href="{{route('faculties.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Faculty Management
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('faculties.create') }}" class="nav-link">
+                  <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Room Management
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="{{route('student.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+               Student Management
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('student.create')}}" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        
+          <li class="nav-item has-treeview">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Subject Management
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+                  <!-- <li class="nav-header">EXAMPLES</li> -->
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Seat Management
+                <i class="fas fa-angle-left right"></i>
+
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Seat Arrangement
+                <i class="fas fa-angle-left right"></i>
+                <!-- <span class="badge badge-info right">6</span> -->
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Exam Management
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Staff Management
+               <i class="fas fa-angle-left right"></i>
+
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-plus"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="fas fa-eye"></i>
+                  <p>Show</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                <i class="far fa-edit"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <!-- <li class="nav-header">LABELS</li> -->
           <li class="nav-item">
             <a href="#" class="nav-link">

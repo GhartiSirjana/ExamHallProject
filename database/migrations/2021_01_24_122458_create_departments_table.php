@@ -17,7 +17,7 @@ class CreateDepartmentsTable extends Migration
             $table->id();
             $table->string('department_name');
             $table->string('department_code');
-            $table->string('description')->nullable();
+            $table->string('description');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });
