@@ -15,15 +15,14 @@
                     <th>Action</th>
                 </thead>
             </tr>
-            @foreach($departs as $depart)
+            @foreach($department as $depart)
             <tr>
                 <tbody>
                     <td>{{ $depart->id }}</td>
                     <td>{{ $depart->department_name }}</td>
                     <td>{{ $depart->department_code }}</td>
-                    <td>{{ $depart->description }}</td>
-                    <td>{{$depart->faculties->count()}}</td>
                     <td>{{ Str::limit($depart->description, $limit = 20)}}</td>
+                    <td>{{$depart->faculties->count()}}</td>
                     <td>
                         <a href="{{ route('departments.show', $depart->id) }}" class="btn btn-success btn-sm">View</a>
                         <a href="{{ route('departments.edit', $depart->id) }}" class="btn btn-info btn-sm">Edit</a>

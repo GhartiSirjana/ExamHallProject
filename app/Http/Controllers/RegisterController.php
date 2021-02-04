@@ -45,7 +45,7 @@ class RegisterController extends Controller
             ]);
         }
 
-        return redirect('/departments');
+        return redirect('/dashboard');
 
     }
 
@@ -70,7 +70,7 @@ class RegisterController extends Controller
         $request->validate([
             'username'=>'required|string|min:5|max:255',
             'address'=>'required|string',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:users',
             'password'=>'required|min:6|max:12|confirmed',
             'role'=>'required'
         ]);

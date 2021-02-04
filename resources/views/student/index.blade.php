@@ -4,7 +4,7 @@
 <div class="row">
     <div class="ml-1 col-md-12">
         <h3 class="fs-5">Student Management</h3>
-        <a class="mb-3 btn btn-info btn-sm" href="{{ route('examhallproject.studentadd') }}">Add Student</a>
+        <a class="mb-3 btn btn-info btn-sm" href="{{ route('student.create') }}">Add Student</a>
 
         <table class="table table-bordered">
             <tr>

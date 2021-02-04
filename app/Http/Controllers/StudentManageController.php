@@ -12,9 +12,9 @@ class StudentManageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function studentIndex()
+    public function index()
     {
-        return view('examhallproject.studentManage');
+        return view('student.index');
     }
 
     /**
@@ -22,9 +22,9 @@ class StudentManageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function studentAdd()
+    public function create()
     {
-        return view('examhallproject.Student-add');
+        return view('student.create');
     }
 
     /**
@@ -35,7 +35,9 @@ class StudentManageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $students = $request->validate([
+
+        ]);
     }
 
     /**

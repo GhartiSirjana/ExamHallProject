@@ -31,8 +31,8 @@
                                 <label for="code" class="form-label"><strong>Department Code</strong> </label>
                                 <input type="text" name="department_code" class="form-control form-control-sm" id="dmcode"">
                                     @error('department_code')
-                                                <span class=" text-danger">{{ $message }}</span>
-                                @enderror
+                                        <span class=" text-danger">{{ $message }}</span>
+                                    @enderror
                             </div>
 
                             <div class="mb-3">

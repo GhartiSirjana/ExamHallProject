@@ -17,8 +17,8 @@ class CreateStaffsTable extends Migration
             $table->id();
             $table->string('staffname');
             $table->foreignId('department_id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
+
         });
     }
 
