@@ -302,10 +302,16 @@
               </li>
             </ul>
           </li>
+<<<<<<< HEAD
 
           <li class="nav-item has-treeview">
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
+=======
+          <li class="nav-item">
+            <a href="{{route('college.showcollege')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+>>>>>>> df44154e32d492ee725d03f786a8222c90ace098
               <p>
                 Seat Arrangement
                 <i class="fas fa-angle-left right"></i>
@@ -335,7 +341,7 @@
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('exammanagement.showexam')}}" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Exam Management
