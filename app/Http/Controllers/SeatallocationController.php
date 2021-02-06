@@ -10,44 +10,40 @@ class SeatallocationController extends Controller
     
     public function index()
     {
-        //
+        return view('seatallocation.index', compact('seatallocations'));
     }
 
   
     public function create()
     {
-        return view('seatallocation.seatallocation_create');
+        $seatallocations = seatallocation::all();
+        return view('seatallocation.create', compact('seatallocations'));
     }
 
    
     public function store(Request $request)
     {
-        $request->validate([
+       $data = $request->validate([
             'name' => 'required|string|min:5|max:100|',
             'rooms' => 'required|string',
             'exams' => 'required|string|',
            
         ]);
-
-        $res = new seatallocation;
-        $res->name=$request->input('name');
-        $res->exam=$request->input('exams');
-        $res->rooms=$request->input('rooms');
-        $res->save();
- 
-        $request->session()->flash('msg', 'data submitted');
-        return redirect('seatallocation_show');
+        $seatallocation = seatallocation::create($data);
+      
+         $request->session()->flash('msg', 'data submitted');
+        return redirect('/seatallocations');
     }
 
     
     public function show(seatallocation $seatallocation)
     {
-        return view('seatallocation.seatallocation_show')->with('seatallocationarr', seatallocation::all());
+        // 
     }
 
-    public function edit(seatallocation $seatallocation, $id)
+    public function edit(seatallocation $seatallocation)
     {
-        return view('seatallocation.seatallocation_edit')->with('seatallocationarr', seatallocation::find($id));
+        return view('seatallocation.edit', compact('seatallocation'));
     }
 
    
@@ -60,20 +56,20 @@ class SeatallocationController extends Controller
            
         ]);
 
-        $res = seatallocation::find($request->id);
-        $res->name=$request->input('name');
-        $res->exam=$request->input('exams');
-        $res->rooms=$request->input('rooms');
-        $res->save();
+       
+        $seatallocation->name=$request->input('name');
+        $seatallocation->exam=$request->input('exams');
+        $seatallocation->rooms=$request->input('rooms');
+        $seatallocation->save();
  
         $request->session()->flash('msg', 'data submitted');
-        return redirect('seatallocation_show');
+        return redirect('seatallocations');
     }
 
     
-    public function destroy(seatallocation $seatallocation , $id)
+    public function destroy(seatallocation $seatallocation)
     {
-        seatallocation::destroy(array('id', $id));
-        return redirect('seatallocation_show');
+        $seatallocation->delete();
+        return redirect('/seatallocations');
     }
 }
