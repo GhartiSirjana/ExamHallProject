@@ -18,9 +18,9 @@ class CreateFacultiesTable extends Migration
             $table->string('name');
             $table->string('short_name');
             $table->unsignedBigInteger('department_id'); // column define gareko
-            $table->timestamps();
-
+            
             $table->foreign('department_id')->on('departments')->references('id'); // relation define gareko
+            $table->timestamps();
         });
     }
 

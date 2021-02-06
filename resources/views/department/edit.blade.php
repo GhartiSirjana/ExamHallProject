@@ -14,12 +14,14 @@
             <div class="card">
                 <div class="card-header">Upadate Department</div>
                 <div class="card-body">
-                    <form action="{{ route('departments.update, $department->id') }}" method="POST">
+                    <form action="{{ route('departments.update', $depart->id) }}" method="POST">
+
                         @csrf
                         @method('put')
+
                         <div class="mb-3">
                             <label for="name" class="form-label"><strong>Department Name</strong> </label>
-                            <input type="text" name="department_name" class="form-control form-control-sm" id="dmname" value="{{$department->department_name}}">
+                            <input type="text" name="department_name" class="form-control form-control-sm" id="department_name" value="{{$department->department_name}}">
                             @error('department_name')
                             <span class=" text-danger">{{$message}}</span>
                             @enderror

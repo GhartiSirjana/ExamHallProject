@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class FacultyController extends Controller
 {
-    function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -73,7 +73,7 @@ class FacultyController extends Controller
         $faculty->save();
 
         $request->session()->flash('msg', 'data submitted');
-        return redirect('faculties');
+        return redirect('/faculties');
     }
 
     public function destroy(Faculty $faculty)

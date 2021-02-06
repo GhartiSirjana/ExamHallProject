@@ -23,7 +23,8 @@
                 <div class="card">
                     <div class="card-header">Add Student</div>
                     <div class="card-body">
-                        <form class="row g-3">
+                        <form class="row g-3" method="POST" action="{{route('student.store')}}" >
+                            @csrf
                             <div class="col-md-12">
                                 <label for="student name" class="form-label">Student Name</label>
                                 <input type="text" class="form-control form-control-sm" name="s_name" id="studentname" value="" required>
@@ -40,17 +41,19 @@
                             <div class="col-md-6">
                                 <label for="student department" class="form-label">Student Department</label>
                                 <select class="form-select form-control form-control-sm" aria-label="Default select example" name="s_department">
-                                <option selected>CSIT</option>
-                                <option >Management</option>
-                                <option value="2">BSC</option>
+                                @foreach($departments as $department)
+                                    <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                @endforeach
+                                
                                 </select>
                             </div>
                             <div class="col-md-5">
                                 <label for="student faculty" class="form-label">Student Faculty</label>
                                 <select class="form-select form-control form-control-sm" aria-label="Default select example" name="s_faculty">
-                                <option selected>Science</option>
-                                <option >Management</option>
-                                <option value="2">BSC</option>
+                                @foreach($faculties as $faculty)
+                                    <option value="{{$faculty->id}}">{{$faculty->short_name}}</option>
+                                @endforeach
+                                
                                 </select>
                             </div>
                             <div class="col-md-3">
@@ -80,7 +83,15 @@
                         
                             <div class="col-md-4">
                                 <label for="student dob" class="form-label">Date of Birth</label>
+                                <input type="text" class="form-control form-control-sm" name="s_dob" id="studentname" value="" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student mobile" class="form-label">Parent Name</label>
                                 <input type="text" class="form-control form-control-sm" name="s_parent" id="studentname" value="" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="student mobile" class="form-label">Email</label>
+                                <input type="email" class="form-control form-control-sm" name="s_email" id="studentname" value="" required>
                             </div>
                             <div class="col-md-5">
                                 <label for="student mobile" class="form-label">Mobile Number</label>

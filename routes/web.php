@@ -52,17 +52,20 @@ Route::post('/adminlogin', [RegisterController::class, 'login'])->name('form.log
 // Route for the Dashboard
 Route::resource('dashboard', DashboardController::class);
 
+// Resource route for department
+Route::resource('departments', DepartmentController::class);
+
+// Resource Route for the Faculties
+Route::resource('faculties', FacultyController::class); // faculties.index, 
+
+
 // // Route for the Staff Management
 Route::resource('staff', StaffManageController::class);
 
-// Resource route for department
-Route::resource('departments', DepartmentController::class);
 
 // Resource route for Student
 Route::resource('student', StudentManageController::class);
 
-// Resource Route for the Faculties
-Route::resource('faculties', FacultyController::class); // faculties.index, 
 
 
 
