@@ -7,6 +7,7 @@
 <a href="seatallocation_show"> Back </a>
     <form action="{{ route('seatallocations.update', $seatallocation->id) }}" method="post">
     @csrf
+    @method('put')
     <div class="form-group">
     <label> Name </label>
     <input type="text" name="name"  class="form-control" value="{{$seatallocation->name}}" required > 

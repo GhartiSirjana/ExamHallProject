@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@push('styles')    
+    <link href="{{ asset('css/subject.css')}}" rel="stylesheet">
+@endpush
 @section('content')
 <div class="container">
     <br/>
@@ -30,7 +33,7 @@
             </div>
             @enderror
         </div>
-       
+        <div class="wrap">
         <div class="form-group">
             <label>Select Rooms </label>
             <select class="form-select" name="rooms" class="form-control"  aria-label="Default select example">
@@ -45,6 +48,11 @@
                 <span class="text-danger">{{ $message }}</span>
             </div>
             @enderror
+        </div>
+        <div class="plus">
+        <span></span>
+        <span></span>
+        </div>
         </div>
    
         <br/>  <br/>

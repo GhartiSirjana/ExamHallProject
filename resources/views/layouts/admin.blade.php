@@ -242,7 +242,7 @@
           </li>
         
           <li class="nav-item has-treeview">
-            <a href="" class="nav-link">
+            <a href="{{route('subjects.index')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Subject Management
@@ -273,7 +273,7 @@
 
                   <!-- <li class="nav-header">EXAMPLES</li> -->
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('seatallocations.index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Seat Management
