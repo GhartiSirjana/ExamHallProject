@@ -85,9 +85,16 @@ class DepartmentController extends Controller
             'department_code' => 'required|string',
             'description' => 'required'
         ]);
+        
+        $department->department_name = $request->input('department_name');
+        $department->department_code = $request->input('department_code');
+        $department->description = $request->input('description');
+        $department->save();
 
-       $department->update($request->all());
-       return redirect('/departments');
+        $request->session()->flash('msg', 'data submitted');
+        return redirect('/departments');
+    //    $department->update($request->all());
+    //    return redirect('/departments');
     }
 
     /**
@@ -99,7 +106,6 @@ class DepartmentController extends Controller
     public function destroy(Department $department)
     {
         $department->delete();
-
-        return redirect('/departments');
+        return redirect()->route('/departments');
     }
 }

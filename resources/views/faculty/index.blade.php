@@ -24,8 +24,8 @@
                 <td> {{ $faculty->department->department_name }} </td>
                 <td> {{ $faculty->created_at }} </td>
                 <td>
-                    <a href="{{ route('faculties.edit', $faculty->id) }}" class="btn btn-danger btn-sm"> edit</a>
-                    <a href="{{ route('faculties.destroy', $faculty->id) }}" class="btn btn-primary btn-sm"> Delete</a>
+                    <a href="{{ route('faculties.edit', $faculty->id) }}" class="btn btn-primary btn-sm"> edit</a>
+                    <a href="{{ route('faculties.destroy', $faculty->id) }}" class="btn btn-danger btn-sm"> Delete</a>
                 </td>
             </tr>
             @endforeach

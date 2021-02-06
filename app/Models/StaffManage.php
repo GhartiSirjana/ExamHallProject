@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class StaffManage extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'staffname', 'department'
-    ];
+    
+    protected $guarded = [];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id'); 
+    }
 }

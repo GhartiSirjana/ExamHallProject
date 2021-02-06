@@ -39,7 +39,7 @@
                             <label>Select Department </label>
                             <select class="form-select" name="department_id" class="form-control" aria-label="Default select example">
                                 @foreach($departments as $department)
-                                <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                    <option value="{{$department->id}}">{{$department->department_name}}</option>
                                 @endforeach
                             </select>
 

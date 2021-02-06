@@ -41,10 +41,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block active">
-        <a href="index3.html" class="text-white nav-link fw-bold">Automatic Exam Hall Arrangement</a>
+        <a href="" class="text-white nav-link fw-bold">Automatic Exam Hall Arrangement</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="text-white nav-link active">Home</a>
+        <a href="" class="text-white nav-link active">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="text-white nav-link">Contact</a>
@@ -169,7 +169,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('faculties.index') }}" class="nav-link">
                   <i class="fas fa-eye"></i>
                   <p>Show</p>
                 </a>
@@ -227,7 +227,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('student.index') }}" class="nav-link">
                 <i class="fas fa-eye"></i>
                   <p>Show</p>
                 </a>
@@ -302,16 +302,9 @@
               </li>
             </ul>
           </li>
-<<<<<<< HEAD
-
-          <li class="nav-item has-treeview">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-=======
           <li class="nav-item">
-            <a href="{{route('college.showcollege')}}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon far fa-image"></i>
->>>>>>> df44154e32d492ee725d03f786a8222c90ace098
               <p>
                 Seat Arrangement
                 <i class="fas fa-angle-left right"></i>
@@ -341,7 +334,7 @@
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="{{route('exammanagement.showexam')}}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Exam Management
@@ -381,13 +374,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('staff.create') }}" class="nav-link">
                 <i class="fas fa-plus"></i>
                   <p>Create</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('staff.index') }}" class="nav-link">
                 <i class="fas fa-eye"></i>
                   <p>Show</p>
                 </a>
