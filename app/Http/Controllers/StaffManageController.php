@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\StaffManage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,17 +15,14 @@ class StaffManageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function staffindex()
+    public function index()
     {
         // $staffs = DB::table('staff_manages')->get();
-        $staffs = DB::table('staff_manages')->latest()->paginate(5);
-        return view('examhallproject.staffmanagement', compact('staffs'));
+        $staffs = StaffManage::all();
+        return view('staff.index', compact('staffs'));
     }
 
-    public function staffadd()
-    {
-        return view('examhallproject.SM-add');
-    }
+  
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +30,8 @@ class StaffManageController extends Controller
      */
     public function create()
     {
-        //
+        $departments = Department::all();
+        return view('staff.create', compact('departments'));
     }
 
     /**
@@ -43,19 +42,16 @@ class StaffManageController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'staffname'=>'required|alpha|string|min:5',
-            'department'=>'required'
+        $data = $request->validate([
+            'staffname'=>'required|string|min:5',
+            'department_id'=>'required'
         ]);
 
-        DB::table('staff_manages')->insert([
-            'staffname'=>$request->staffname,
-            'department'=>$request->department
-        ]);
         // return redirect()->back()->with('error', 'Something went wrong.');
 
         // return redirect()->back()->with('success', 'Staff Added Successfully');
-        return redirect('/staff-test');
+        StaffManage::create($data);
+        return redirect('/staff');
     }
 
     /**
@@ -66,8 +62,7 @@ class StaffManageController extends Controller
      */
     public function show(StaffManage $staffManage, $id)
     {
-        $staffs = DB::table('staff_manages')->where('id', $id)->first();
-        return view('examhallproject.SM-show', compact('staffs')); 
+        
     }
 
     /**
@@ -78,8 +73,7 @@ class StaffManageController extends Controller
      */
     public function edit(StaffManage $staffManage, $id)
     {
-        $staffs = DB::table('staff_manages')->where('id', $id)->first();
-        return view('examhallproject.SM-edit', compact('staffs'));
+  
     }
 
     /**
@@ -91,12 +85,7 @@ class StaffManageController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        DB::table('staff_manages')->where('id', $id)->update([
-            'staffname'=>$request->staffname,
-            'department'=>$request->department
-        ]);
-        return redirect()->route('examhallproject.staffmanagement')
-                           ->with('update', 'Staff detils updated Successfully') ;
+      
     }
 
     /**
@@ -107,7 +96,6 @@ class StaffManageController extends Controller
      */
     public function destroy(StaffManage $staffManage, $id)
     {
-        DB::table('staff_manages')->where('id', $id)->delete();
-        return back()->with('delete', 'Staff detail has been deleted successfully');
+     
     }
 }

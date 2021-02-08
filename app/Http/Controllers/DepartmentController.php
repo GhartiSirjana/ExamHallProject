@@ -14,9 +14,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departs = Department::all();
+        $department = Department::all();
 
-        return view('department.index', compact('departs'));
+        return view('department.index', compact('department'));
     }
 
     /**
@@ -68,7 +68,7 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        return view('department.edit', compact('department'));
+        return view('department.edit');
     }
 
     /**
@@ -80,8 +80,21 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-       $department->update($request->all());
-       return redirect('/departments');
+        $request->validate([
+            'department_name' => 'required|string|min:5|max:100|',
+            'department_code' => 'required|string',
+            'description' => 'required'
+        ]);
+        
+        $department->department_name = $request->input('department_name');
+        $department->department_code = $request->input('department_code');
+        $department->description = $request->input('description');
+        $department->save();
+
+        $request->session()->flash('msg', 'data submitted');
+        return redirect('/departments');
+    //    $department->update($request->all());
+    //    return redirect('/departments');
     }
 
     /**
@@ -93,7 +106,6 @@ class DepartmentController extends Controller
     public function destroy(Department $department)
     {
         $department->delete();
-
-        return redirect('/departments');
+        return redirect()->route('/departments');
     }
 }

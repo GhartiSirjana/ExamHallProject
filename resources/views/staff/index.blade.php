@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-10 offset-md-1">
         <h3 class="fs-5">Staff Management</h3>
-        <a class="btn btn-info btn-sm" href="{{ route('examhallproject.staffadd') }}">Add Staff</a>
+        <a class="btn btn-info btn-sm" href="{{ route('staff.index') }}">Add Staff</a>
         <table class="table table-bordered mt-3">
             <tr>
                 <thead>
@@ -20,9 +20,9 @@
                     <td>{{ $staff->staffname }}</td>
                     <td>{{ $staff->department }}</td>
                     <td>
-                        <a href="/staff-show/{{$staff->id}}" class="btn btn-success btn-sm">View</a>
-                        <a href="/staff-edit/{{$staff->id}}" class="btn btn-info btn-sm">Edit</a>
-                        <a href="/delete/{{$staff->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a>
+                        <a href="{{ route('staff.index', $staff->id) }}" class="btn btn-success btn-sm">View</a>
+                        <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-info btn-sm">Edit</a>
+                        <a href="{{ route('staff.destroy', $staff->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a>
                     </td>
                     @endforeach
             </tbody>

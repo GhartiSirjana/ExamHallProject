@@ -18,19 +18,15 @@
                         <h4>Add New Staff</h4>
                     </div>
                     <div class="col-md-2">
-                        <a href="{{ route('examhallproject.staffmanagement') }}" class="btn btn-success btn-sm">Back</a>
+                        <a href="{{ route('staff.index') }}" class="btn btn-success btn-sm">Back</a>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">Staff Add</div>
-                    @if(Session::has('success'))
-                    <div class="alert alert-danger">
-                        {{Session::get('success')}}
-                    </div>
-                    @endif
                     <div class="card-body">
-                        <form action="{{ route('examhallproject.staffstore') }}" method="POST">
+                        <form action="{{ route('staff.store') }}" method="POST">
                             @csrf
+                            
                             <div class="mb-3">
                                 <label for="name" class="form-label"><strong>Staff Name</strong> </label>
                                 <input type="text" name="staffname" class="form-control form-control-sm" id="staffname"">
@@ -41,11 +37,10 @@
                             <div class="mb-3">
                                 <label for="department" class="form-label"><strong>Department</strong></label>
                                 <!-- <input type="text" name="department" class="form-control form-control-sm " id="department""> -->
-                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="department">
-                                <option selected>CSIT</option>
-                                <option >Engineering</option>
-                                <option value="2">Management</option>
-                                <option value="3">BSC</option>
+                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="department_id">
+                                @foreach($departments as $department)
+                                <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                @endforeach
                                 </select>
                                 @error('department')
                                     <span class=" text-danger">{{$message}}</span>
