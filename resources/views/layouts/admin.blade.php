@@ -183,7 +183,7 @@
 
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{route('roommanagement.showroom')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Room Management
