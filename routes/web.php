@@ -13,11 +13,8 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-<<<<<<< HEAD
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoommanagmentController;
-=======
->>>>>>> e2e73e301a57d5938010a089445e302f82384049
 use App\Http\Controllers\StaffManageController;
 use App\Http\Controllers\StudentManageController;
 use App\Models\Department;
@@ -61,30 +58,14 @@ Route::resource('dashboard', DashboardController::class);
 // Resource route for department
 Route::resource('departments', DepartmentController::class);
 
-<<<<<<< HEAD
 // Student Management
 Route::get('student', [StudentManageController::class, 'studentIndex'])->name('examhallproject.student');
 
 // Student details Add
 Route::get('student-add', [StudentManageController::class, 'studentAdd'])->name('examhallproject.studentadd');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 // Resource Route for the Faculties
 Route::resource('faculties', FacultyController::class); // faculties.index, 
->>>>>>> e2e73e301a57d5938010a089445e302f82384049
 
 
 // // Route for the Staff Management
@@ -119,15 +100,12 @@ Route::get('department-faculties/{department_id}', function($department_id) {
 Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
 
 
-<<<<<<< HEAD
 Route::resource('faculties', FacultyController::class); // faculties.index, faculties.show, faculties.store
-=======
 
 
 Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
 
 
->>>>>>> e2e73e301a57d5938010a089445e302f82384049
 
 
 Route::get('/showcollege' , [addcollegecontroller::class , 'show'])->name('college.showcollege');

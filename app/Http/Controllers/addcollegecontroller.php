@@ -23,19 +23,19 @@ class AddcollegeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:5|max:100',
+            'college' => 'required|string|min:5|max:100',
             'address' => 'required|string',
             'description' => 'required|string',
         ]);
         $res = new addcollege;
-        $res->name = $request->input('name');
+        $res->name=$request->input('college');
         $res->address=$request->input('address');
         $res->description=$request->input('description');
         $res->save();
 
 
         $request->session()->flash('msg' , 'data submitted');
-        return redirect('/showcollege');
+        return redirect('showcollege');
 
 
 
