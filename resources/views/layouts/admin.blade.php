@@ -362,10 +362,16 @@
               </li>
             </ul>
           </li>
+<<<<<<< HEAD
+          <li class="nav-item has-treeview">
+            <a href="{{route('roommanagement.showroom')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+=======
           
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
+>>>>>>> e2e73e301a57d5938010a089445e302f82384049
               <p>
                Staff Management
                <i class="fas fa-angle-left right"></i>

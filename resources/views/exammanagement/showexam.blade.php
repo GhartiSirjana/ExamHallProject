@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<h1> FACULTY </h1>
+<h1 class = "h3">Exam management</h1>
 {{session('msg')}}
 <a href="createexam" class="btn btn-primary"> Add Exam </a> 
 <table class="table  table-bordered table-striped table-hover">
