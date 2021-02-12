@@ -10,14 +10,15 @@ class SeatallocationController extends Controller
     
     public function index()
     {
+        $seatallocations = seatallocation::all();
         return view('seatallocation.index', compact('seatallocations'));
     }
 
   
     public function create()
     {
-        $seatallocations = seatallocation::all();
-        return view('seatallocation.create', compact('seatallocations'));
+        // $seatallocations = seatallocation::all();
+        return view('seatallocation.create');
     }
 
    

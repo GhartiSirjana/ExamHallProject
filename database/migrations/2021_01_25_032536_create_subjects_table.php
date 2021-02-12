@@ -18,8 +18,13 @@ class CreateSubjectsTable extends Migration
             $table->string('subjectname');
             $table->string('subjectcode');
             $table->string('semester');
-            $table->string('faculty');
-            $table->string('department');
+            $table->unsignedBigInteger('faculty_id'); 
+            
+            $table->unsignedBigInteger('department_id');
+             
+            $table->foreign('faculty_id')->on('faculties')->references('id'); 
+            
+            $table->foreign('department_id')->on('departments')->references('id'); 
             
             $table->timestamps();
         });

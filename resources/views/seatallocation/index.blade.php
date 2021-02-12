@@ -8,7 +8,7 @@
 
 {{session('msg')}}
 <br/>
-<a href="{{ route('seatallocations.create') }}" class="btn btn-primary"> ADD Faculty </a> 
+<a href="{{ route('seatallocations.create') }}" class="btn btn-primary"> ADD Seat </a> 
 <br/><br/>
 <table class="table  table-bordered table-striped table-hover">
 <tr>
