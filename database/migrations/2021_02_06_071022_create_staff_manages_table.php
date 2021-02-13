@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddcollegesTable extends Migration
+class CreateStaffManagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAddcollegesTable extends Migration
      */
     public function up()
     {
-        Schema::create('addcolleges', function (Blueprint $table) {
+        Schema::create('staff_manages', function (Blueprint $table) {
             $table->id();
-            $table->string('collegename');
-            $table->string('address');
-            $table->text('description')->nullable();
-            $table->string('Action');
+            $table->string('staffname');
+            $table->unsignedBigInteger('department_id');
             $table->timestamps();
+            $table->foreign('department_id')->on('departments')->references('id');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateAddcollegesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addcolleges');
+        Schema::dropIfExists('staff_manages');
     }
 }

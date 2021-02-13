@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\College;
 use App\Models\Department;
 use App\Models\Faculty;
 use App\Models\StudentManage;
@@ -29,7 +30,8 @@ class StudentManageController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-        return view('student.create', compact('departments', 'faculties'));
+        $colleges = College::all();
+        return view('student.create', compact('departments', 'faculties', 'colleges'));
     }
 
     /**
@@ -41,23 +43,24 @@ class StudentManageController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            's_name'=>'required|string|min:5|max:12',
-            's_college'=>'required|string|min:5|max:12',
-            's_department'=>'required|string|min:5|max:12',
-            's_faculty'=>'required|string|min:5|max:12',
-            's_year'=>'required|string|min:5|max:12',
-            's_semester'=>'required|string|min:5|max:12',
-            's_registration'=>'required|string|min:5|max:12',
-            's_symbolno'=>'required|string|min:5|max:12',
-            's_dob'=>'required|string|min:5|max:12',
-            's_parent'=>'required|string|min:5|max:12',
-            's_email'=>'required|string|unique:users',
-            's_mobile'=>'required|string|numeric',
-            's_address'=>'required|string|min:8|max:15',
+            'name' => 'required|min:5|max:15|string',
+            'college' => 'required',
+            'department' => 'required', 
+            'faculty' => 'required',
+            'year' => 'required|numeric',
+            'semester' => 'required',
+            'registerNumber'=> 'required|string',
+            'symbolno' => 'required|numeric|unique:student_manages,symbolno',
+            'dob' => 'required',
+            'parent' => 'required|min:5|max:12',
+            'email' => 'required|unique:users',
+            'mobile' => 'required|numeric', 
+            'address' => 'required|min:5|max:12'
         ]);
-        $students = StudentManage::create($data);
-        return redirect()->route('/student')
-                        ->with('success', 'Student added Successfully');
+
+        $student = StudentManage::create($data);
+        return redirect('/student');
+                        
     }
 
     /**

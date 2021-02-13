@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\addcollege;
+use App\Models\College;
 use Illuminate\Http\Request;
 
 class AddcollegeController extends Controller
@@ -10,72 +10,73 @@ class AddcollegeController extends Controller
     
     public function index()
     {
-        //
+        $colleges = College::all();
+        return view('college.index', compact('colleges'));
     }
 
     
     public function create()
     {
-        return view('college.createcollege');
+        return view('college.create');
     }
 
     
     public function store(Request $request)
     {
-        $request->validate([
-            'college' => 'required|string|min:5|max:100',
+        $data = $request->validate([
+            'name' => 'required|string|min:5|max:100',
             'address' => 'required|string',
             'description' => 'required|string',
         ]);
-        $res = new addcollege;
-        $res->name=$request->input('college');
-        $res->address=$request->input('address');
-        $res->description=$request->input('description');
-        $res->save();
+        // $res = new College;
+        // $res->name=$request->input('college');
+        // $res->address=$request->input('address');
+        // $res->description=$request->input('description');
+        // $res->save();
 
-
-        $request->session()->flash('msg' , 'data submitted');
-        return redirect('showcollege');
+        $college = College::create($data);
+       
+        return redirect('/college');
 
 
 
     }
 
     
-    public function show(addcollege $addcollege)
+    public function show(College $College)
     {
-        return view('college.showcollege')->with('addcollegearr' , addcollege::all());
+        // return view('college.showcollege')->with('addcollegearr' , College::all());
     }
 
     
-    public function edit(addcollege $addcollege , $id)
+    public function edit(College $college , $id)
     {
-        return view('college.editcollege')->with('addcollegearr' , addcollege::find($id));
+        // return view('college.edit')->with('addcollegearr' , College::find($id));
     }
 
     
-    public function update(Request $request, addcollege $addcollege)
+    public function update(Request $request, College $college)
     {
-        $request->validate([
-            'college' => 'required|string|min:5|max:100',
+        $data = $request->validate([
+            'name' => 'required|string|min:5|max:100',
             'address' => 'required|string',
             'description' => 'required|string',
         ]);
-        $res =  addcollege::find($request->id);
-        $res->name=$request->input('college');
-        $res->address=$request->input('address');
-        $res->description=$request->input('description');
-        $res->save();
 
-
+        $college = College::create($data);
+        // $res =  College::find($request->id);
+        // $res->name=$request->input('college');
+        // $res->address=$request->input('address');
+        // $res->description=$request->input('description');
+        // $res->save();
         $request->session()->flash('msg' , 'data submitted');
-        return redirect('showcollege');
+        return redirect('college');
     }
 
     
-    public function destroy(addcollege $addcollege , $id)
+    public function destroy(College $college , $id)
     {
-        addcollege::destroy(array('id' , $id));
-        return redirect('showcollege');
+        // College::destroy(array('id' , $id));
+        // return redirect('college');
     }
 }

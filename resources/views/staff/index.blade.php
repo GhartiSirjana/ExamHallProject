@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{ $staff->id }}</td>
                     <td>{{ $staff->staffname }}</td>
-                    <td>{{ $staff->department }}</td>
+                    <td>{{ $staff->department->department_name}}</td>
                     <td>
                         <a href="{{ route('staff.index', $staff->id) }}" class="btn btn-success btn-sm">View</a>
                         <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-info btn-sm">Edit</a>
@@ -28,15 +28,7 @@
             </tbody>
             </tr>
         </table>
-        <span>
-            {{$staffs->links()}}
-        </span>
-        <style>
-            .w-5
-            {
-                display: none;
-            }
-        </style>
+  
     </div>
 </div>
 @endsection

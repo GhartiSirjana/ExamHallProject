@@ -45,7 +45,7 @@ class DepartmentController extends Controller
         ]);
 
 
-        Department::create($data);
+        $departs = Department::create($data);
         return redirect('/departments');
     }
 
@@ -68,7 +68,7 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        return view('department.edit');
+        return view('department.edit', compact('department'));
     }
 
     /**

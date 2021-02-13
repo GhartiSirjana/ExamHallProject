@@ -55,7 +55,7 @@ class SubjectController extends Controller
     }
 
    
-    public function edit(subject $subject,)
+    public function edit(subject $subject)
     {
         return view('subject.edit', compact('subject'));
     }
@@ -83,7 +83,7 @@ class SubjectController extends Controller
     }
 
     
-    public function destroy(subject $subject,)
+    public function destroy(subject $subject)
     {
         $subject->delete();
         return redirect('subjects');
