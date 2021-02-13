@@ -17,18 +17,19 @@
     <th>SubjectCode</th>
     <th>Semester</th>
     <th>Faculty</th>
-    <th> Department</th>
+    <th>Department</th>
     <th>Created_at</th>
     <th>Action</th>
 </tr>
+
 @foreach($subjects as $subject)
 <tr>
 <td> {{$subject->id}} </td>
 <td> {{$subject->subjectname}} </td>
 <td> {{$subject->subjectcode}} </td>
 <td> {{$subject->semester}} </td>
-<td> {{$subject->faculty}} </td>
-<td> {{$subject->department}} </td>
+<td> {{$subject->faculty->name}} </td>
+<td> {{$subject->department->department_name}} </td>
 <td> {{$subject->created_at}} </td>
 <td>
 <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-danger"> edit</a>

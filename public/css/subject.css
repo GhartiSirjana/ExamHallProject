@@ -1,19 +1,15 @@
-.form-wrapper{
-    margin-top:5%;
-    margin-left:5%;
-    
-}
-.form-select{
+
+/* .form-select{
     width:80%;
-}
+} */
 .wrap{
     display:flex;
     
 }
 .plus{
-    background-color: blue;
-    height: 66px;
-    width: 6%;
+    background-color: #0037ffab;
+    height: 67px;
+    width: 10%;
     margin-top: 14px;
     margin-left: 3%;
     display: flex;

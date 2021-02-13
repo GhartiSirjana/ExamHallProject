@@ -3,7 +3,7 @@
     <div class="col-md-6 offset-md-3">
         <div class="card">
 
-        <div class="card-header">Add New College/Campus</div>
+        <div class="card-header">Update College/Campus</div>
         <div class="card-body">
             <form method="post" action="{{route('college.editcollege', [$addcollegearr->id])}}">
             @csrf
@@ -23,8 +23,8 @@
                         <input type="text" name="description" class="form-control" id="Desc" value="{{$addcollegearr->description}}" >
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Addcollege/campus</button>
-                <button type="submit" class="btn">Close</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn">Close</button>
 
             </form>
         </div>

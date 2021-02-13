@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
+use App\Models\Faculty;
 use App\Models\subject;
 use Illuminate\Http\Request;
 
@@ -21,7 +23,9 @@ class SubjectController extends Controller
    
     public function create()
     {
-        return view('subject.create');
+        $departments = Department::all();
+        // dd($faculties);
+        return view('subject.create', compact('departments'));
         
 
     }
@@ -36,13 +40,25 @@ class SubjectController extends Controller
         // $res->faculty=$request->input('faculty');
         // $res->save();
         $data = $request->validate([
-            'department' => 'required|string',
-            'subjectname' => 'required|string',
-            'code' => 'required|numeric',
+            'department_id' => 'required|numeric|exists:departments,id',
+            'subjectname' => 'required|array|min:1', // ['Physics', 'Calculus', 'IT']
+            'subjectname.*' => 'required|string', // Physics
+            'code' => 'required|array|min:1',
+            'code.*' => 'required|numeric',
             'semester' => 'required|string', 
-            'faculty' => 'required|string',
+            'faculty_id' => 'required|numeric|exists:faculties,id',
         ]);
-        $subject = subject::create($data);
+        foreach($data['subjectname'] as $index => $sub) {
+            
+            $subject = subject::create([
+                'subjectname' => $sub,
+                'subjectcode' => $data['code'][$index],
+                'semester' => $data['semester'],
+                'department_id' => $data['department_id'],
+                'faculty_id' => $data['faculty_id']
+            ]);
+        }
+        
  
         $request->session()->flash('msg', 'data submitted');
         return redirect('/subjects');
@@ -57,7 +73,9 @@ class SubjectController extends Controller
    
     public function edit(subject $subject)
     {
-        return view('subject.edit', compact('subject'));
+        $departments = Department::all();
+        $faculties = Faculty::all();
+        return view('subject.edit', compact('departments', 'faculties'));
     }
 
    

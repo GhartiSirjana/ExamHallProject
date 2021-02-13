@@ -10,6 +10,7 @@
         <div class="form-wrapper">
         <form action="{{ route('subjects.update', $subject->id) }}" method="post">
             @csrf
+            @method('put')
      
          <div class="form-group">
         <label>Select Semester </label>

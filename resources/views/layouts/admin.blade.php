@@ -27,7 +27,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+  <script src="{{asset('js/app.js')}}"></script>
   @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -174,7 +174,7 @@
 
           <!-- <li class="nav-header">EXAMPLES</li> -->
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('seatallocations.index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Seat Management
@@ -202,10 +202,9 @@
               </p>
             </a>
           </li>
-          
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+          <li class="nav-item has-treeview">
+            <a href="{{route('roommanagement.showroom')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
               <p>
                Staff Management
                <!-- <i class="fas fa-angle-left right"></i> -->
