@@ -1,27 +1,22 @@
 @extends('layouts.admin')
 @push('styles')
-
-    <style>
-        .form-group input {
-            width: 50%;
-        }
-
-        .form-group .form-select {
-            width: 50%;
-        }
-
-        .container a {
-            color: blue;
-        }
-
-    </style>
 @endpush
 @section('content')
 
-    <div class="container">
-        <br />
-        <br />
-        <a href="faculty_show"> Back </a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="row mb-3">
+                <div class="col-md-10">
+                    <h4>Update Faculty</h4>
+                </div>
+                <div class="col-md-2">
+                    <a href="{{ route('faculties.index') }}" class="btn btn-success btn-sm">Back</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Upadate Faculty</div>
+                <div class="card-body">
         <form class="" action="{{ route('faculties.update', $faculty->id) }}" method="post">
             @csrf
             @method('put')
@@ -62,6 +57,8 @@
             <button type="submit" class="btn btn-primary"> submit </button>
         </form>
     </div>
+            </div>
+        </div>
     </body>
 
     </html>
