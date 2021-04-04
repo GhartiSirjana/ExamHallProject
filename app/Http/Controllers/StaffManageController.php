@@ -73,6 +73,8 @@ class StaffManageController extends Controller
      */
     public function edit(StaffManage $staffManage, $id)
     {
+        $departments = Department::all();
+        return view('staff.edit', compact( 'staffManage', 'departments'));
   
     }
 

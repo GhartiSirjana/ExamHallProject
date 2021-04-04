@@ -10,53 +10,53 @@ class RoommanagmentController extends Controller
     
     public function index()
     {
-        //
+        $rooms = roommanagment::all();
+        return view('roommanagement.index', compact('rooms'));
     }
 
     
     public function create()
     {
-        return view('roommanagement.addroom');
+        return view('roommanagement.create');
+    }
+    public function block()
+    {
+        return view('roommanagement.blockindex');
+    }
+    public function floor()
+    {
+        return view('roommanagement.floorindex');
     }
 
    
     public function store(Request $request)
     {
         $request->validate([
-            'room' => 'required|string',
+            'roomno' => 'required|string',
             'block' => 'required|string|min:5|max:100',
             'floor' => 'required|string',
-            'roomcapacity' => 'required|numeric',
+            'capacity' => 'required|numeric',
             'rows' => 'required|numeric',
-            'column' => 'required|numeric',
-
-            
-
-            
+            'columns' => 'required|numeric',
+            'incigilator' => 'required|numeric',
 
         ]);
         $res = new roommanagment;
-        $res->room_no=$request->input('room');
+        $res->number=$request->input('roomno');
         $res->block=$request->input('block');
         $res->floor=$request->input('floor');
-        $res->capacity=$request->input('roomcapacity');
-        $res->no_of_rows=$request->input('rows');
-        $res->no_of_colums=$request->input('column');
-    
-
+        $res->capacity=$request->input('capacity');
+        $res->rows=$request->input('rows');
+        $res->cols=$request->input('columns');
+        $res->invigilator=$request->input('invigilator');
 
         $res->save();
-
-
         $request->session()->flash('msg' , 'data submitted');
-        return redirect('showroom');
+        return redirect('index');
     }
 
     
-    public function show(roommanagment $roommanagment)
-    {
-        return view('roommanagement.showroom')->with('roommanagementarr' , roommanagment::all());
-    }
+ 
 
     
     public function edit(roommanagment $roommanagment)
@@ -74,6 +74,6 @@ class RoommanagmentController extends Controller
     public function destroy(roommanagment $roommanagment , $id)
     {
         roommanagment::destroy(array('id' , $id));
-        return redirect('showroom');
+        return redirect('index');
     }
 }

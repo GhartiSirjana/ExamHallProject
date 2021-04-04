@@ -18,7 +18,7 @@
                         <h4>Update Staff</h4>
                     </div>
                     <div class="col-md-2">
-                        <a href="{{ route('examhallproject.staffmanagement') }}" class="btn btn-success btn-sm">Back</a>
+                        <a href="{{ route('staff.index') }}" class="btn btn-success btn-sm">Back</a>
                     </div>
                 </div>
                 <div class="card">
@@ -29,8 +29,9 @@
                     </div>
                     @endif
                     <div class="card-body">
-                        <form action="{{ route('examhallproject.staffupdate', $staffs->id) }}" method="POST">
+                        <form action="{{ route('staff.update', $staffManage->id) }}" method="POST">     
                             @csrf
+                            @method('put')
                             <div class="mb-3">
                                 <label for="name" class="form-label"><strong>Staff Name</strong> </label>
                                 <input type="text" name="staffname" class="form-control form-control-sm" id="staffname" value="{{$staffs->staffname}}">

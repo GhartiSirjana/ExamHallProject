@@ -36,9 +36,9 @@
                 <tbody>
                     <td>{{$student->id}}</td>
                     <td>{{$student->name}}</td>
-                    <td>{{$student->college->name}}</td>
-                    <td>{{$student->department->department_name}}</td>
-                    <td>{{$student->faculty->faculty_name}}</td>
+                    <td>{{$student->colleges->id}}</td>
+                    <td>{{$student->departments->department_name}}</td>
+                    <td>{{$student->faculties->faculty_name}}</td>
                     <td>{{$student->year}}</td>
                     <td>{{$student->semester}}</td>
                     <td>{{$student->registerNumber}}</td>

@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-10 offset-md-1">
         <h3 class="fs-5">Faculty</h3>
-        {{ session('msg') }}
+        <!-- {{ session('msg') }} -->
         <a class="btn btn-info btn-sm" href="{{ route('faculties.create') }}">Add Faculty</a>
         <table class="table mt-3 table-bordered">
 

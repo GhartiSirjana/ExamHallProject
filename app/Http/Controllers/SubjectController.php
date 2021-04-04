@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\exammanagement;
 use App\Models\Faculty;
 use App\Models\subject;
 use Illuminate\Http\Request;
@@ -25,7 +26,9 @@ class SubjectController extends Controller
     {
         $departments = Department::all();
         // dd($faculties);
-        return view('subject.create', compact('departments'));
+        $faculties = Faculty::all();
+        $exams = exammanagement::all();
+        return view('subject.create', compact('departments', 'faculties', 'exams'));
         
 
     }

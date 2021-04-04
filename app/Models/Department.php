@@ -29,4 +29,9 @@ class Department extends Model
     {
         return $this->hasMany(StudentManage::class, 'department_id');
     }
+
+    public function exam()
+    {
+        return $this->hasMany(exammanagement::class, 'department_id');
+    }
 }

@@ -21,58 +21,55 @@
                     <div class="form-wrapper">
                         <form action="{{ route('subjects.store') }}" method="post">
                             @csrf
-                            
-                           
+
+
                             <div class="form-group">
                                 <label>Select Department </label>
                                 <select id="department" class="form-select" name="department_id" class="form-control" aria-label="Default select example">
-                               <option value="">Select department</option>
-                                @foreach($departments as $department)
+                                    <option value="">Select department</option>
+                                    @foreach($departments as $department)
                                     <option value="{{$department->id}}">{{$department->department_name}}</option>
-                                @endforeach
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label>Select Faculty </label>
                                 <select id="faculty" class="form-select" name="faculty_id" class="form-control" aria-label="Default select example">
-                               
+                                    @foreach($faculties as $faculty)
+                                    <option value="{{$faculty->id}}">{{$faculty->short_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label>Select Semester </label>
                                 <select class="form-select" name="semester" class="form-control" aria-label="Default select example">
-                                    <option selected>1sem</option>
-                                    <option>2nd sem</option>
-                                    <option>3rdsem</option>
-                                    <option>4thsem</option>
-                                    <option>5thsem</option>
-                                    <option>6thsem</option>
-                                    <option>7thsem</option>
-                                    <option>8thsem</option>
+                                    @foreach($exams as $exam)
+                                    <option value="{{$exam->id}}">{{$exam->semester}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="subject-input-group" x-data="{subjects : [{subjectName: '', code: ''}]}">
-                            <template  x-for="(item, index) in subjects" :key="index">
-                                <div class="form-row mb-3 align-items-end">
-                                    <div class="form-group col mb-0">
-                                        <label> Subject Name </label>
-                                        <input type="text" name="subjectname[]" class="form-control">
+                                <template x-for="(item, index) in subjects" :key="index">
+                                    <div class="form-row mb-3 align-items-end">
+                                        <div class="form-group col mb-0">
+                                            <label> Subject Name </label>
+                                            <input type="text" name="subjectname[]" class="form-control">
+                                        </div>
+                                        <div class="form-group col mb-0">
+                                            <label> SubjectCode </label>
+                                            <input type="number" name="code[]" class="form-control">
+                                        </div>
+                                        <template x-if="index > 0">
+                                            <button type="button" @click="subjects.splice(index, 1)" class="btn btn-danger btn-add-subject"><i class="fa fa-minus"></i></button>
+                                        </template>
+                                        <template x-if="index == 0">
+                                            <button type="button" @click="subjects.push({subjectName: '', code: ''})" class="btn btn-primary btn-add-subject"><i class="fa fa-plus"></i></button>
+                                        </template>
                                     </div>
-                                    <div class="form-group col mb-0">
-                                        <label> SubjectCode </label>
-                                        <input type="number" name="code[]" class="form-control">
-                                    </div>
-                                    <template x-if="index > 0">
-                                        <button  type="button" @click="subjects.splice(index, 1)" class="btn btn-danger btn-add-subject"><i class="fa fa-minus"></i></button>
-                                    </template>
-                                    <template  x-if="index == 0">
-                                        <button type="button" @click="subjects.push({subjectName: '', code: ''})" class="btn btn-primary btn-add-subject"><i class="fa fa-plus"></i></button>
-                                    </template>
-                                </div>
-                            </template>
+                                </template>
                             </div>
 
                             <button type="submit" class="btn btn-primary"> Add Subject</button>
@@ -98,6 +95,5 @@
             console.log(err);
         })
     });
-
 </script>
 @endsection

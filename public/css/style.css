@@ -13,3 +13,9 @@
     background-size: cover;
     background-position: center;
 }
+.background
+{
+    background-image: url("image/mini.jpg");
+    width: 100%;
+    height: 100vh;
+}
