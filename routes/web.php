@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoommanagmentController;
 use App\Http\Controllers\StaffManageController;
+
 use App\Http\Controllers\StudentManageController;
 use App\Models\Department;
 
@@ -34,11 +35,11 @@ use App\Models\Department;
 //     return view('seatarrangement.seatarrangement_create');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';
 
 
 
@@ -53,7 +54,7 @@ Route::post('/adminlogin', [RegisterController::class, 'login'])->name('form.log
 
 
 // Route for the Dashboard
-Route::resource('dashboard', DashboardController::class);
+Route::resource('/dashboard', DashboardController::class);
 
 // Resource route for department
 Route::resource('departments', DepartmentController::class);
@@ -75,24 +76,16 @@ Route::resource('staff', StaffManageController::class);
 // Resource route for Student
 Route::resource('student', StudentManageController::class);
 
-// Resource route for seatallocation
-Route::resource('seatallocations', SeatallocationController::class);
-
-// Resource route for subject
+// Resource route for Subjects
 Route::resource('subjects', SubjectController::class);
 
+// Resource route for the Seatallocation
+Route::resource('seatallocations', SeatallocationController::class);
 
-// Get faculties by department id
-Route::get('department-faculties/{department_id}', function($department_id) {
-    $department = Department::find($department_id);
-    if($department) {
-        return response()->json($department->faculties);
-    }
-    return response()->json([]);
-});
+// Resources route for the College
+Route::resource('college', addcollegecontroller::class);
 
-
-
+// Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
 
 
 
@@ -103,7 +96,9 @@ Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('colle
 Route::resource('faculties', FacultyController::class); // faculties.index, faculties.show, faculties.store
 
 
-Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
+
+
+
 
 
 

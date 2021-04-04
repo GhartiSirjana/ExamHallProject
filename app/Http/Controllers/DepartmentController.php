@@ -45,7 +45,7 @@ class DepartmentController extends Controller
         ]);
 
 
-        Department::create($data);
+        $departs = Department::create($data);
         return redirect('/departments');
     }
 

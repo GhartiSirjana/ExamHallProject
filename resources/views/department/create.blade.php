@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+    <br>
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="mb-3 row">

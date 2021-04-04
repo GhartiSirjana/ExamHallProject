@@ -94,33 +94,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <a href="{{ route('college.index') }}" class="nav-link">
+              <!-- <i class="nav-icon far fa-image"></i> -->
               <p>
                 College/Campus Manage
-                <i class="fas fa-angle-left right"></i>
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <li class="nav-item has-treeview">
@@ -128,29 +108,10 @@
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Department Manage
-                <i class="right fas fa-angle-left"></i>
+                <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('departments.create') }}" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('departments.index')}}" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
+
           </li>
 
           <li class="nav-item has-treeview">
@@ -158,39 +119,19 @@
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Faculty Management
-                <i class="fas fa-angle-left right"></i>
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('faculties.create') }}" class="nav-link">
-                  <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('faculties.index') }}" class="nav-link">
-                  <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Room Management
-                <i class="fas fa-angle-left right"></i>
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <!-- <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="" class="nav-link">
                 <i class="fas fa-plus"></i>
@@ -209,128 +150,47 @@
                   <p>Update</p>
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('student.index')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                Student Management
-                <i class="fas fa-angle-left right"></i>
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('student.create')}}" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('student.index') }}" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
         
           <li class="nav-item has-treeview">
-            <a href="{{route('subjects.index')}}" class="nav-link">
+            <a href="{{ route('subjects.index') }}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Subject Management
-                <i class="fas fa-angle-left right"></i>
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
-                  <!-- <li class="nav-header">EXAMPLES</li> -->
+          <!-- <li class="nav-header">EXAMPLES</li> -->
           <li class="nav-item">
             <a href="{{route('seatallocations.index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Seat Management
-                <i class="fas fa-angle-left right"></i>
-
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
+
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Seat Arrangement
-                <i class="fas fa-angle-left right"></i>
-                <!-- <span class="badge badge-info right">6</span> -->
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <li class="nav-item has-treeview">
@@ -338,59 +198,18 @@
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Exam Management
-                <i class="fas fa-angle-left right"></i>
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('roommanagement.showroom')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                Staff Management
-               <i class="fas fa-angle-left right"></i>
-
+               <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('staff.create') }}" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('staff.index') }}" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <!-- <li class="nav-header">LABELS</li> -->

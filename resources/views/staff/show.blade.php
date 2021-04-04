@@ -17,7 +17,7 @@
                         <h4>Show Staff Details</h4>
                     </div>
                     <div class="col-md-2">
-                        <a href="{{ route('examhallproject.staffmanagement') }}" class="btn btn-success btn-sm">Back</a>
+                        <a href="{{ route('staff.index') }}" class="btn btn-success btn-sm">Back</a>
                     </div>
                 </div>
             </div>

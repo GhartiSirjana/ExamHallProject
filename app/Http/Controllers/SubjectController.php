@@ -101,7 +101,7 @@ class SubjectController extends Controller
     }
 
     
-    public function destroy(subject $subject,)
+    public function destroy(subject $subject)
     {
         $subject->delete();
         return redirect('subjects');

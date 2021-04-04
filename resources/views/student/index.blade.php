@@ -35,22 +35,22 @@
             <tr>
                 <tbody>
                     <td>{{$student->id}}</td>
-                    <td>{{$student->s_name}}</td>
-                    <td>{{$student->s_college}}</td>
-                    <td>{{$student->s_department}}</td>
-                    <td>{{$student->s_faculty}}</td>
-                    <td>{{$student->s_year}}</td>
-                    <td>{{$student->s_semester}}</td>
-                    <td>{{$student->s_registration}}</td>
-                    <td>{{$student->s_symbolno}}</td>
-                    <td>{{$student->s_dob}}</td>
-                    <td>{{$student->s_parent}}</td>
-                    <td>{{$student->s_email}}</td>
-                    <td>{{$student->s_mobile}}</td>
-                    <td>{{$student->s_address}}</td>
+                    <td>{{$student->name}}</td>
+                    <td>{{$student->college->name}}</td>
+                    <td>{{$student->department->department_name}}</td>
+                    <td>{{$student->faculty->faculty_name}}</td>
+                    <td>{{$student->year}}</td>
+                    <td>{{$student->semester}}</td>
+                    <td>{{$student->registerNumber}}</td>
+                    <td>{{$student->symbolno}}</td>
+                    <td>{{$student->dob}}</td>
+                    <td>{{$student->parent}}</td>
+                    <td>{{$student->email}}</td>
+                    <td>{{$student->mobile}}</td>
+                    <td>{{$student->address}}</td>
                     <td>
                         <a href="" class="btn btn-success btn-sm">View</a>
-                        <a href="" class="btn btn-info btn-sm">Edit</a>
+                        <a href="{{route('student.edit', $student->id)}}" class="btn btn-info btn-sm">Edit</a>
                         <a href="" class="btn btn-danger btn-sm">Delete</a>
                     </td>
                 </tbody>
