@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="container">
-<br/> <br/><br/>
-<h1> Seat Allocation </h1> 
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <h3 class="fs-5">Seat Allocation</h3>
 
 
 {{session('msg')}}
 <br/>
-<a href="{{ route('seatallocations.create') }}" class="btn btn-primary"> ADD Seat </a> 
+<a class="btn btn-info btn-sm" href="{{ route('seatallocations.create') }}" class="btn btn-primary"> ADD Seat </a> 
 <br/><br/>
 <table class="table  table-bordered table-striped table-hover">
 <tr>
@@ -32,6 +32,8 @@
 </tr>
 @endforeach
 </table>
+</div>
+</div>
 </div>
     
 

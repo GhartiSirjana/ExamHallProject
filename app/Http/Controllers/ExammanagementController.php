@@ -10,7 +10,7 @@ class ExammanagementController extends Controller
     
     public function index()
     {
-        //
+    
     }
 
     

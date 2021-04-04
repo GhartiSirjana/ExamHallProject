@@ -19,6 +19,7 @@ use App\Http\Controllers\StaffManageController;
 
 use App\Http\Controllers\StudentManageController;
 use App\Models\Department;
+use App\Models\exammanagement;
 
 /*
 |--------------------------------------------------------------------------
