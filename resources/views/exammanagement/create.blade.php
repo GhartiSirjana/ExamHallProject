@@ -19,13 +19,13 @@
                         <div class="col-md-12">
                             <label>Name</label>
                             <input type="text" name="Name" class="form-control form-control-sm" id="examname">
-                            @error('examname')
+                            @error('name')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Department</label>
-                            <select class="form-select" name="semester" id="" class="form-control form-control-sm">
+                            <select class="form-select" name="department_id" id="" class="form-control form-control-sm">
                                 @foreach($departments as $department)
                                 <option value="{{$department->id}}">{{$department->department_name}}</option>
                                 @endforeach
@@ -33,19 +33,28 @@
                         </div>
                         <div class="col-md-6">
                             <label>Faculty</label>
-                            <select class="form-select" name="Faculty" class="form-control form-control-sm" id="faculty">
+                            <select class="form-select" name="faculty_id" class="form-control form-control-sm" id="faculty">
                                 @foreach($faculties as $faculty)
                                 <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label>Semester</label>
-                            <input type="text" name="semester" class="form-control form-control-sm" id="semester">
+                            <label>Subject</label>
+                            <select class="form-select" name="subject_id" class="form-control form-control-sm" id="faculty">
+                                @foreach($subjects as $subject)
+                                <option value="{{$subject->id}}">{{$subject->subjectname}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-md-6">
-                            <label>Subject</label>
-                            <input type="text" name="subject" class="form-control form-control-sm" id="subject">
+                            <label>Semester</label>
+
+                            <select class="form-select" name="semester" class="form-control form-control-sm" id="faculty">
+                                @foreach($subjects as $subject)
+                                <option value="{{$subject->id}}">{{$subject->semester}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-md-6">
                             <label>Exam date</label>

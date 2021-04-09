@@ -21,6 +21,7 @@ use App\Http\Controllers\StaffManageController;
 
 use App\Http\Controllers\StudentManageController;
 use App\Models\Department;
+use App\Models\exammanagement;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,7 +80,7 @@ Route::resource('subjects', SubjectController::class);
 Route::resource('seatallocations', SeatallocationController::class);
 
 // Resources route for the College
-Route::resource('college', addcollegecontroller::class);
+Route::resource('colleges', addcollegecontroller::class);
 
 // Resources Route for the Room
 Route::resource('room', RoommanagmentController::class);

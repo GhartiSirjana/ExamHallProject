@@ -9,15 +9,18 @@
         <table class="table mt-3 table-bordered">
 
             <tr>
+            <thead>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Short Name</th>
                 <th>Department</th>
                 <th>Created_at</th>
                 <th>Action</th>
+            </thead>
             </tr>
             @foreach ($faculties as $faculty)
             <tr>
+            <tbody>
                 <td> {{ $faculty->id }} </td>
                 <td> {{ $faculty->name }} </td>
                 <td> {{ $faculty->short_name }} </td>
@@ -27,6 +30,7 @@
                     <a href="{{ route('faculties.edit', $faculty->id) }}" class="btn btn-primary btn-sm"> edit</a>
                     <a href="{{ route('faculties.destroy', $faculty->id) }}" class="btn btn-danger btn-sm"> Delete</a>
                 </td>
+            </tbody>
             </tr>
             @endforeach
         </table>

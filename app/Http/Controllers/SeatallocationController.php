@@ -39,7 +39,7 @@ class SeatallocationController extends Controller
     
     public function show(seatallocation $seatallocation)
     {
-        // 
+        return view('seatallocation.show', compact('seatallocation')); 
     }
 
     public function edit(seatallocation $seatallocation)

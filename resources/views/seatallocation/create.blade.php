@@ -11,7 +11,7 @@
                     <h4>Add New Seat</h4>
                 </div>
                 <div class="col-md-2">
-                    <a href="seatallocation.index" class="btn btn-success btn-sm">Back</a>
+                    <a href="{{ route('seatallocations.index') }}" class="btn btn-success btn-sm">Back</a>
                 </div>
             </div>
 
