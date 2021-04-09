@@ -15,7 +15,7 @@
                     <th>Short Name</th>
                     <th>Department</th>
                     <th>Created_at</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </thead>
             </tr>
             @foreach ($faculties as $faculty)
@@ -28,6 +28,8 @@
                     <td> {{ $faculty->created_at }} </td>
                     <td>
                         <a href="{{ route('faculties.edit', $faculty->id) }}" class="btn btn-primary btn-sm"> edit</a>
+                    </td>
+                    <td>
                         <form action="{{route('faculties.destroy', $faculty['id'])}}" method="post">
                             {{csrf_field()}}
                             <input type="hidden" name="_method" value="Delete">
