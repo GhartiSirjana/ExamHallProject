@@ -19,8 +19,9 @@
                 <td>{{$college->address}}</td>
                 <td>{{$college->description}}</td>
                 <td>
-                    <a href="{{route( 'college.destroy', $college->id)}}" class="btn btn-primary"> Delete</a>
-                    <a href="{{route('college.edit', $college->id)}}" class="btn btn-danger"> edit</a>
+                    <a href="{{route('college.show', $college->id)}}" class="btn btn-info btn-sm">View</a>
+                    <a href="{{route('college.edit', $college->id)}}" class="btn btn-primary btn-sm"> Edit</a>
+                    <a href="{{route('college.destroy', $college->id)}}" class="btn btn-danger btn-sm"> Delete</a>
                 </td>
             </tr>
             @endforeach

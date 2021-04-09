@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-10 offset-md-1">
         <h3 class="fs-5">Staff Management</h3>
-        <a class="btn btn-info btn-sm" href="{{ route('staff.index') }}">Add Staff</a>
+        <a class="btn btn-info btn-sm" href="{{ route('staff.create') }}">Add Staff</a>
         <table class="table table-bordered mt-3">
             <tr>
                 <thead>

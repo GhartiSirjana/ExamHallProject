@@ -7,6 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -95,7 +96,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('college.index') }}" class="nav-link">
-              <!-- <i class="nav-icon far fa-image"></i> -->
+              <i class="nav-icon far fa-image"></i>
               <p>
                 College/Campus Manage
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -124,7 +125,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{ route('room.index') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Room Management
@@ -194,7 +195,7 @@
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="" class="nav-link">
+            <a href="{{route('exam.index')}}" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Exam Management
@@ -203,7 +204,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{route('roommanagement.showroom')}}" class="nav-link">
+            <a href="{{route('staff.index')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                Staff Management

@@ -61,10 +61,10 @@ Route::resource('/dashboard', DashboardController::class);
 Route::resource('departments', DepartmentController::class);
 
 // Student Management
-Route::get('student', [StudentManageController::class, 'studentIndex'])->name('examhallproject.student');
+// Route::get('student', [StudentManageController::class, 'studentIndex'])->name('examhallproject.student');
 
 // Student details Add
-Route::get('student-add', [StudentManageController::class, 'studentAdd'])->name('examhallproject.studentadd');
+// Route::get('student-add', [StudentManageController::class, 'studentAdd'])->name('examhallproject.studentadd');
 
 // Resource Route for the Faculties
 Route::resource('faculties', FacultyController::class); // faculties.index, 
@@ -72,7 +72,6 @@ Route::resource('faculties', FacultyController::class); // faculties.index,
 
 // // Route for the Staff Management
 Route::resource('staff', StaffManageController::class);
-
 
 // Resource route for Student
 Route::resource('student', StudentManageController::class);
@@ -86,45 +85,14 @@ Route::resource('seatallocations', SeatallocationController::class);
 // Resources route for the College
 Route::resource('college', addcollegecontroller::class);
 
-// Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
+// Resources Route for the Room
+Route::resource('room', RoommanagmentController::class);
+Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
+Route::get('room-floor', [RoommanagmentController::class, 'floor'])->name('roommanagement.floor');
 
-
-
-
-Route::get('/addcollege' , [addcollegecontroller::class , 'index'])->name('college.createcollege');
-
+Route::resource('exam', ExammanagementController::class);
 
 Route::resource('faculties', FacultyController::class); // faculties.index, faculties.show, faculties.store
 
 
 
-
-
-
-
-
-
-Route::get('/showcollege' , [addcollegecontroller::class , 'show'])->name('college.showcollege');
-Route::get('/college_delete/{id}' , [addcollegecontroller::class , 'destroy']);
-Route::get('/createcollege' , [addcollegecontroller::class , 'create'])->name('college.createcollege');
-Route::post('/college_submit' , [addcollegecontroller::class , 'store'])->name('college.store');
-Route::get('/editcollege/{id}' , [addcollegecontroller::class , 'edit'])->name('college.editcollege');
-Route::post('/updatecollege/{id}' , [addcollegecontroller::class , 'update'])->name('college.editcollege');
-
-
-
-
-Route::get('/showexam' , [ExammanagementController::class , 'show'])->name('exammanagement.showexam');
-Route::get('/exam_delete/{id}' , [ExammanagementController::class , 'destroy']);
-Route::get('/createexam' , [ExammanagementController::class , 'create'])->name('exammanagement.createexam');
-Route::post('/exam_submit' , [ExammanagementController::class , 'store'])->name('exammanagement.createexam');
-Route::get('/editexam/{id}' , [ExammanagementController::class , 'edit'])->name('exammanagement.editexam');
-Route::post('/updateexam/{id}' , [ExammanagementController::class , 'update'])->name('exammanagement.editexam');
-
-
-
-
-Route::get('/showroom' , [RoommanagmentController::class , 'show'])->name('roommanagement.showroom');
-Route::get('/room_delete/{id}' , [RoommanagmentController::class , 'destroy']);
-Route::get('/addroom' , [RoommanagmentController::class , 'create'])->name('roommanagement.addroom');
-Route::post('/room_submit' , [RoommanagmentController::class , 'store'])->name('roommanagement.addroom');
