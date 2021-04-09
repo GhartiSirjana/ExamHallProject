@@ -18,8 +18,8 @@
                         @csrf
                         <div class="col-md-12">
                             <label>Name</label>
-                            <input type="text" name="Name" class="form-control form-control-sm" id="examname">
-                            @error('examname')
+                            <input type="text" name="name" class="form-control form-control-sm" id="examname">
+                            @error('name')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-md-6">
                             <label>Faculty</label>
-                            <select class="form-select" name="Faculty" class="form-control form-control-sm" id="faculty">
+                            <select class="form-select" name="faculty" class="form-control form-control-sm" id="faculty">
                                 @foreach($faculties as $faculty)
                                 <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                 @endforeach
@@ -49,15 +49,15 @@
                         </div>
                         <div class="col-md-6">
                             <label>Exam date</label>
-                            <input type="date" name="Exam_Date" class="form-control form-control-sm" id="examdate">
+                            <input type="date" name="exam_date" class="form-control form-control-sm" id="examdate">
                         </div>
                         <div class="col-md-3">
                             <label>Start Time</label>
-                            <input type="time" name="Start_Time" class="form-control form-control-sm" id="starttime">
+                            <input type="time" name="start_time" class="form-control form-control-sm" id="starttime">
                         </div>
                         <div class="col-md-3">
                             <label>End Time</label>
-                            <input type="time" name="End_Time" class="form-control form-control-sm" id="endtime">
+                            <input type="time" name="end_time" class="form-control form-control-sm" id="endtime">
                         </div>
                         <div class="col-md-2 ml-auto">
                             <button type="submit" class="btn btn-primary btn-sm">Add Exam</button>
