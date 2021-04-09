@@ -15,6 +15,9 @@ class CreateFloorsTable extends Migration
     {
         Schema::create('floors', function (Blueprint $table) {
             $table->id();
+            $table->string('floor');
+            $table->unsignedBigInteger('block_id');
+            $table->foreign('block_id')->on('blocks')->references('id');
             $table->timestamps();
         });
     }

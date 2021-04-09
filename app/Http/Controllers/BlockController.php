@@ -12,9 +12,11 @@ class BlockController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        // dd($request);
+        $blocks = Block::all();
+        return view('block.index', compact('blocks'));
     }
 
     /**
@@ -24,7 +26,7 @@ class BlockController extends Controller
      */
     public function create()
     {
-        //
+        // return view('block.create');
     }
 
     /**
@@ -35,7 +37,12 @@ class BlockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'block'=>'required',
+        ]);
+        $roomblock = Block::create($data);
+        return redirect('/block');
+
     }
 
     /**

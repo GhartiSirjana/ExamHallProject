@@ -20,7 +20,7 @@ class ExammanagementController extends Controller
     
     public function create()
     {
-        $departments = Department::all();
+        // $departments = Department::all();
         $faculties = Faculty::all();
         return view('exammanagement.create', compact('departments','faculties'));
     }

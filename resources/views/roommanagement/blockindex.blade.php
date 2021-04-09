@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <form method="POST" class="row g-3 mb-4" action="{{route('room.store')}}">
                         @csrf
-                        <div class="col-md-10">
+                        <div class="col-md-12">
                             <label for="room" class="form-label">Block Name</label>
                             <input type="text" name="block" class="form-control form-control-sm" id="block">
                         </div>
