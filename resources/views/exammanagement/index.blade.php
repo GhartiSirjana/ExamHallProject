@@ -7,9 +7,10 @@
 <tr>
     <th>ID</th>
     <th>Name</th>
+    <th>Department</th>
     <th>Faculty</th>
-    <th>Semester</th>
     <th>Subject</th>
+    <th>Semester</th>
     <th>Exam Date</th>
     <th>Start Time</th>
     <th>End Time</th>
@@ -20,10 +21,11 @@
 @foreach($exams as $exam)
 <tr>
 <td>{{$exam->id}}</td>
-<td>{{$exam->name}}</td>
-<td>{{$exam->faculty}}</td>
-<td>{{$exam->semester}}</td>
-<td>{{$exam->subject}}</td>
+<td>{{$exam->Name}}</td>
+<td>{{$exam->department->department_name}}</td>
+<td>{{$exam->faculties->name}}</td>
+<td>{{$exam->subjects->subjectname}}</td>
+<td>{{$exam->subjects->semester}}</td>
 <td>{{$exam->exam_date}}</td>
 <td>{{$exam->start_time}}</td>
 <td>{{$exam->end_time}}</td>

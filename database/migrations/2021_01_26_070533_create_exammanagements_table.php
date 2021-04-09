@@ -16,12 +16,17 @@ class CreateExammanagementsTable extends Migration
         Schema::create('exammanagements', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->string('Faculty');
+            $table->unsignedBigInteger('department_id');
+            $table->unsignedBigInteger('faculty_id');
+            $table->unsignedBigInteger('subject_id');
             $table->string('semester');
-            $table->string('subject');
             $table->date('Exam_Date');
             $table->time('Start_Time');
             $table->time('End_Time');
+            $table->foreign('department_id')->on('departments')->references('id');
+            $table->foreign('faculty_id')->on('faculties')->references('id');
+            $table->foreign('subject_id')->on('subjects')->references('id');
+
             $table->timestamps();
         });
     }

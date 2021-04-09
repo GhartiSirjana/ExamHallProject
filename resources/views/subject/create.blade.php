@@ -43,12 +43,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Select Semester </label>
-                                <select class="form-select" name="semester" class="form-control" aria-label="Default select example">
-                                    @foreach($exams as $exam)
-                                    <option value="{{$exam->id}}">{{$exam->semester}}</option>
-                                    @endforeach
-                                </select>
+                                <label> Semester </label>
+                                <input type="text" name="semester" class="form-control">
                             </div>
 
                             <div class="subject-input-group" x-data="{subjects : [{subjectName: '', code: ''}]}">

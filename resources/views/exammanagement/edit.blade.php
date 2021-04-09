@@ -5,7 +5,7 @@
 
         <div class="card-header">Add Exam</div>
         <div class="card-body">
-            <form method="post" action ="{{ route('exam.update', $exam->id) }}">
+            <form method="post" action ="{{ route('exam.update', $exammanagement->id) }}">
             @csrf
             @method('put')
                 <div class="mb-3">

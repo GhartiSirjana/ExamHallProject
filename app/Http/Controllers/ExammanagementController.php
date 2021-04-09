@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use App\Models\exammanagement;
 use App\Models\Faculty;
+use App\Models\subject;
 use Illuminate\Http\Request;
 
 class ExammanagementController extends Controller
@@ -22,7 +23,8 @@ class ExammanagementController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-        return view('exammanagement.create', compact('departments','faculties'));
+        $subjects = Subject::all();
+        return view('exammanagement.create', compact('departments','faculties', 'subjects'));
     }
 
     
@@ -30,12 +32,13 @@ class ExammanagementController extends Controller
     {
         $data = $request->validate([
             'Name' => 'required|string|min:5|max:100',
-            'Faculty' => 'required|string',
+            'department_id' => 'required|string',
+            'faculty_id' => 'required|string',
             'semester' => 'required|string',
-            'subject' => 'required|string',
-            // 'Exam_Date' => 'required|date',
-            // 'Start_Time' => 'required|time',
-            // 'End_Time' => 'required|time'
+            'subject_id' => 'required|string',
+            'Exam_Date' => 'required',
+            'Start_Time' => 'required',
+            'End_Time' => 'required'
         ]);
 
         $exammanagement = exammanagement::create($data);
