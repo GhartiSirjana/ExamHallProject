@@ -22,7 +22,6 @@
                         <form action="{{ route('subjects.store') }}" method="post">
                             @csrf
 
-
                             <div class="form-group">
                                 <label>Select Department </label>
                                 <select id="department" class="form-select" name="department_id" class="form-control" aria-label="Default select example">

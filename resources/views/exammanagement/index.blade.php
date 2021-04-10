@@ -23,7 +23,7 @@
 <td>{{$exam->id}}</td>
 <td>{{$exam->Name}}</td>
 <td>{{$exam->department->department_name}}</td>
-<td>{{$exam->faculties->name}}</td>
+<td>{{$exam->faculties->short_name}}</td>
 <td>{{$exam->subjects->subjectname}}</td>
 <td>{{$exam->subjects->semester}}</td>
 <td>{{$exam->Exam_Date}}</td>

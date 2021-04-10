@@ -5,8 +5,8 @@
         <h3 class="fs-5 mb-3">Room management</h3>
         <!-- {{ session('msg') }} -->
         <a href="{{route('room.create')}}" class="btn btn-primary btn-sm"> Add room </a>
-        <a href="{{route('roommanagement.block')}}" class="btn btn-primary btn-sm"> Add Block </a>
-        <a href="{{route('roommanagement.floor')}}" class="btn btn-primary btn-sm"> Add Floor </a>
+        <a href="block" class="btn btn-primary btn-sm"> Add Block </a>
+        <a href="{{route('floor.index')}}" class="btn btn-primary btn-sm"> Add Floor </a>
 
         <table class="table table-bordered mt-3">
             <tr>

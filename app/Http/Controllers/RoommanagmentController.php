@@ -21,6 +21,8 @@ class RoommanagmentController extends Controller
     }
     public function block()
     {
+
+        
         return view('roommanagement.blockindex');
     }
     public function floor()

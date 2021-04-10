@@ -22,7 +22,7 @@
                                 <option value="">One</option>
                             </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label for="">Floor</label>
                             <input type="text" name="floor" class="form-control form-control-sm">
                         </div>

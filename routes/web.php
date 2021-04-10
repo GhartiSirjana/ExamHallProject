@@ -3,6 +3,7 @@
 use App\Http\Controllers\addcollegecontroller;
 use App\Http\Controllers\ExammanagementController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\BlockController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\LoginController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\SeatallocationController;
 use App\Http\Controllers\SeatManagementController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\FloorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -60,11 +62,6 @@ Route::resource('/dashboard', DashboardController::class);
 // Resource route for department
 Route::resource('departments', DepartmentController::class);
 
-// Student Management
-// Route::get('student', [StudentManageController::class, 'studentIndex'])->name('examhallproject.student');
-
-// Student details Add
-// Route::get('student-add', [StudentManageController::class, 'studentAdd'])->name('examhallproject.studentadd');
 
 // Resource Route for the Faculties
 Route::resource('faculties', FacultyController::class); // faculties.index, 
@@ -87,12 +84,21 @@ Route::resource('colleges', addcollegecontroller::class);
 
 // Resources Route for the Room
 Route::resource('room', RoommanagmentController::class);
+// Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
+// Route::get('room-floor', [RoommanagmentController::class, 'floor'])->name('roommanagement.floor');
 Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
-Route::get('room-floor', [RoommanagmentController::class, 'floor'])->name('roommanagement.floor');
 
+//Resource route for the exam 
 Route::resource('exam', ExammanagementController::class);
 
 Route::resource('faculties', FacultyController::class); // faculties.index, faculties.show, faculties.store
+
+//Resource route for the block 
+Route::resource('block', BlockController::class);
+
+//Resource route for the floor 
+Route::resource('floor', FloorController::class);
+
 
 
 

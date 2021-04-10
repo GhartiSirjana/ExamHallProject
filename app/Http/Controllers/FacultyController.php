@@ -76,9 +76,10 @@ class FacultyController extends Controller
         return redirect('/faculties');
     }
 
-    public function destroy(Faculty $faculty)
+    public function destroy($id)
     {
-        $faculty->delete();
-        return redirect('faculties');
+       $faculty = Faculty::find($id);
+       $faculty->delete();
+       return redirect('/faculties');
     }
 }
