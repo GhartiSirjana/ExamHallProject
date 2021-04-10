@@ -48,7 +48,7 @@ class FacultyController extends Controller
 
     public function show(Faculty $faculty)
     {
-        return view('faculty.show', compact('faculty'));
+        // return view('faculty.show', compact('faculty'));
     }
 
 
