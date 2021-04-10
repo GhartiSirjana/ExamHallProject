@@ -13,7 +13,8 @@ class ExammanagementController extends Controller
     
     public function index()
     {
-        $exams = exammanagement::all();
+        $exams = exammanagement::with('faculty')->get();
+        // dd($exams);
         return view('exammanagement.index', compact('exams'));
 
     }
@@ -23,7 +24,7 @@ class ExammanagementController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-        $subjects = Subject::all();
+        $subjects = subject::all();
         return view('exammanagement.create', compact('departments','faculties', 'subjects'));
     }
 

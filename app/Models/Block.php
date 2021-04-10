@@ -13,7 +13,7 @@ class Block extends Model
 
     public function floor()
     {
-        return $this->hasMany(Floor::class, 'block_id');
+        return $this->hasMany(Floor::class, "block_id");
     }
 
 }

@@ -34,9 +34,9 @@ use App\Models\exammanagement;
 |
 */
 
-// Route::get('/seatarrangement', function () {
-//     return view('seatarrangement.seatarrangement_create');
-// });
+Route::get('/seatarrangement', function () {
+    return view('seatarrangement.seatarrangement_create');
+});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -86,7 +86,7 @@ Route::resource('colleges', addcollegecontroller::class);
 Route::resource('room', RoommanagmentController::class);
 // Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
 // Route::get('room-floor', [RoommanagmentController::class, 'floor'])->name('roommanagement.floor');
-Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
+// Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
 
 //Resource route for the exam 
 Route::resource('exam', ExammanagementController::class);

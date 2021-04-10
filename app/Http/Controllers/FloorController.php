@@ -15,10 +15,10 @@ class FloorController extends Controller
      */
     public function index(Request $request)
     {
-        // dd($request);
-
+        
         $floors = Floor::all();
         $blocks = Block::all();
+        // dd($blocks);
         return view('floor.index', compact('floors', 'blocks'));
     }
 
@@ -41,7 +41,7 @@ class FloorController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'block'=>'required|string',
+            'block_id'=>'required|string',
             'floor'=>'required|string'
         ]);
         $roomfloor = Floor::create($data);
