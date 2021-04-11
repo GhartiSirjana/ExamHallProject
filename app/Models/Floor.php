@@ -12,6 +12,6 @@ class Floor extends Model
 
     public function block()
     {
-        return $this->belongsTo(Block::class, 'block_id');
+        return $this->belongsTo(Block::class, "block_id");
     }
 }

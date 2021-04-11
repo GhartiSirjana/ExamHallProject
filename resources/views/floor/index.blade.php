@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="room" class="form-label">Block Name</label>
-                            <select class="form-select form-control form-control-sm" id="block" name="block">
+                            <select class="form-select form-control form-control-sm" id="block" name="block_id">
                             @foreach($blocks as $block)
                                 <option value="{{$block->id}}">{{$block->block}}</option>
                             @endforeach
@@ -51,7 +51,7 @@
                             <tbody>
                                 <td>{{$floor->id}}</td>
                                 <td>{{$floor->floor}}</td>
-                                <td>{{$floor->block->block_id}}</td>
+                                <td>{{$floor->block->block}}</td>
                                 <td>
                                     <a href="" class="btn btn-primary btn-sm">Edit</a>
                                     <a href="" class="btn btn-danger btn-sm">Delete</a>

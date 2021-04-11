@@ -21,6 +21,7 @@ class exammanagement extends Model
     }
     public function subject()
     {
-        return $this->hasMany(subject::class);
+        return $this->belongsTo(subject::class,'subject_id');
     }
+    //hasmany examsubjects
 }

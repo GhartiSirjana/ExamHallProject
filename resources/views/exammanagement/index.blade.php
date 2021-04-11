@@ -23,9 +23,9 @@
 <td>{{$exam->id}}</td>
 <td>{{$exam->Name}}</td>
 <td>{{$exam->department->department_name}}</td>
-<td>{{$exam->faculties->short_name}}</td>
-<td>{{$exam->subjects->subjectname}}</td>
-<td>{{$exam->subjects->semester}}</td>
+<td>{{$exam->faculty->name}}</td>
+<td>{{$exam->subject->subjectname}}</td>
+<td>{{$exam->subject->semester}}</td>
 <td>{{$exam->Exam_Date}}</td>
 <td>{{$exam->Start_Time}}</td>
 <td>{{$exam->End_Time}}</td>
