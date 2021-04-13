@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">Upadate Department</div>
                 <div class="card-body">
-                    <form action="{{ route('departments.update', $department->id) }}" method="POST">
+                    <form action="{{route('departments.update', $department->id)}}" method="POST">
 
                         @csrf
                         @method('put')

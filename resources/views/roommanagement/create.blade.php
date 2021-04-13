@@ -19,15 +19,18 @@
 
                         <div class="col-md-6">
                             <label for="room" class="form-label">Block</label>
-                            <select class="form-select form-control form-control-sm" name="block" class="form-control" id="block">
-                                <option value="">one</option>
+                            <select class="form-select form-control form-control-sm" id="block" name="block_id">
+                            @foreach($blocks as $block)
+                                <option value="{{$block->id}}">{{$block->block}}</option>
+                            @endforeach
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="block" class="form-label">Floor</label>
-                            <select class="form-select form-control form-control-sm" name="floor" class="form-control" id="block">
-                                <option value="">one</option>
-                                <option value="">two</option>
+                            <select class="form-select form-control form-control-sm" id="block" name="floor_id">
+                            @foreach($floors as $floor)
+                                <option value="{{$floor->id}}">{{$floor->floor}}</option>
+                            @endforeach
                             </select>
 
                         </div>

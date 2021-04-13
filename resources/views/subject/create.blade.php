@@ -12,7 +12,7 @@
                     <h4>Add New Subject</h4>
                 </div>
                 <div class="col-md-2">
-                    <a href="subjects.index" class="btn btn-success btn-sm">Back</a>
+                    <a href="{{ route('subjects.index') }}" class="btn btn-success btn-sm">Back</a>
                 </div>
             </div>
             <div class="card">

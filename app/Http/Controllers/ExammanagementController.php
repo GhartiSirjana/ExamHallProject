@@ -62,37 +62,38 @@ class ExammanagementController extends Controller
     
     public function update(Request $request, exammanagement $exammanagement)
     {
-        // $request->validate([
-        //     'name' => 'required|string|min:5|max:100',
-        //     'faculty' => 'required|string',
-        //     'semester' => 'required|string',
-        //     'subject' => 'required|string',
-        //     'examdate' => 'required|date',
-        //     // 'starttime' => 'required|time',
-        //     // 'endtime' => 'required|time',
+        $request->validate([
+            'name' => 'required|string|min:5|max:100',
+            'faculty' => 'required|string',
+            'semester' => 'required|string',
+            'subject' => 'required|string',
+            'examdate' => 'required|date',
+            // 'starttime' => 'required|time',
+            // 'endtime' => 'required|time',
 
             
 
-        // ]);
-        // $exammanagement->name = $request->input('name');
-        // $exammanagement->faculty = $request->input('faculty');
-        // $exammanagement->semester = $request->input('semester');
-        // $exammanagement->subject = $request->input('subject');
-        // $exammanagement->exam_date = $request->input('exam_date');
-        // $exammanagement->save();
+        ]);
+        $exammanagement->name = $request->input('name');
+        $exammanagement->faculty = $request->input('faculty');
+        $exammanagement->semester = $request->input('semester');
+        $exammanagement->subject = $request->input('subject');
+        $exammanagement->exam_date = $request->input('exam_date');
+        $exammanagement->save();
 
 
        
 
 
-        // $request->session()->flash('msg' , 'data submitted');
-        // return redirect('/exam');
+        $request->session()->flash('msg' , 'data submitted');
+        return redirect('/exam');
     }
 
     
-    public function destroy(exammanagement $exammanagement)
+    public function destroy($id)
     {
-        // $exammanagement->delete();
-        // return redirect('/exam');
+        $exammanagement = exammanagement::find($id);
+        $exammanagement->delete();
+        return redirect('/exam');
     }
 }

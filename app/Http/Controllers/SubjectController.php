@@ -29,6 +29,7 @@ class SubjectController extends Controller
         $faculties = Faculty::all();
         $exams = exammanagement::all();
         return view('subject.create', compact('departments', 'faculties', 'exams'));
+       
         
 
     }
@@ -104,9 +105,10 @@ class SubjectController extends Controller
     }
 
     
-    public function destroy(subject $subject)
+    public function destroy($id)
     {
+        $subject = Subject::find($id);
         $subject->delete();
-        return redirect('subjects');
+        return redirect('/subjects');
     }
 }
