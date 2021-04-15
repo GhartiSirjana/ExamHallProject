@@ -45,7 +45,7 @@ class AddcollegeController extends Controller
     
     public function show(College $College)
     {
-        return view('college.show', compact('college'));
+        return view('college.show', compact('College'));
     }
 
     
