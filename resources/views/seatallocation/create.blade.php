@@ -32,14 +32,11 @@
                         </div>
                         <div class="form-group">
                             <label>Select Exams </label>
-                            <select class="form-select" name="exams" class="form-control" aria-label="Default select example">
-                                <option selected>Bsc.Csit</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select class="form-select" name="exam_id" class="form-control" aria-label="Default select example">
+                                <option value=""></option>
                             </select>
 
-                            @error('exams')
+                            @error('exam_id')
                             <div class="alert alert-danger">
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
@@ -48,25 +45,18 @@
                         <div class="wrap">
                             <div class="form-group  col mb-0">
                                 <label>Select Rooms </label>
-                                <select class="form-select" name="rooms" class="form-control" aria-label="Default select example">
-                                    <option selected>Block1</option>
-                                    <option>block2</option>
-                                    <option>block3</option>
-                                    <option>block4</option>
+                                <select class="form-select" name="room_id" class="form-control" aria-label="Default select example">
+                                 
                                 </select>
 
-                                @error('rooms')
+                                @error('room_id')
                                 <div class="alert alert-danger">
                                     <span class="text-danger">{{ $message }}</span>
                                 </div>
                                 @enderror
                             </div>
-                         
-        
-                            
-                         
                         </div>
-                        <br /> <br />
+                        <br/> <br/>
                         <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
 
 

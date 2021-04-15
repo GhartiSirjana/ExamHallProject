@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class seatallocation extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    public function exam()
+    {
+        return $this->hasMany(exammanagement::class);
+    }
 }
