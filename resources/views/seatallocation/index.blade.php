@@ -22,7 +22,11 @@
                 <tbody>
                     <td> {{$seatallocation->id}} </td>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <td> {{$seatallocation->exammanagemts->Name}} </td>
+=======
+                    <td> {{$seatallocation->name}} </td>
+>>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
 =======
                     <td> {{$seatallocation->name}} </td>
 >>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
