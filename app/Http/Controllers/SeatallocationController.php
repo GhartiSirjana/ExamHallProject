@@ -18,8 +18,20 @@ class SeatallocationController extends Controller
   
     public function create()
     {
+<<<<<<< HEAD
         $exams = exammanagement::all();
         return view('seatallocation.create', compact('exams'));
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+        $exams = exammanagement::all();
+        return view('seatallocation.create', compact('exams'));
+=======
+=======
+>>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
+        return view('seatallocation.create');
+>>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
+>>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
     }
 
    

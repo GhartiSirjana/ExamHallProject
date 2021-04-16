@@ -11,7 +11,7 @@
                 <th>CollegeName</th>
                 <th>Address</th>
                 <th>Description</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
             </thead>
             </tr>
             @foreach($colleges as $college)
@@ -24,8 +24,16 @@
                 <td>
                     
                     <a href="{{route('colleges.edit', $college->id)}}" class="btn btn-primary btn-sm"> Edit</a>
-                    <a href="{{route('colleges.destroy', $college->id)}}" class="btn btn-danger btn-sm"> Delete</a>
                 </td>
+                    <!-- <a href="{{route('colleges.destroy', $college->id)}}" class="btn btn-danger btn-sm"> Delete</a> -->
+                    <td>
+                        <form action="{{route('colleges.destroy', $college['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
+                    </td>
             </tbody>
             </tr>
             @endforeach

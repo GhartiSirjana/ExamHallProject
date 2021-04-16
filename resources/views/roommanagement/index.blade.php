@@ -18,7 +18,7 @@
                 <th>No of Rows</th>
                 <th>No of columns</th>
                 <th>Invigilator</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
             </tr>
             @foreach($rooms as $room)
             <tr>
@@ -31,9 +31,21 @@
                 <td>{{$room->columns}}</td>
                 <td>{{$room->staff->staffname}}</td>
                 <td>
+<<<<<<< HEAD
+=======
+                   
+>>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                     <a href="{{route('room.edit', $room->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="{{route('room.destroy', $room->id)}}" class="btn btn-danger btn-sm">Delete</a>
                 </td>
+                    <a href="{{route('room.destroy', $room->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                    <td>
+                        <form action="{{route('room.destroy', $room['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
+                    </td>
             </tr>
             @endforeach
         </table>

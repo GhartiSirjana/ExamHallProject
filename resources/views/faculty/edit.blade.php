@@ -47,7 +47,7 @@
                     @endforeach
                 </select>
 
-                @error('department')
+                @error('department_id')
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $message }}</span>
                 </div>

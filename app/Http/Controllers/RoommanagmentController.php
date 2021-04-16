@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\roommanagment;
 use App\Models\Block;
 use App\Models\Floor;
+use App\Models\roommanagment;
 use App\Models\StaffManage;
 use Illuminate\Http\Request;
 
@@ -62,19 +62,41 @@ class RoommanagmentController extends Controller
     
     public function edit(roommanagment $roommanagment)
     {
-        //
+        return view('roommanagement.edit', compact('roommanagement'));
     }
 
     
     public function update(Request $request, roommanagment $roommanagment)
     {
-        //
+        $request->validate([
+            'roomno' => 'required|string',
+            'block' => 'required|string|min:5|max:100',
+            'floor' => 'required|string',
+            'capacity' => 'required|numeric',
+            'rows' => 'required|numeric',
+            'columns' => 'required|numeric',
+            'incigilator' => 'required|numeric',
+
+        ]);
+        $res = new roommanagment;
+        $res->number=$request->input('roomno');
+        $res->block=$request->input('block');
+        $res->floor=$request->input('floor');
+        $res->capacity=$request->input('capacity');
+        $res->rows=$request->input('rows');
+        $res->cols=$request->input('columns');
+        $res->invigilator=$request->input('invigilator');
+
+        $res->save();
+        $request->session()->flash('msg' , 'data submitted');
+        return redirect('/room');
     }
 
     
-    public function destroy(roommanagment $roommanagment , $id)
+    public function destroy($id)
     {
-        roommanagment::destroy(array('id' , $id));
-        return redirect('index');
+        $room = roommanagment::find($id);
+        $room->delete();
+        return redirect('/room');
     }
 }

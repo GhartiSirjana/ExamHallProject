@@ -30,6 +30,9 @@
                                 <option value="{{$department->id}}">{{$department->department_name}}</option>
                                 @endforeach
                             </select>
+                            @error('department_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Faculty</label>
@@ -60,22 +63,37 @@
                             <label>Exam date</label>
                             <input type="date" name="Exam_Date" class="form-control form-control-sm" id="examdate">
                             @error('Exam_Date')
+<<<<<<< HEAD
                             <span class="text-danger">{{$message}}</span>
                             @enderror
+=======
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
+>>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
                         <div class="col-md-3">
                             <label>Start Time</label>
                             <input type="time" name="Start_Time" class="form-control form-control-sm" id="starttime">
                             @error('Start_Time')
+<<<<<<< HEAD
                             <span class="text-danger">{{$message}}</span>
                             @enderror
+=======
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
+>>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
                         <div class="col-md-3">
                             <label>End Time</label>
                             <input type="time" name="End_Time" class="form-control form-control-sm" id="endtime">
                             @error('End_Time')
+<<<<<<< HEAD
                             <span class="text-danger">{{$message}}</span>
                             @enderror
+=======
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
+>>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
                         <div class="col-md-2 ml-auto">
                             <button type="submit" class="btn btn-primary btn-sm">Add Exam</button>
