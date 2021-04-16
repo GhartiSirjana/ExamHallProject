@@ -19,7 +19,6 @@
     <th>Semester</th>
     <th>Faculty</th>
     <th>Department</th>
-    <th>Created_at</th>
     <th>Action</th>
 </thead>
 </tr>
@@ -33,7 +32,6 @@
 <td> {{$subject->semester}} </td>
 <td> {{$subject->faculty->name}} </td>
 <td> {{$subject->department->department_name}} </td>
-<td> {{$subject->created_at}} </td>
 <td>
 <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-primary btn-sm"> edit</a>
 <a href="{{ route('subjects.destroy', $subject->id) }}" class="btn btn-danger btn-sm"> Delete</a>

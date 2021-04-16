@@ -43,7 +43,7 @@ class StaffManageController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'staffname'=>'required|string|min:5',
+            'staffname'=>'required|string|min:5|regex:/^[a-zA-Z\s]+$/',
             'department_id'=>'required'
         ]);
 

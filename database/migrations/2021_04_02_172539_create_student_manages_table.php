@@ -24,6 +24,7 @@ class CreateStudentManagesTable extends Migration
             $table->string('registerNumber');
             $table->string('symbolno');
             $table->string('dob');
+            $table->string('email');
             $table->string('parent');
             $table->string('mobile');
             $table->string('address');

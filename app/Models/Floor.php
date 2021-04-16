@@ -12,10 +12,10 @@ class Floor extends Model
 
     public function block()
     {
-        return $this->belongsTo(Block::class, "block_id");
+        return $this->belongsTo(Block::class, "floor_id");
     }
     public function room()
     {
-        return $this->belongsTo(roommanagment::class, "id");
+        return $this->hasMany(roommanagment::class, "floor_id");
     }
 }

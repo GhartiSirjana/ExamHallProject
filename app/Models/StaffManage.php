@@ -15,4 +15,8 @@ class StaffManage extends Model
     {
         return $this->belongsTo(Department::class, 'department_id'); 
     }
+    public function room()
+    {
+        return $this->hasMany(roommanagment::class, 'staff_id');
+    }
 }

@@ -32,14 +32,14 @@ class ExammanagementController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'Name' => 'required|string|min:5|max:100',
+            'Name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
             'department_id' => 'required|string',
             'faculty_id' => 'required|string',
             'semester' => 'required|string',
             'subject_id' => 'required|string',
-            'Exam_Date' => 'required',
-            'Start_Time' => 'required',
-            'End_Time' => 'required'
+            'Exam_Date' => 'required|date_format:Y-m-d',
+            'Start_Time' => 'required|',
+            'End_Time' => 'required|'
         ]);
 
         $exammanagement = exammanagement::create($data);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\exammanagement;
 use App\Models\seatallocation;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class SeatallocationController extends Controller
   
     public function create()
     {
-        return view('seatallocation.create');
+        $exams = exammanagement::all();
+        return view('seatallocation.create', compact('exams'));
     }
 
    
@@ -49,7 +51,7 @@ class SeatallocationController extends Controller
     public function update(Request $request, seatallocation $seatallocation)
     {
         $request->validate([
-            'name' => 'required|string|min:5|max:100|',
+            'name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
             'exam_id' => 'required|string|',
             'room_id' => 'required|string',
            

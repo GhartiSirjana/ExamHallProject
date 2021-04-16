@@ -16,7 +16,7 @@ class BlockController extends Controller
     {
         // dd($request);
         $blocks = Block::all();
-        return view('block.index', compact('blocks'));
+        return view('Block.index', compact('blocks'));
     }
 
     /**
@@ -38,7 +38,7 @@ class BlockController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'block'=>'required',
+            'block'=>'required|string',
         ]);
         $roomblock = Block::create($data);
         return redirect('/block');

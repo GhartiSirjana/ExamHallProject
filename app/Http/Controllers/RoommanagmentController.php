@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\roommanagment;
+use App\Models\Block;
+use App\Models\Floor;
+use App\Models\StaffManage;
 use Illuminate\Http\Request;
 
 class RoommanagmentController extends Controller
@@ -17,44 +20,40 @@ class RoommanagmentController extends Controller
     
     public function create()
     {
-        return view('roommanagement.create');
+        $blocks = Block::all();
+        $floors = Floor::all();
+        $staffs = StaffManage::all();
+        return view('roommanagement.create', compact('blocks', 'floors', 'staffs'));
     }
-    public function block()
-    {
-
-        
-        return view('roommanagement.blockindex');
-    }
-    public function floor()
-    {
-        return view('roommanagement.floorindex');
-    }
-
    
     public function store(Request $request)
     {
-        $request->validate([
-            'roomno' => 'required|string',
-            'block' => 'required|string|min:5|max:100',
-            'floor' => 'required|string',
+        $data = $request->validate([
+            'roomno' => 'required|numeric',
+            'block_id' => 'required|string',
+            'floor_id' => 'required|string',
             'capacity' => 'required|numeric',
             'rows' => 'required|numeric',
             'columns' => 'required|numeric',
-            'incigilator' => 'required|numeric',
-
+            'staff_id' => 'required|string'
         ]);
-        $res = new roommanagment;
-        $res->number=$request->input('roomno');
-        $res->block=$request->input('block');
-        $res->floor=$request->input('floor');
-        $res->capacity=$request->input('capacity');
-        $res->rows=$request->input('rows');
-        $res->cols=$request->input('columns');
-        $res->invigilator=$request->input('invigilator');
 
-        $res->save();
+        $roommanagement = roommanagment::create($data);
         $request->session()->flash('msg' , 'data submitted');
-        return redirect('index');
+        return redirect('/room');
+
+        // $res = new roommanagment;
+        // $res->number=$request->input('roomno');
+        // $res->block=$request->input('block_id');
+        // $res->floor=$request->input('floor_id');
+        // $res->capacity=$request->input('capacity');
+        // $res->rows=$request->input('rows');
+        // $res->cols=$request->input('columns');
+        // $res->staff_id=$request->input('staff_id');
+
+        // $res->save();
+        // $roommanagement = roommanagment::create($data);
+
     }
 
     

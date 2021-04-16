@@ -14,7 +14,6 @@
                     <th>Name</th>
                     <th>Short Name</th>
                     <th>Department</th>
-                    <th>Created_at</th>
                     <th colspan="2">Action</th>
                 </thead>
             </tr>
@@ -22,10 +21,9 @@
             <tr>
                 <tbody>
                     <td> {{ $faculty->id }} </td>
-                    <td> {{ $faculty->name }} </td>
+                    <td> {{ $faculty->name}} </td>
                     <td> {{ $faculty->short_name }} </td>
                     <td> {{ $faculty->department->department_name }} </td>
-                    <td> {{ $faculty->created_at }} </td>
                     <td>
                         <a href="{{ route('faculties.edit', $faculty->id) }}" class="btn btn-primary btn-sm"> edit</a>
                     </td>

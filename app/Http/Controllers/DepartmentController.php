@@ -39,7 +39,7 @@ class DepartmentController extends Controller
     {
 
         $data = $request->validate([
-            'department_name' => 'required|string|min:5',
+            'department_name' => 'required|string|min:5|regex:/^[a-zA-Z\s]+$/',
             'department_code' => 'required|min:2|max:40',
             'description'     => 'nullable|min:5'
         ]);
@@ -81,7 +81,7 @@ class DepartmentController extends Controller
     public function update(Request $request, Department $department)
     {
         $request->validate([
-            'department_name' => 'required|string|min:5|max:100|',
+            'department_name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
             'department_code' => 'required|string',
             'description' => 'required'
         ]);

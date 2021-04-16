@@ -16,12 +16,15 @@ class CreateRoommanagmentsTable extends Migration
         Schema::create('roommanagments', function (Blueprint $table) {
             $table->id();
             $table->string('roomno');
-            $table->string('block');
-            $table->string('floor');
+            $table->unsignedBigInteger('block_id');
+            $table->foreign('block_id')->on('blocks')->references('id');
+            $table->unsignedBigInteger('floor_id');
+            $table->foreign('floor_id')->on('floors')->references('id');
             $table->string('capacity');
             $table->string('rows');
             $table->string('columns');
-            $table->string('invigilator');
+            $table->unsignedBigInteger('staff_id');
+            $table->foreign('staff_id')->on('staff_manages')->references('id');
             $table->timestamps();
         });
     }

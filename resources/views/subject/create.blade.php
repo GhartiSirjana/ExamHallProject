@@ -44,6 +44,11 @@
                             <div class="form-group">
                                 <label> Semester </label>
                                 <input type="text" name="semester" class="form-control">
+                                @error('semester')
+                                <div>
+                                    <span class="text-danger">{{$message}}</span>
+                                </div>
+                                @enderror
                             </div>
 
                             <div class="subject-input-group" x-data="{subjects : [{subjectName: '', code: ''}]}">
@@ -52,10 +57,20 @@
                                         <div class="form-group col mb-0">
                                             <label> Subject Name </label>
                                             <input type="text" name="subjectname[]" class="form-control">
+                                            @error('subjectname')
+                                            <div>
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group col mb-0">
                                             <label> SubjectCode </label>
                                             <input type="number" name="code[]" class="form-control">
+                                            @error('code[]')
+                                            <div>
+                                                <span class="text-danger">{{$message}}</span>
+                                            </div>
+                                            @enderror
                                         </div>
                                         <template x-if="index > 0">
                                             <button type="button" @click="subjects.splice(index, 1)" class="btn btn-danger btn-add-subject"><i class="fa fa-minus"></i></button>

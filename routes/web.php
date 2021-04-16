@@ -84,9 +84,7 @@ Route::resource('colleges', addcollegecontroller::class);
 
 // Resources Route for the Room
 Route::resource('room', RoommanagmentController::class);
-// Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
-// Route::get('room-floor', [RoommanagmentController::class, 'floor'])->name('roommanagement.floor');
-// Route::get('room-block', [RoommanagmentController::class, 'block'])->name('roommanagement.block');
+
 
 //Resource route for the exam 
 Route::resource('exam', ExammanagementController::class);

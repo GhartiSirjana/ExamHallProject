@@ -18,6 +18,7 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = subject::all();
+        // dd($subjects);
         return view('subject.index', compact('subjects'));
     }
 
@@ -25,12 +26,9 @@ class SubjectController extends Controller
     public function create()
     {
         $departments = Department::all();
-        // dd($faculties);
         $faculties = Faculty::all();
-        $exams = exammanagement::all();
-        return view('subject.create', compact('departments', 'faculties', 'exams'));
-        
-
+        // dd($faculties);
+        return view('subject.create', compact('departments', 'faculties'));
     }
 
     public function store(Request $request)

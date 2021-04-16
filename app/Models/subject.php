@@ -19,8 +19,9 @@ class subject extends Model
         return $this->belongsTo(Faculty::class);
 
     }
-    public function exam()
-    {
-        return $this->belongsTo(exammanagement::class);
-    }
+    // public function exam()
+    // {
+    //     return $this->belongsTo(exammanagement::class);
+    // }
+
 }
