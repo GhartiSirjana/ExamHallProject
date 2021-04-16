@@ -30,6 +30,9 @@
                                     <option value="{{$department->id}}">{{$department->department_name}}</option>
                                     @endforeach
                                 </select>
+                                @error('department_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -39,11 +42,17 @@
                                     <option value="{{$faculty->id}}">{{$faculty->short_name}}</option>
                                     @endforeach
                                 </select>
+                                @error('faculty_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label> Semester </label>
                                 <input type="text" name="semester" class="form-control">
+                                @error('semester')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="subject-input-group" x-data="{subjects : [{subjectName: '', code: ''}]}">
@@ -52,10 +61,12 @@
                                         <div class="form-group col mb-0">
                                             <label> Subject Name </label>
                                             <input type="text" name="subjectname[]" class="form-control">
+                                      
                                         </div>
                                         <div class="form-group col mb-0">
                                             <label> SubjectCode </label>
                                             <input type="number" name="code[]" class="form-control">
+                                       
                                         </div>
                                         <template x-if="index > 0">
                                             <button type="button" @click="subjects.splice(index, 1)" class="btn btn-danger btn-add-subject"><i class="fa fa-minus"></i></button>

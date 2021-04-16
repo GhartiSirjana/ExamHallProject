@@ -20,7 +20,7 @@
                     <th>Faculty</th>
                     <th>Department</th>
                     <th>Created_at</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </thead>
             </tr>
 

@@ -35,7 +35,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="department" class="form-label"><strong>Department</strong></label>
+                                <label for="department" name="department" class="form-label"><strong>Department</strong></label>
                                 <!-- <input type="text" name="department" class="form-control form-control-sm " id="department""> -->
                                 <select class="form-select form-control form-control-sm" aria-label="Default select example" name="department_id">
                                 @foreach($departments as $department)

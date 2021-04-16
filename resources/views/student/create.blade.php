@@ -40,6 +40,9 @@
                                     <option value="{{$college->id}}">{{$college->name}}</option>
                                     @endforeach
                                 </select>
+                            @error('college')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <label for="student department" class="form-label">Student Department</label>
@@ -49,6 +52,9 @@
                                     @endforeach
 
                                 </select>
+                                @error('department')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="col-md-5">
                                 <label for="student faculty" class="form-label">Student Faculty</label>
@@ -58,6 +64,9 @@
                                     @endforeach
 
                                 </select>
+                                @error('faculty')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="col-md-3">
                                 <label for="year" class="form-label">Year</label>
@@ -66,6 +75,9 @@
                                     <option>2071</option>
                                     <option value="2">2073</option>
                                 </select>
+                                @error('year')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="student semester" class="form-label">Semester</label>
@@ -74,11 +86,14 @@
                                     <option>2nd</option>
                                     <option value="2">7th</option>
                                 </select>
+                                @error('semester')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="student regisno" class="form-label">Registration No.</label>
                                 <input type="text" class="form-control form-control-sm" name="registerNumber" id="" value="">
-                                @error('registration')
+                                @error('registerNumber')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>
