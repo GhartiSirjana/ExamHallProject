@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\exammanagement;
 use App\Models\seatallocation;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class SeatallocationController extends Controller
   
     public function create()
     {
-        return view('seatallocation.create');
+        $exams = exammanagement::all();
+        return view('seatallocation.create', compact('exams'));
     }
 
    

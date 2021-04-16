@@ -20,7 +20,7 @@
                     <td>{{ $staff->staffname }}</td>
                     <td>{{ $staff->department->department_name}}</td>
                     <td>
-                        <a href="{{ route('staff.index', $staff->id) }}" class="btn btn-success btn-sm">View</a>
+                        
                         <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-info btn-sm">Edit</a>
                         <a href="{{ route('staff.destroy', $staff->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a>
                     </td>

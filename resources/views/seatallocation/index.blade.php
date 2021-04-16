@@ -21,7 +21,7 @@
             <tr>
                 <tbody>
                     <td> {{$seatallocation->id}} </td>
-                    <td> {{$seatallocation->name}} </td>
+                    <td> {{$seatallocation->exammanagemts->Name}} </td>
                     <td> {{$seatallocation->exam}} </td>
                     <td> {{$seatallocation->rooms}} </td>
 

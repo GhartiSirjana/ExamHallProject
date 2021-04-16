@@ -33,7 +33,9 @@
                         <div class="form-group">
                             <label>Select Exams </label>
                             <select class="form-select" name="exam_id" class="form-control" aria-label="Default select example">
-                                <option value=""></option>
+                                @foreach($exams as $exam)
+                                <option value="{{$exam->id}}">{{$exam->Name}}</option>
+                                @endforeach
                             </select>
 
                             @error('exam_id')

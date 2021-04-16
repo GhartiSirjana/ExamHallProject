@@ -19,15 +19,8 @@
 
                         <div class="col-md-6">
                             <label for="room" class="form-label">Block</label>
-<<<<<<< HEAD
-                            <select class="form-select form-control form-control-sm" id="block" name="block_id">
-                            @foreach($blocks as $block)
-                                <option value="{{$block->id}}">{{$block->block}}</option>
-                            @endforeach
-=======
                             <select class="form-select form-control form-control-sm" name="block_id" class="form-control" id="block">
                                 <option value="">one</option>
->>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
                             </select>
                             @error('block_id')
                                 <span class="text-danger">{{$message}}</span>
@@ -35,19 +28,9 @@
                         </div>
                         <div class="col-md-6">
                             <label for="block" class="form-label">Floor</label>
-<<<<<<< HEAD
-                            <select class="form-select form-control form-control-sm" id="block" name="floor_id">
-                            @foreach($floors as $floor)
-                                <option value="{{$floor->id}}">{{$floor->floor}}</option>
-                            @endforeach
-                            @error('floor_id')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-=======
                             <select class="form-select form-control form-control-sm" name="floor_id" class="form-control" id="block">
                                 <option value="">one</option>
                                 <option value="">two</option>
->>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
                             </select>
 
                         </div>

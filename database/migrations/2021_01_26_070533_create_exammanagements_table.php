@@ -17,15 +17,15 @@ class CreateExammanagementsTable extends Migration
             $table->id();
             $table->string('Name');
             $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->on('departments')->references('id');
             $table->unsignedBigInteger('faculty_id');
+            $table->foreign('faculty_id')->on('faculties')->references('id');
             $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')->on('subjects')->references('id');
             $table->string('semester');
             $table->date('Exam_Date');
             $table->time('Start_Time');
             $table->time('End_Time');
-            $table->foreign('department_id')->on('departments')->references('id');
-            $table->foreign('faculty_id')->on('faculties')->references('id');
-            $table->foreign('subject_id')->on('subjects')->references('id');
 
             $table->timestamps();
         });

@@ -5,55 +5,73 @@
 
         <div class="card-header">Add Exam</div>
         <div class="card-body">
-            <form method="post" action ="{{ route('exam.update', $exammanagement->id) }}">
+            <form method="post" action ="{{ route('exam.update', $exam->id) }}">
             @csrf
             @method('put')
                 <div class="mb-3">
                     <label>Name</label>
-                    <input type="text" name="name" class="form-control" id="examname"value="{{$exam->name}}" >
-                    @error('name')
+                    <input type="text" name="Name" class="form-control" id="examname" value="{{$exammanagement->Name}}" >
+                    @error('Name')
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label>Faculty</label>
-                    <input type="text" name = "faculty" class="form-control" id="faculty"value="{{$exam->faculty}}">
-                    @error('faculty')
-                    <span class = "text-danger">{{$message}}</span>
-                    @enderror
-                </div>
+                            <label>Department</label>
+                            <select class="form-select" name="department_id" value="{{$exammanagement->department}}" id="" class="form-control form-control-sm">
+                                @foreach($departments as $department)
+                                <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                @endforeach
+                            </select>
+                            @error('department_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
+                        </div>
                 <div class="mb-3">
-                        <label>Semester</label>
-                        <input type="text" name="semester" class="form-control" id="semester" value="{{$exam->semester}}">
-                        @error('semester')
+                <select class="form-select" name="faculty_id" value="{{$exammanagement->faculty}}" class="form-control form-control-sm" id="faculty">
+                                @foreach($faculties as $faculty)
+                                <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                                @endforeach
+                            </select>
+                    @error('faculty_id')
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                         <label>Subject</label>
-                        <input type="text" name="subject" class="form-control" id="subject" value="{{$exam->subject}}">
-                        @error('subject')
+                        <select class="form-select" name="subject_id" value="{{$exammanagement->subject}}" class="form-control form-control-sm" id="faculty">
+                                @foreach($subjects as $subject)
+                                <option value="{{$subject->id}}">{{$subject->subjectname}}</option>
+                                @endforeach
+                            </select>
+                        @error('subject_id')
+                    <span class = "text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                        <label>Semester</label>
+                        <input type="text" name="semester" class="form-control" id="semester" value="{{$exammanagement->semester}}">
+                        @error('semester')
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                         <label>Exam date</label>
-                        <input type="date" name="examdate" class="form-control" id="examdate" value="{{$exam->exam_date}}">
-                        @error('exam_date')
+                        <input type="date" name="Exam_Date" class="form-control" id="examdate" value="{{$exammanagement->Exam_Date}}">
+                        @error('Exam_Date')
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                         <label>Start Time</label>
-                        <input type="time" name="starttime" class="form-control" id="starttime"value="{{$exam->start_time}}" >
-                        @error('start_time')
+                        <input type="time" name="Start_Time" class="form-control" id="starttime"value="{{$exammanagement->Start_Time}}" >
+                        @error('Start_Time')
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                         <label>End Time</label>
-                        <input type="time" name="endtime" class="form-control" id="endtime" value="{{$exam->end_time}}">
-                        @error('end_time')
+                        <input type="time" name="End_Time" class="form-control" id="endtime" value="{{$exammanagement->End_Time}}">
+                        @error('End_Time')
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>

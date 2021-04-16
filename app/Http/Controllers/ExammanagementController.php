@@ -56,7 +56,10 @@ class ExammanagementController extends Controller
     
     public function edit(exammanagement $exammanagement)
     {
-        return view('exammanagement.edit', compact('exammanagement'));
+        $departments = Department::all();
+        $faculties = Faculty::all();
+        $subjects = subject::all();
+        return view('exammanagement.create', compact('exammanagement','departments','faculties', 'subjects'));
     }
 
     
