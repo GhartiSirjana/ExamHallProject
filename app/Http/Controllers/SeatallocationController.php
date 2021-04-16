@@ -17,7 +17,6 @@ class SeatallocationController extends Controller
   
     public function create()
     {
-        // $seatallocations = seatallocation::all();
         return view('seatallocation.create');
     }
 
@@ -26,9 +25,8 @@ class SeatallocationController extends Controller
     {
        $data = $request->validate([
             'name' => 'required|string|min:5|max:100|',
-            'rooms' => 'required|string',
-            'exams' => 'required|string|',
-           
+            'room_id' => 'required|string',
+            'exam_id' => 'required|string|'
         ]);
         $seatallocation = seatallocation::create($data);
       
@@ -52,8 +50,8 @@ class SeatallocationController extends Controller
     {
         $request->validate([
             'name' => 'required|string|min:5|max:100|',
-            'exams' => 'required|string|',
-            'rooms' => 'required|string',
+            'exam_id' => 'required|string|',
+            'room_id' => 'required|string',
            
         ]);
 

@@ -99,6 +99,10 @@ Route::resource('block', BlockController::class);
 //Resource route for the floor 
 Route::resource('floor', FloorController::class);
 
+Route::get('seatarrangement', function(){
+    return view('seatarrangement.index');
+});
+
 
 
 

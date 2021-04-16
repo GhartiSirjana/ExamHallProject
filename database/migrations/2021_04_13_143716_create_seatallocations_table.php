@@ -16,9 +16,10 @@ class CreateSeatallocationsTable extends Migration
         Schema::create('seatallocations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('exam');
-            $table->string('rooms');
-
+            $table->unsignedBigInteger('room_id');
+            $table->unsignedBigInteger('exam_id');
+            $table->foreign('room_id')->on('roommanagments')->references('id');
+            $table->foreign('exam_id')->on('exammanagements')->references('id');
             $table->timestamps();
         });
     }
