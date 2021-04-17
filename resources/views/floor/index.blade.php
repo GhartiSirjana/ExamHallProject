@@ -53,9 +53,17 @@
                                 <td>{{$floor->floor}}</td>
                                 <td>{{$floor->block->block}}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="{{ route('floor.edit', $floor->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                 </td>
+                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                    <td>
+                        <form action="{{route('floor.destroy', $floor['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
+                    </td>
                             </tbody>
                         </tr>
                         @endforeach

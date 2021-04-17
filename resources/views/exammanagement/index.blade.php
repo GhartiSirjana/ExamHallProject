@@ -18,27 +18,25 @@
 
 
     </tr>
-    @foreach($exams as $exam)
+    @foreach($exams as $exammanagement)
     <tr>
-        <td>{{$exam->id}}</td>
-        <td>{{$exam->Name}}</td>
-        <td>{{$exam->department->department_name}}</td>
-        <td>{{$exam->faculty->name}}</td>
-        <td>{{$exam->subject->subjectname}}</td>
-        <td>{{$exam->subject->semester}}</td>
-        <td>{{$exam->Exam_Date}}</td>
-        <td>{{$exam->Start_Time}}</td>
-        <td>{{$exam->End_Time}}</td>
-
-
+        <td>{{$exammanagement->id}}</td>
+        <td>{{$exammanagement->Name}}</td>
+        <td>{{$exammanagement->department->department_name}}</td>
+        <td>{{$exammanagement->faculty->name}}</td>
+        <td>{{$exammanagement->subject->subjectname}}</td>
+        <td>{{$exammanagement->subject->semester}}</td>
+        <td>{{$exammanagement->Exam_Date}}</td>
+        <td>{{$exammanagement->Start_Time}}</td>
+        <td>{{$exammanagement->End_Time}}</td>
 
 
         <td>
-            <a href="{{route('exam.edit', $exam->id)}}" class="btn btn-primary btn-sm"> Edit</a>
+            <a href="{{route('exam.edit', $exammanagement->id)}}" class="btn btn-primary btn-sm"> Edit</a>
         </td>
-        <!-- <a href="{{route('exam.destroy', $exam->id)}}" class="btn btn-danger btn-sm"> Delete</a> -->
+        <!-- <a href="{{route('exam.destroy', $exammanagement->id)}}" class="btn btn-danger btn-sm"> Delete</a> -->
         <td>
-            <form action="{{route('exam.destroy', $exam['id'])}}" method="post">
+            <form action="{{route('exam.destroy', $exammanagement['id'])}}" method="post">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="Delete">
                 <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>

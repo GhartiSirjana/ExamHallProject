@@ -22,11 +22,7 @@
                             <label for="collegecampus" class="form-label">College/Campus Name</label>
                             <input type="text" name="name" class="form-control form-control-sm" id="collegecampus">
                             @error('name')
-<<<<<<< HEAD
                             <div>
-=======
-                          
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                                 <span class="text-danger">{{ $message }}</span>
                          
                             @enderror
@@ -35,11 +31,7 @@
                             <label for="Address" class="form-label">Address</label>
                             <input type="text" name="address" class="form-control form-control-sm" id="address">
                             @error('address')
-<<<<<<< HEAD
                             <div>
-=======
-                          
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                                 <span class="text-danger">{{ $message }}</span>
                            
                             @enderror
@@ -59,6 +51,11 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-sm">Add College</button>
+<<<<<<< HEAD
+=======
+                       
+
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                     </form>
                 </div>
 

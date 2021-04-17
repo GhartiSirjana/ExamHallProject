@@ -5,7 +5,7 @@
 
         <div class="card-header">Add Exam</div>
         <div class="card-body">
-            <form method="post" action ="{{ route('exam.update', $exam->id) }}">
+            <form method="post" action ="{{ route('exam.update', $exammanagement->id) }}">
             @csrf
             @method('put')
                 <div class="mb-3">
@@ -76,7 +76,7 @@
                     @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Add Exam</button>
-                <button type="submit" class="btn">Close</button>
+             
 
             </form>
         </div>

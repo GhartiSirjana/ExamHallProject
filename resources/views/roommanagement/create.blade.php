@@ -28,11 +28,7 @@
                         <div class="col-md-6">
                             <label for="room" class="form-label">Room No</label>
                             <input type="text" name="roomno" class="form-control form-control-sm" id="room">
-                            @error('roomno')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror
+                          
                         </div>
                         <div class="col-md-6">
                             <label for="room" class="form-label">Block</label>
@@ -40,17 +36,10 @@
                                 @foreach($blocks as $block)
                                 <option value="{{$block->id}}">{{$block->block}}</option>
                                 @endforeach
-                                <!-- @if($errors->any())
-                                @foreach($errors->all() as $error)
-                                <div>
-                                    <span class="text-danger">{{$error}}</span>
-                                </div>
-                                @endforeach
-                                @endif -->
+                               
+                              
                             </select>
-                            @error('block_id')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
+                         
                         </div>
 
                         <div class="col-md-6">
@@ -59,11 +48,7 @@
                                 @foreach($floors as $floor)
                                 <option value="{{$floor->id}}">{{$floor->floor}}</option>
                                 @endforeach
-                                <!-- @error('floor_id')
-                                <div>
-                                    <span class="text-danger">{{$message}}</span>
-                                </div>
-                                @enderror -->
+                            
                             </select>
 <<<<<<< HEAD
 
@@ -78,6 +63,7 @@
                             <label for="roomcapacity" class="form-label">Room capacity</label>
                             <input type="number" name="capacity" class="form-control form-control-sm" id="roomcapacity">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             @error('capacity')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -88,10 +74,14 @@
                             </div>
                             @enderror -->
 >>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
+=======
+                          
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
                         <div class="col-md-6">
                             <label for="rows" class="form-label">No of rows</label>
                             <input type="number" name="rows" class="form-control form-control-sm" id="rows">
+<<<<<<< HEAD
 <<<<<<< HEAD
                             @error('rows')
                                 <span class="text-danger">{{$message}}</span>
@@ -103,11 +93,15 @@
                             </div>
                             @enderror -->
 >>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
+=======
+                         
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
 
                         <div class="col-md-6">
                             <label for="column" class="form-label">No of column</label>
                             <input type="number" name="columns" class="form-control form-control-sm" id="column">
+<<<<<<< HEAD
 <<<<<<< HEAD
                             @error('columns')
                                 <span class="text-danger">{{$message}}</span>
@@ -122,6 +116,9 @@
                                 <span class="text-danger">{{$message}}</span>
                             </div>
                             @enderror -->
+=======
+                         
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
                         <div class="col-md-12">
                             <label for="invigilator" class="form-label">Invigilator</label>

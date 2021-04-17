@@ -61,7 +61,7 @@
 
 
                 <button type="submit" class="btn btn-primary">Add room</button>
-                <button type="submit" class="btn">Close</button>
+              
 
             </form>
         </div>

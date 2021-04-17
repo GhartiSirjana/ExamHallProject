@@ -70,9 +70,26 @@
                         <!-- <div class="col-md-11">
                             <label>Select Exams </label>
                             <select class="form-select" name="exam_id" class="form-control" aria-label="Default select example">
+<<<<<<< HEAD
                                 @foreach($exams as $exam)
                                 <option value="{{$exam->id}}">{{$exam->Name}}</option>
                                 @endforeach
+=======
+
+                                @foreach($exams as $exam)
+                                <option value="{{$exam->id}}">{{$exam->Name}}</option>
+                                @endforeach
+
+
+                                @foreach($exams as $exam)
+                                <option value="{{$exam->id}}">{{$exam->Name}}</option>
+                                @endforeach
+
+                                <option value=""></option>
+
+                                <option value=""></option>
+
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                             </select>
                             @error('exam_id')
                             <div>
@@ -85,6 +102,11 @@
                         </div> -->
                         <div class="col-md-3">
                             <button type="submit" class="btn btn-primary"> Save </button>
+<<<<<<< HEAD
+=======
+                           
+
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
                     </form>
                 </div>
