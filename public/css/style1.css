@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    /* color: #fff; */
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.head-section {
+    background-color: #222f3e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 0 250px 10px rgba(0, 0, 0, 0.67);
+}
+
+.main-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.phone,
+.email,
+.social-media {
+    font-size: 10px;
+}
+
+.social-media .fab,
+.fas {
+    margin: 0 5px;
+}
+
+.login,
+.register {
+    color: white;
+}
+.sign, .log
+{
+    background-color: #874788;
+    margin: 20px;
+    padding: 4px 7px 8px 8px;
+    border:0;
+    border-radius: 7px;
+  
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color:black;
+}
+
+
+/*  */
+
+.navbar {
+    background-color: #6d0d17;
+}
+nav a.navbar-brand
+{
+    letter-spacing: 1px;
+}
+
+/*  */
+
+.main-body {
+    background-image: linear-gradient(rgba(7, 9, 12, 0.486), rgba(25, 26, 1, 0.651)), 
+    url('../images/seat1.jpeg');
+    height:80vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-heading
+{
+    place-items: center;
+}
+.body-heading h1
+{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* background-image: linear-gradient(to bottom, #222f3e, #0097e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+
+
+.search {
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+    border-radius: 0;
+    padding: 0;
+    margin-top: -20px;
+
+}
+
+.search::placeholder {
+    color: white;
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+
+
+
+.nav-item {
+    position: relative;
+}
+
+.nav1 {
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+
+.nav-link:hover .active {
+    color: #f1c40f;
+}
+
+.nav1::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    border-bottom: 2px solid #f1c40f;
+    transition: all 0.4s linear;
+}
+
+.nav1:hover::before {
+    width: 95%;
+}
+
+/*  */
+
+.about-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-heading h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+
+.image-responsive {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.567),
+        1px 3px 10px rgba(0, 0, 0, 0.67);
+    transition: 0.5s linear;
+    border-radius: 20px;
+}
+
+/*  */
+.student-allocation
+{
+    background-color: #222f3e;
+}
+.student-allocation .sa-heading
+{
+    position: relative; 
+    margin-bottom: 10px;
+}
+.student-allocation .sa-heading h1 
+{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.student-allocation .sa-heading h1::before
+{
+    content: '';
+    width: 370px;
+    height: 3px;
+    background-color: #f1c40f;
+    position: absolute;
+    top: 80%;
+}
+.student-profiles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-images
+{
+    margin-bottom: 30px;
+}
+
+.profile-images img
+{
+    border-radius: 5px;
+}
+
+/*  */
+
+/* .ta-section {
+    background-color: #0097e6;
+} */
+.ta-section .ta-heading
+{
+    position: relative;
+    margin-bottom: 10px;
+}
+.ta-section .ta-heading h3, .t-profile h3, .t-detail p
+{
+    color: black;
+}
+.ta-section .ta-heading h1
+{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.ta-section .ta-heading h1::before
+{
+    content: '';
+    background-color: #f1c40f;
+    width: 370px;
+    height: 3px;
+    position: absolute;
+    top: 80%;
+}
+
+.t-profile h3
+{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.row .card:hover
+{
+    transform: scale(0.9);
+    transition: 1s;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.67);
+
+}
+
+.row .card .image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ra */
+.ra-section
+{
+    background-color: #222f3e;
+}
+.ra-heading 
+{
+    position: relative;
+}
+.ra-heading h1
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.ra-heading h1::before
+{
+    content: '';
+    background-color: #f1c40f;
+    width: 320px;
+    height: 3px;
+    position: absolute;
+    top: 80%;
+}
+
+/* team */
+.team
+{
+    margin: 50px 0;
+}
+.team h1
+{
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px;
+    font-size: 30px;
+}
+.team h1::after
+{
+    content: '';
+    background-color: #f1c40f;
+    display: block;
+    height: 3px;
+    width: 155px;
+    margin: 5px auto;
+}
+
+.tm:hover
+{
+    border: 1px solid #333;
+    transition: 0.5s linear;
+}
+.img-box ul a li i
+{
+    color:#fff;
+}
+.team .tm
+{
+    margin-top: 25px;
+}
+.team .img-box
+{
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+.tm h2
+{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.tm h3
+{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.img-box::after
+{
+    content: '';
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.5s linear;
+}
+.img-box ul
+{
+    margin: 0;
+    padding: 20px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.img-box ul li
+{
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 3px;
+    display: inline-block;
+    opacity: 1;
+}
+.img-box a
+{
+    color: #fff;
+}
+.img-box:hover::after
+{
+    opacity: 1;
+}
+.img-box:hover ul
+{
+    opacity: 1;
+}
+
+
+/* student section */
+
+
+.body-heading .para
+{
+    width: 60%;
+    margin-left: 85px;
+}
+.getstart .start
+{
+    border: 1px solid yellow;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: -120px;
+    letter-spacing: 1px;
+}
+.start:hover
+{
+    background-color: #0097e6;
+    transition: 0.5s linear;
+}
+.about
+{
+    background-color: #495256;;
+}
+.about .about-heading
+{
+    position: relative;
+}
+.about .about-heading h1
+{
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+}
+
+.about .about-heading h1::before
+{
+    content: '';
+    width: 138px;
+    height: 3px;
+    background-color: #f1c40f;
+    position: absolute;
+    top: 80%;
+    
+}
+.about .paragraph .detail
+{
+    color: #fff;
+}
+
+.contact
+{
+    background-color: #222f3e;
+    padding: 20px;
+
+}
+.contact .contact-heading
+{
+    position: relative;
+    margin-bottom: 20px;
+}
+.contact .contact-heading h1
+{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.contact .contact-heading h1::after
+{
+    content: '';
+    width: 195px;
+    height: 3px;
+    background-color: #f1c40f;
+    position: absolute;
+    top: 80%; 
+    left: 42%;
+}
+.form-group
+{
+    position: relative;
+    padding: 10px 0;
+}
+input
+{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 0 0;
+}
+input::placeholder
+{
+    color: #fff;
+}
+
+label
+{
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transition: 0.3s;
+    margin: 0;
+    color: #fff;
+}
+.form-group input[type="submit"]
+{
+    /* width: 10%; */
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    /* margin: 10px 0 40px 0; */
+    background: #3268a7;
+    transition:0.5s;
+}
+input:focus
+{
+    border-bottom: 1px solid rgb(0, 183, 255);
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label
+{
+    position: absolute;
+    left: 0;
+    top: -9px;
+    color: rgba(19, 226, 233, 0.863);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* .footer
+{
+    background-color: #0097e6;
+} */
+
+/* SR */
+.sr
+{
+    background-color: #222f3e;
+}
+
+
+/* style of registration.php */
+@media(prefers-color-scheme:dark)
+    {
+        /* body
+        {
+            background-color: #222f3e;
+            position: relative;
+        } */
+        .main-div
+        {
+            background-color: #222f3e;
+            color: #fff;
+        }
+    }
+.main-div
+    {
+        background-color: #222f3e;
+        color: #fff;
+        width: 50%;
+        top: 5%;
+        left: 25%;
+        position: absolute;
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2),
+            15px 15px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+    .main-div h1
+    {
+        font-size: 20px;
+        padding: 20px 0 30px 0;
+        text-transform: uppercase;
+    }
+    .form-group
+    {
+        position: relative;
+        padding: 5px 0;
+    }
+
+    .form-group .form-control
+    {
+        border: 0;
+        background-color: transparent;
+        border-bottom: 1px solid #fff;
+        border-radius: 0;
+        font-size: 12px;
+        width: 100%;
+        outline: none;
+    }
+    .form-group .form-control::placeholder
+    {
+        color: #fff;
+    }
+
+    .form-group label
+    {
+        padding: -20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 14px;
+        transition: 0.5s;
+    }
+    .form-control[type="submit"]
+    {
+        border-bottom: 0;
+        width:30%;
+        background-color: #03a9f4;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    .form-control[type="submit"]:hover
+    {
+        background-image: linear-gradient(to right, yellow, red);
+        transition: 1s;
+        /* transform: skew(120deg); */
+        /* transform: scale(-1.2); */
+        
+    }
+
+
+    .form-group .form-control:focus~label,
+    .form-group .form-control:valid~label
+    {
+        position: absolute;
+        top: -16px;
+        left: 0;
+        color: #03a9f4;
+        font-size: 12px;
+    }
+/* .check
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+
+

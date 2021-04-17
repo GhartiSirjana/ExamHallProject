@@ -42,7 +42,7 @@ Route::get('/seatarrangement', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
 
 
 
@@ -50,7 +50,7 @@ Route::get('/seatarrangement', function () {
 Route::get('/registration', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/store', [RegisterController::class, 'store'])->name('register.store');
 // Route for the Login
-Route::get('/loginindex', [RegisterController::class, 'loginIndex'])->name('form.login');
+Route::get('/loginindex', [RegisterController::class, 'loginIndex'])->name('form.loginhome');
 
 // Route for the layout Admin
 Route::post('/adminlogin', [RegisterController::class, 'login'])->name('form.login');
@@ -103,4 +103,6 @@ Route::get('seatarrangement', function(){
 
 
 
-
+Route::get('/frontend', function () {
+    return view('homepage.frontend');
+});
