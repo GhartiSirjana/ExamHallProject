@@ -19,7 +19,7 @@ class Faculty extends Model
     }
     public function student()
     {
-        return $this->hasMany(StudentManage::class, 'faculties_id');
+        return $this->hasMany(StudentManage::class, 'faculty_id');
     }
     public function subject()
     {

@@ -45,7 +45,7 @@ class AddcollegeController extends Controller
     
     public function show(College $College)
     {
-        return view('college.show', compact('college'));
+        // return view('college.show', compact('College'));
     }
 
     
@@ -80,8 +80,9 @@ class AddcollegeController extends Controller
     }
 
     
-    public function destroy(College $college)
+    public function destroy($id)
     {
+        $college = College::find($id);
         $college->delete();
         return redirect('/colleges');
     }

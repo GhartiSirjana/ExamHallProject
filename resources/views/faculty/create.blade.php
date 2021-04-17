@@ -19,10 +19,9 @@
                         @csrf
                         <div class="form-group">
                             <label>Faculty Name </label>
-                            <input type="text" name="name" class="form-control form-control-sm" required>
+                            <input type="text" name="name" class="form-control form-control-sm">
                             @error('name')
-                            <div class="alert alert-danger">
-                                <span class="text-danger">{{ $message }}</span>
+                         <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
                         </div>
@@ -30,7 +29,7 @@
                             <label>Faculty Short Name </label>
                             <input type="text" name="short_name" class="form-control form-control-sm">
                             @error('short_name')
-                            <div class="alert alert-danger">
+                           
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
@@ -39,12 +38,12 @@
                             <label>Select Department </label>
                             <select class="form-select" name="department_id" class="form-control" aria-label="Default select example">
                                 @foreach($departments as $department)
-                                    <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                <option value="{{$department->id}}">{{$department->department_name}}</option>
                                 @endforeach
                             </select>
 
-                            @error('department')
-                            <div class="alert alert-danger">
+                            @error('department_id')
+                         
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror

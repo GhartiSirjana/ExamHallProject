@@ -23,27 +23,17 @@ class StaffManageController extends Controller
     }
 
   
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $departments = Department::all();
         return view('staff.create', compact('departments'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(Request $request)
     {
         $data = $request->validate([
-            'staffname'=>'required|string|min:5',
+            'staffname'=>'required|string|min:5|regex:/^[a-zA-Z\s]+$/',
             'department_id'=>'required'
         ]);
 
@@ -54,23 +44,13 @@ class StaffManageController extends Controller
         return redirect('/staff');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\StaffManage  $staffManage
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(StaffManage $staffManage, $id)
     {
         
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\StaffManage  $staffManage
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit(StaffManage $staffManage, $id)
     {
         $departments = Department::all();

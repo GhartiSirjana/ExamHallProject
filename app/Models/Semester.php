@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class seatallocation extends Model
+class Semester extends Model
 {
     use HasFactory;
-    protected $guarded = [];
-    public function exam()
+    public function student()
     {
-        return $this->hasMany(exammanagement::class);
+        return $this->hasMany(StudentManage::class);
     }
 }

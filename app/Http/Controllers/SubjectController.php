@@ -18,6 +18,7 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = subject::all();
+        // dd($subjects);
         return view('subject.index', compact('subjects'));
     }
 
@@ -25,12 +26,10 @@ class SubjectController extends Controller
     public function create()
     {
         $departments = Department::all();
-        // dd($faculties);
         $faculties = Faculty::all();
-        $exams = exammanagement::all();
-        return view('subject.create', compact('departments', 'faculties', 'exams'));
-        
-
+     
+        // dd($faculties);
+        return view('subject.create', compact('departments', 'faculties'));
     }
 
     public function store(Request $request)
@@ -70,7 +69,7 @@ class SubjectController extends Controller
    
     public function show(subject $subject)
     {
-        return view('subject.show', compact('subject'));
+        return redirect('/subjects');
     }
 
    
@@ -78,25 +77,25 @@ class SubjectController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-        return view('subject.edit', compact('departments', 'faculties'));
+        return view('subject.edit', compact('subject','departments', 'faculties'));
     }
 
    
     public function update(Request $request, subject $subject)
     {
         $data = $request->validate([
-            'department' => 'required|string',
             'subjectname' => 'required|string',
-            'code' => 'required|numeric',
+            'subjectcode' => 'required|numeric',
             'semester' => 'required|string', 
-            'faculty' => 'required|string',
+            'faculty_id' => 'required|string',
+            'department_id' => 'required|string',
         ]);
     
-        $subject->department=$request->input('department');
         $subject->subjectname=$request->input('subjectname');
-        $subject->subjectcode=$request->input('code');
+        $subject->subjectcode=$request->input('subjectcode');
         $subject->semester=$request->input('semester');
-        $subject->faculty=$request->input('faculty');
+        $subject->faculty_id=$request->input('faculty_id');
+        $subject->department_id=$request->input('department_id');
         $subject->save();
  
         $request->session()->flash('msg', 'data submitted');
@@ -104,9 +103,10 @@ class SubjectController extends Controller
     }
 
     
-    public function destroy(subject $subject)
+    public function destroy($id)
     {
+        $subject = Subject::find($id);
         $subject->delete();
-        return redirect('subjects');
+        return redirect('/subjects');
     }
 }

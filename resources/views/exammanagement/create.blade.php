@@ -19,7 +19,7 @@
                         <div class="col-md-12">
                             <label>Name</label>
                             <input type="text" name="Name" class="form-control form-control-sm" id="examname">
-                            @error('name')
+                            @error('Name')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
@@ -30,6 +30,9 @@
                                 <option value="{{$department->id}}">{{$department->department_name}}</option>
                                 @endforeach
                             </select>
+                            @error('department_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Faculty</label>
@@ -38,6 +41,9 @@
                                 <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                 @endforeach
                             </select>
+                            @error('faculty_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Subject</label>
@@ -46,6 +52,9 @@
                                 <option value="{{$subject->id}}">{{$subject->subjectname}}</option>
                                 @endforeach
                             </select>
+                            @error('subject_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Semester</label>
@@ -55,18 +64,30 @@
                                 <option value="{{$subject->id}}">{{$subject->semester}}</option>
                                 @endforeach
                             </select>
+                            @error('semester')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Exam date</label>
                             <input type="date" name="Exam_Date" class="form-control form-control-sm" id="examdate">
+                            @error('Exam_Date')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="col-md-3">
                             <label>Start Time</label>
                             <input type="time" name="Start_Time" class="form-control form-control-sm" id="starttime">
+                            @error('Start_Time')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="col-md-3">
                             <label>End Time</label>
                             <input type="time" name="End_Time" class="form-control form-control-sm" id="endtime">
+                            @error('End_Time')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="col-md-2 ml-auto">
                             <button type="submit" class="btn btn-primary btn-sm">Add Exam</button>

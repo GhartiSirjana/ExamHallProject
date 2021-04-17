@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Staff</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-</head>
-
-<body>
-    <br><br>
+@extends('layouts.admin')
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -35,7 +28,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="department" class="form-label"><strong>Department</strong></label>
+                                <label for="department" name="department" class="form-label"><strong>Department</strong></label>
                                 <!-- <input type="text" name="department" class="form-control form-control-sm " id="department""> -->
                                 <select class="form-select form-control form-control-sm" aria-label="Default select example" name="department_id">
                                 @foreach($departments as $department)
@@ -53,6 +46,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

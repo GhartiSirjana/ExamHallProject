@@ -32,14 +32,14 @@ class ExammanagementController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'Name' => 'required|string|min:5|max:100',
+            'Name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
             'department_id' => 'required|string',
             'faculty_id' => 'required|string',
             'semester' => 'required|string',
             'subject_id' => 'required|string',
-            'Exam_Date' => 'required',
-            'Start_Time' => 'required',
-            'End_Time' => 'required'
+            'Exam_Date' => 'required|date_format:Y-m-d',
+            'Start_Time' => 'required|',
+            'End_Time' => 'required|'
         ]);
 
         $exammanagement = exammanagement::create($data);
@@ -56,43 +56,47 @@ class ExammanagementController extends Controller
     
     public function edit(exammanagement $exammanagement)
     {
-        return view('exammanagement.edit', compact('exammanagement'));
+        $departments = Department::all();
+        $faculties = Faculty::all();
+        $subjects = subject::all();
+        return view('exammanagement.create', compact('exammanagement','departments','faculties', 'subjects'));
     }
 
     
     public function update(Request $request, exammanagement $exammanagement)
     {
-        // $request->validate([
-        //     'name' => 'required|string|min:5|max:100',
-        //     'faculty' => 'required|string',
-        //     'semester' => 'required|string',
-        //     'subject' => 'required|string',
-        //     'examdate' => 'required|date',
-        //     // 'starttime' => 'required|time',
-        //     // 'endtime' => 'required|time',
+        $request->validate([
+            'name' => 'required|string|min:5|max:100',
+            'faculty' => 'required|string',
+            'semester' => 'required|string',
+            'subject' => 'required|string',
+            'examdate' => 'required|date',
+            // 'starttime' => 'required|time',
+            // 'endtime' => 'required|time',
 
             
 
-        // ]);
-        // $exammanagement->name = $request->input('name');
-        // $exammanagement->faculty = $request->input('faculty');
-        // $exammanagement->semester = $request->input('semester');
-        // $exammanagement->subject = $request->input('subject');
-        // $exammanagement->exam_date = $request->input('exam_date');
-        // $exammanagement->save();
+        ]);
+        $exammanagement->name = $request->input('name');
+        $exammanagement->faculty = $request->input('faculty');
+        $exammanagement->semester = $request->input('semester');
+        $exammanagement->subject = $request->input('subject');
+        $exammanagement->exam_date = $request->input('exam_date');
+        $exammanagement->save();
 
 
        
 
 
-        // $request->session()->flash('msg' , 'data submitted');
-        // return redirect('/exam');
+        $request->session()->flash('msg' , 'data submitted');
+        return redirect('/exam');
     }
 
     
-    public function destroy(exammanagement $exammanagement)
+    public function destroy($id)
     {
-        // $exammanagement->delete();
-        // return redirect('/exam');
+        $exammanagement = exammanagement::find($id);
+        $exammanagement->delete();
+        return redirect('/exam');
     }
 }

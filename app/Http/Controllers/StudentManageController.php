@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\College;
 use App\Models\Department;
 use App\Models\Faculty;
+use App\Models\Semester;
 use App\Models\StudentManage;
+use App\Models\subject;
 use Illuminate\Http\Request;
 
 class StudentManageController extends Controller
@@ -18,6 +20,7 @@ class StudentManageController extends Controller
     public function index()
     {
         $students = StudentManage::all();
+        
         return view('student.index', compact('students'));
     }
 
@@ -31,7 +34,8 @@ class StudentManageController extends Controller
         $departments = Department::all();
         $faculties = Faculty::all();
         $colleges = College::all();
-        return view('student.create', compact('departments', 'faculties', 'colleges'));
+        $semesters = Semester::all();
+        return view('student.create', compact('departments', 'faculties', 'colleges', 'semesters'));
     }
 
     /**
@@ -43,19 +47,20 @@ class StudentManageController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|min:5|max:15|string',
-            'college' => 'required',
-            'department' => 'required', 
-            'faculty' => 'required',
+            'name' => 'required|min:5|max:15|string|regex:/^[a-zA-Z\s]+$/',
+            'college_id' => 'required|regex:/^[a-zA-Z\s]+$/',
+            'department_id' => 'required|regex:/^[a-zA-Z\s]+$/', 
+            'faculty_id' => 'required|regex:/^[a-zA-Z\s]+$/',
             'year' => 'required|numeric',
-            'semester' => 'required',
-            'registerNumber'=> 'required|string',
+            'semester' => 'required|string',
+            'registerNumber'=> 'required|numeric',
             'symbolno' => 'required|numeric|unique:student_manages,symbolno',
-            'dob' => 'required',
-            'parent' => 'required|min:5|max:12',
+            'dob' => 'required|date_format:Y-m-d',
+            'email'=>'required|unique:users',
+            'parent' => 'required|min:5|max:12|regex:/^[a-zA-Z\s]+$/',
             'email' => 'required|unique:users',
             'mobile' => 'required|numeric', 
-            'address' => 'required|min:5|max:12'
+            'address' => 'required|min:5|max:12|regex:/^[a-zA-Z\s]+$/'
         ]);
 
         $student = StudentManage::create($data);

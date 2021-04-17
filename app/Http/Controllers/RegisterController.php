@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Register;
+use App\Model\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -68,8 +68,8 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username'=>'required|string|min:5|max:255',
-            'address'=>'required|string',
+            'username'=>'required|string|min:5|max:255|regex:/^[a-zA-Z\s]+$/',
+            'address'=>'required|string|regex:/^[a-zA-Z\s]+$/',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6|max:12|confirmed',
             'role'=>'required'

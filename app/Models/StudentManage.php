@@ -12,9 +12,9 @@ class StudentManage extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function faculties()
+    public function faculty()
     {
-        return $this->belongsTo(Faculty::class, 'faculties_id');
+        return $this->belongsTo(Faculty::class, 'faculty_id');
     }
 
     public function department()
@@ -26,4 +26,9 @@ class StudentManage extends Model
     {
         return $this->belongsTo(College::class, 'college_id');
     }
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
+
 }

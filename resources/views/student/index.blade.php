@@ -21,14 +21,14 @@
                     <th>Faculty</th>
                     <th>Year</th>
                     <th>Semester</th>
-                    <th>Registration No.</th>
-                    <th>Symbol No.</th>
+                    <th>Registration</th>
+                    <th>Symbol</th>
                     <th>DOB</th>
-                    <th>Parent Name</th>
                     <th>Email</th>
-                    <th>Mobile No.</th>
+                    <th>Parent Name</th>
+                    <th>Mobile</th>
                     <th>Address</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </thead>
             </tr>
             @foreach($students as $student)
@@ -36,22 +36,29 @@
                 <tbody>
                     <td>{{$student->id}}</td>
                     <td>{{$student->name}}</td>
-                    <td>{{$student->colleges->id}}</td>
-                    <td>{{$student->departments->department_name}}</td>
-                    <td>{{$student->faculties->faculty_name}}</td>
+                    <td>{{$student->college->name}}</td>
+                    <td>{{$student->department->department_name}}</td>
+                    <td>{{$student->faculty->name}}</td>
                     <td>{{$student->year}}</td>
                     <td>{{$student->semester}}</td>
                     <td>{{$student->registerNumber}}</td>
                     <td>{{$student->symbolno}}</td>
                     <td>{{$student->dob}}</td>
-                    <td>{{$student->parent}}</td>
                     <td>{{$student->email}}</td>
+                    <td>{{$student->parent}}</td>
                     <td>{{$student->mobile}}</td>
                     <td>{{$student->address}}</td>
                     <td>
-                        <a href="" class="btn btn-success btn-sm">View</a>
                         <a href="{{route('student.edit', $student->id)}}" class="btn btn-info btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                        <a href="{{route('students.destroy')}}" class="btn btn-danger btn-sm">Delete</a>
+                        <td>
+                        <form action="{{route('students.destroy', $student['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
                     </td>
                 </tbody>
             </tr>

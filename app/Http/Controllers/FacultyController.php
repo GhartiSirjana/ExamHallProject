@@ -34,8 +34,8 @@ class FacultyController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string|min:5|max:100|',
-            'short_name' => 'required|string',
+            'name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
+            'short_name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
             'department_id' => 'required|numeric',
         ]);
 
@@ -48,7 +48,7 @@ class FacultyController extends Controller
 
     public function show(Faculty $faculty)
     {
-        return view('faculty.show', compact('faculty'));
+        // return view('faculty.show', compact('faculty'));
     }
 
 
@@ -78,8 +78,8 @@ class FacultyController extends Controller
 
     public function destroy($id)
     {
-       $faculty = Faculty::find($id);
-       $faculty->delete();
-       return redirect('/faculties');
+        $faculty = Faculty::find($id);
+        $faculty->delete();
+        return redirect('/faculties');
     }
 }
