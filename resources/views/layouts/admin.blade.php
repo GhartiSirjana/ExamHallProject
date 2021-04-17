@@ -42,7 +42,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block active">
-        <a href="" class="text-white nav-link fw-bold">Automatic Exam Hall Arrangement</a>
+        <a href="" class="text-white nav-link fw-bold h-1 text-uppercase">Automatic Exam Hall Arrangement</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="" class="text-white nav-link active">Home</a>
@@ -53,7 +53,7 @@
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="ml-3 form-inline">
+    <!-- <form class="ml-3 form-inline">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -62,7 +62,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
 
     <!-- Right navbar links -->
     <!--  -->
@@ -96,7 +96,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('colleges.index') }}" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <i class="fas fa-university"></i>
               <p>
                 College/Campus Manage
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -106,7 +106,7 @@
 
           <li class="nav-item has-treeview">
             <a href="{{ route('departments.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+            <i class="fas fa-building"></i>
               <p>
                 Department Manage
                 <!-- <i class="right fas fa-angle-left"></i> -->
@@ -117,7 +117,7 @@
 
           <li class="nav-item has-treeview">
             <a href="{{route('faculties.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+            <i class="fas fa-store"></i>
               <p>
                 Faculty Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -126,7 +126,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="{{ route('room.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <i class="fas fa-person-booth"></i>
               <p>
                 Room Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -155,7 +155,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('student.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+            <i class="fas fa-user-graduate"></i>
               <p>
                Student Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -165,7 +165,7 @@
         
           <li class="nav-item has-treeview">
             <a href="{{ route('subjects.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="fas fa-book"></i>
               <p>
                 Subject Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -176,7 +176,7 @@
           <!-- <li class="nav-header">EXAMPLES</li> -->
           <li class="nav-item">
             <a href="{{route('seatallocations.index')}}" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+            <i class="fas fa-chair"></i>
               <p>
                 Seat Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -186,7 +186,7 @@
 
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <i class="fas fa-chair"></i>
               <p>
                 Seat Arrangement
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -196,7 +196,7 @@
 
           <li class="nav-item has-treeview">
             <a href="{{route('exam.index')}}" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+            <i class="fas fa-book-open"></i>
               <p>
                 Exam Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
@@ -205,7 +205,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('staff.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <i class="fas fa-male"></i>
               <p>
                Staff Management
                <!-- <i class="fas fa-angle-left right"></i> -->

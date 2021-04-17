@@ -24,7 +24,7 @@ class AddcollegeController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string|min:5|max:100',
+            'name' => 'required|string|min:10|max:100|regex:/^[a-zA-Z\s]+$/',
             'address' => 'required|string',
             'description' => 'required|string',
         ]);
@@ -63,7 +63,6 @@ class AddcollegeController extends Controller
             'description' => 'required|string',
         ]);
 
-               
         $college->name=$request->input('name');
         $college->address=$request->input('address');
         $college->description=$request->input('description');

@@ -6,7 +6,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <br />
             <div class="row mb-3">
                 <div class="col-md-10">
                     <h4>Add New Subject</h4>
@@ -21,7 +20,6 @@
                     <div class="form-wrapper">
                         <form action="{{ route('subjects.store') }}" method="post">
                             @csrf
-
                             <div class="form-group">
                                 <label>Select Department </label>
                                 <select id="department" class="form-select" name="department_id" class="form-control" aria-label="Default select example">
@@ -51,13 +49,9 @@
                                 <label> Semester </label>
                                 <input type="text" name="semester" class="form-control">
                                 @error('semester')
-<<<<<<< HEAD
                                 <div>
                                     <span class="text-danger">{{$message}}</span>
                                 </div>
-=======
-                                <span class="text-danger">{{$message}}</span>
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                                 @enderror
                             </div>
 
@@ -67,28 +61,20 @@
                                         <div class="form-group col mb-0">
                                             <label> Subject Name </label>
                                             <input type="text" name="subjectname[]" class="form-control">
-<<<<<<< HEAD
                                             @error('subjectname')
                                             <div>
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
                                             @enderror
-=======
-                                      
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                                         </div>
                                         <div class="form-group col mb-0">
                                             <label> SubjectCode </label>
                                             <input type="number" name="code[]" class="form-control">
-<<<<<<< HEAD
                                             @error('code[]')
                                             <div>
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
                                             @enderror
-=======
-                                       
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                                         </div>
                                         <template x-if="index > 0">
                                             <button type="button" @click="subjects.splice(index, 1)" class="btn btn-danger btn-add-subject"><i class="fa fa-minus"></i></button>
@@ -107,7 +93,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <script>
     document.querySelector('#department').addEventListener('change', (event) => {

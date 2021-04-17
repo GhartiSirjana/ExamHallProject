@@ -13,4 +13,8 @@ class seatallocation extends Model
     {
         return $this->hasMany(exammanagement::class);
     }
+    public function room()
+    {
+        return $this->hasMany(roommanagment::class);
+    }
 }

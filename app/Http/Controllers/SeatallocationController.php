@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\exammanagement;
 use App\Models\seatallocation;
+use App\Models\Block;
+use App\Models\roommanagment;
 use Illuminate\Http\Request;
 
 class SeatallocationController extends Controller
@@ -18,31 +20,28 @@ class SeatallocationController extends Controller
   
     public function create()
     {
-<<<<<<< HEAD
         $exams = exammanagement::all();
-        return view('seatallocation.create', compact('exams'));
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $exams = exammanagement::all();
-        return view('seatallocation.create', compact('exams'));
-=======
-=======
->>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
-        return view('seatallocation.create');
->>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
+        $blocks = Block::all();
+        $rooms = roommanagment::all();
+        return view('seatallocation.create', compact('exams', 'blocks', 'rooms'));
     }
 
-   
     public function store(Request $request)
     {
        $data = $request->validate([
-            'name' => 'required|string|min:5|max:100|',
+            'name' => 'required|string|min:4|max:100',
             'room_id' => 'required|string',
-            'exam_id' => 'required|string|'
+            'exam' => 'required|array|min:3',
+            'exam.*'=>'required|string',
+
         ]);
-        $seatallocation = seatallocation::create($data);
+        foreach($data['exam'] as $index => $seat){
+            $seatallocation = seatallocation::create([
+                'name' => $data['name'],
+                'room_id' => $data['room_id'],
+                'exam' => $seat
+            ]);
+        }
       
          $request->session()->flash('msg', 'data submitted');
         return redirect('/seatallocations');

@@ -22,7 +22,7 @@
                             <label for="collegecampus" class="form-label">College/Campus Name</label>
                             <input type="text" name="name" class="form-control form-control-sm" id="collegecampus">
                             @error('name')
-                            <div class="alert alert-danger">
+                            <div>
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
@@ -31,7 +31,7 @@
                             <label for="Address" class="form-label">Address</label>
                             <input type="text" name="address" class="form-control form-control-sm" id="address">
                             @error('address')
-                            <div class="alert alert-danger">
+                            <div>
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
@@ -40,15 +40,13 @@
                             <label for="productDesc" class="form-label">Description</label>
                             <input type="text" name="description" class="form-control form-control-sm" id="Desc">
                             @error('description')
-                            <div class="alert alert-danger">
+                            <div>
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-sm">Add College</button>
-                        <!-- <button type="submit" class="btn">Close</button> -->
-
                     </form>
                 </div>
 

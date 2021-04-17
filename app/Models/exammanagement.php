@@ -26,7 +26,7 @@ class exammanagement extends Model
     //has many examsubjects
     public function seat()
     {
-        return $this->belongsTo(seatallocation::class );
+        return $this->belongsTo(seatallocation::class);
     }
 
 }

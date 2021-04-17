@@ -24,6 +24,7 @@
                 <div class="card-body">
                     <form method="POST" class="row g-3" action="{{route('room.store')}}">
                         @csrf
+                        
                         <div class="col-md-6">
                             <label for="room" class="form-label">Room No</label>
                             <input type="text" name="roomno" class="form-control form-control-sm" id="room">
@@ -64,84 +65,44 @@
                                 </div>
                                 @enderror -->
                             </select>
-<<<<<<< HEAD
-=======
 
                         </div>
 
-                        <div class="col-md-6">
-                            <label for="room" class="form-label">Room No</label>
-                            <input type="text" name="roomno" class="form-control form-control-sm" id="room">
-                            @error('roomno')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
-                        </div>
+    
 
                         <div class="col-md-6">
                             <label for="roomcapacity" class="form-label">Room capacity</label>
                             <input type="number" name="capacity" class="form-control form-control-sm" id="roomcapacity">
-<<<<<<< HEAD
-                            <!-- @error('capacity')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
-=======
                             @error('capacity')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
                         <div class="col-md-6">
                             <label for="rows" class="form-label">No of rows</label>
                             <input type="number" name="rows" class="form-control form-control-sm" id="rows">
-<<<<<<< HEAD
-                            <!-- @error('rows')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
-=======
                             @error('rows')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
 
                         <div class="col-md-6">
                             <label for="column" class="form-label">No of column</label>
                             <input type="number" name="columns" class="form-control form-control-sm" id="column">
-<<<<<<< HEAD
-                            <!-- @error('columns')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
-=======
                             @error('columns')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
                         <div class="col-md-12">
                             <label for="invigilator" class="form-label">Invigilator</label>
-<<<<<<< HEAD
-                            <select class="form-select form-control form-control-sm" name="staff_id" class="form-control" id="staff">
+                            <select class="form-select form-control form-control-sm" name="staff_id" class="form-control" id="block">
                                 @foreach($staffs as $staff)
                                 <option value="{{$staff->id}}">{{$staff->staffname}}</option>
                                 @endforeach
                             </select>
-=======
-                            <input type="text" name="invigilator" class="form-control form-control-sm" id="invigilator">
+                            <!-- <input type="text" name="staff_id" class="form-control form-control-sm" id="invigilator"> -->
                             @error('invigilator')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
-                        </div>
-
-                        <div class="col-md-3 mt-3">
-                            <button type="submit" class="btn btn-primary btn-sm">Add room</button>
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                         </div>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary btn-sm">Add room</button>       

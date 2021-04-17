@@ -25,4 +25,8 @@ class roommanagment extends Model
     {
         return $this->belongsTo(StaffManage::class, "staff_id");
     }
+    public function seat()
+    {
+        return $this->belongsTo(seatallocation::class);
+    }
 }

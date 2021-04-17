@@ -12,8 +12,8 @@
                 <thead>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Exams</th>
                     <th>Rooms</th>
+                    <th>Exams</th>
                     <th>Action</th>
                 </thead>
             </tr>
@@ -21,17 +21,8 @@
             <tr>
                 <tbody>
                     <td> {{$seatallocation->id}} </td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <td> {{$seatallocation->exammanagemts->Name}} </td>
-=======
-                    <td> {{$seatallocation->name}} </td>
->>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
-=======
-                    <td> {{$seatallocation->name}} </td>
->>>>>>> 3c87a62139acbdbbb7ade569943af02168fb674e
-                    <td> {{$seatallocation->exam}} </td>
-                    <td> {{$seatallocation->rooms}} </td>
+                    <td> {{$seatallocation->room->roomno}} </td>
+                    <td> {{$seatallocation->exam}}</td>
 
                     <td>
                         <a href="{{ route('seatallocations.show', $seatallocation->id) }}" class="btn btn-info">View Arrangement</a>

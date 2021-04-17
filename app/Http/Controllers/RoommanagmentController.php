@@ -29,7 +29,7 @@ class RoommanagmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'roomno' => 'required|numeric',
+            'roomno' => 'required|string',
             'block_id' => 'required|string',
             'floor_id' => 'required|string',
             'capacity' => 'required|numeric',
