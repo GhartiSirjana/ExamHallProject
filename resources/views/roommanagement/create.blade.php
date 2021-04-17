@@ -27,11 +27,7 @@
                         <div class="col-md-6">
                             <label for="room" class="form-label">Room No</label>
                             <input type="text" name="roomno" class="form-control form-control-sm" id="room">
-                            @error('roomno')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror
+                          
                         </div>
                         <div class="col-md-6">
                             <label for="room" class="form-label">Block</label>
@@ -39,17 +35,10 @@
                                 @foreach($blocks as $block)
                                 <option value="{{$block->id}}">{{$block->block}}</option>
                                 @endforeach
-                                <!-- @if($errors->any())
-                                @foreach($errors->all() as $error)
-                                <div>
-                                    <span class="text-danger">{{$error}}</span>
-                                </div>
-                                @endforeach
-                                @endif -->
+                               
+                              
                             </select>
-                            @error('block_id')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
+                         
                         </div>
 
                         <div class="col-md-6">
@@ -58,41 +47,25 @@
                                 @foreach($floors as $floor)
                                 <option value="{{$floor->id}}">{{$floor->floor}}</option>
                                 @endforeach
-                                <!-- @error('floor_id')
-                                <div>
-                                    <span class="text-danger">{{$message}}</span>
-                                </div>
-                                @enderror -->
+                            
                             </select>
                         </div>
 
                         <div class="col-md-6">
                             <label for="roomcapacity" class="form-label">Room capacity</label>
                             <input type="number" name="capacity" class="form-control form-control-sm" id="roomcapacity">
-                            <!-- @error('capacity')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
+                          
                         </div>
                         <div class="col-md-6">
                             <label for="rows" class="form-label">No of rows</label>
                             <input type="number" name="rows" class="form-control form-control-sm" id="rows">
-                            <!-- @error('rows')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
+                         
                         </div>
 
                         <div class="col-md-6">
                             <label for="column" class="form-label">No of column</label>
                             <input type="number" name="columns" class="form-control form-control-sm" id="column">
-                            <!-- @error('columns')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
+                         
                         </div>
                         <div class="col-md-12">
                             <label for="invigilator" class="form-label">Invigilator</label>

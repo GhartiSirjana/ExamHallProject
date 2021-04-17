@@ -51,13 +51,9 @@
                                 <label> Semester </label>
                                 <input type="text" name="semester" class="form-control">
                                 @error('semester')
-<<<<<<< HEAD
                                 <div>
                                     <span class="text-danger">{{$message}}</span>
                                 </div>
-=======
-                                <span class="text-danger">{{$message}}</span>
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                                 @enderror
                             </div>
 
@@ -67,28 +63,20 @@
                                         <div class="form-group col mb-0">
                                             <label> Subject Name </label>
                                             <input type="text" name="subjectname[]" class="form-control">
-<<<<<<< HEAD
                                             @error('subjectname')
                                             <div>
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
                                             @enderror
-=======
-                                      
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                                         </div>
                                         <div class="form-group col mb-0">
                                             <label> SubjectCode </label>
-                                            <input type="number" name="code[]" class="form-control">
-<<<<<<< HEAD
+                                            <input type="text" name="code[]" class="form-control">
                                             @error('code[]')
                                             <div>
                                                 <span class="text-danger">{{$message}}</span>
                                             </div>
                                             @enderror
-=======
-                                       
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
                                         </div>
                                         <template x-if="index > 0">
                                             <button type="button" @click="subjects.splice(index, 1)" class="btn btn-danger btn-add-subject"><i class="fa fa-minus"></i></button>

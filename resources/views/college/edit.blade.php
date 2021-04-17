@@ -38,7 +38,7 @@
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Update</button>
-                <button type="button" class="btn">Close</button>
+              
 
             </form>
         </div>

@@ -47,7 +47,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-sm">Add College</button>
-                        <!-- <button type="submit" class="btn">Close</button> -->
+                       
 
                     </form>
                 </div>

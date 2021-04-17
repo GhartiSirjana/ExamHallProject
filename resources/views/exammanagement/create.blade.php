@@ -92,9 +92,7 @@
                         <div class="col-md-2 ml-auto">
                             <button type="submit" class="btn btn-primary btn-sm">Add Exam</button>
                         </div>
-                        <div class="col-md-2">
-                            <button type="submit" class="btn btn-sm">Close</button>
-                        </div>
+                   
                     </form>
                 </div>
 

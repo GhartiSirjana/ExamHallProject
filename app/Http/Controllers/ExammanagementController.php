@@ -37,7 +37,7 @@ class ExammanagementController extends Controller
             'faculty_id' => 'required|string',
             'semester' => 'required|string',
             'subject_id' => 'required|string',
-            'Exam_Date' => 'required|date_format:Y-m-d',
+            'subject_id' => 'required|date_format:Y-m-d',
             'Start_Time' => 'required|',
             'End_Time' => 'required|'
         ]);
@@ -59,29 +59,30 @@ class ExammanagementController extends Controller
         $departments = Department::all();
         $faculties = Faculty::all();
         $subjects = subject::all();
-        return view('exammanagement.create', compact('exammanagement','departments','faculties', 'subjects'));
+        return view('exammanagement.edit', compact('exammanagement','departments','faculties', 'subjects'));
     }
 
     
     public function update(Request $request, exammanagement $exammanagement)
     {
-        $request->validate([
-            'name' => 'required|string|min:5|max:100',
-            'faculty' => 'required|string',
+         $request->validate([
+            'Name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
+            'department_id' => 'required|string',
+            'faculty_id' => 'required|string',
             'semester' => 'required|string',
-            'subject' => 'required|string',
-            'examdate' => 'required|date',
-            // 'starttime' => 'required|time',
-            // 'endtime' => 'required|time',
-
-            
-
+            'subject_id' => 'required|string',
+            'Exam_Date' => 'required|date_format:Y-m-d',
+            'Start_Time' => 'required|',
+            'End_Time' => 'required|'
         ]);
-        $exammanagement->name = $request->input('name');
-        $exammanagement->faculty = $request->input('faculty');
+        $exammanagement->Name = $request->input('Name');
+        $exammanagement->department_id = $request->input('department_id');
+        $exammanagement->faculty_id = $request->input('faculty_id');
         $exammanagement->semester = $request->input('semester');
-        $exammanagement->subject = $request->input('subject');
-        $exammanagement->exam_date = $request->input('exam_date');
+        $exammanagement->subject_id = $request->input('subject_id');
+        $exammanagement->Exam_Date = $request->input('Exam_Date');
+        $exammanagement->Start_Time = $request->input('Start_Time');
+        $exammanagement->Exam_Time = $request->input('Exam_Time');
         $exammanagement->save();
 
 

@@ -26,7 +26,7 @@ div class="container">
                         </div>
                         <div class="form-group">
                             <label> SubjectCode </label>
-                            <input type="number" name="subjectcode" value="{{$subject->subjectcode}}" class="form-control">
+                            <input type="text" name="subjectcode" value="{{$subject->subjectcode}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">

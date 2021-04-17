@@ -41,8 +41,15 @@
                                 <td>{{$block->block}}</td>
                                 <td>
                                     <a href="{{route('block.edit', $block->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="{{route('block.destroy', $block->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
+                                <td>
+                        <form action="{{route('block.destroy', $block['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
+                    </td>
                             </tbody>
                         </tr>
                         @endforeach
