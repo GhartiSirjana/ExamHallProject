@@ -21,13 +21,34 @@
             <tr>
                 <tbody>
                     <td> {{$seatallocation->id}} </td>
+<<<<<<< HEAD
                     <td> {{$seatallocation->room->roomno}} </td>
                     <td> {{$seatallocation->exam}}</td>
+=======
+
+                    <td> {{$seatallocation->exammanagemts->Name}} </td>
+
+                    <td> {{$seatallocation->name}} </td>
+
+
+                    <td> {{$seatallocation->name}} </td>
+
+                    <td> {{$seatallocation->exam}} </td>
+                    <td> {{$seatallocation->rooms}} </td>
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
 
                     <td>
-                        <a href="{{ route('seatallocations.show', $seatallocation->id) }}" class="btn btn-info">View Arrangement</a>
+     
                         <a href="{{ route('seatallocations.edit', $seatallocation->id) }}" class="btn btn-primary"> edit</a>
+                    </td>
                         <a href="{{ route('seatallocations.delete', $seatallocation->id) }}" class="btn btn-danger"> delete</a>
+                        <td>
+                        <form action="{{route('seatallocations.destroy', $seatallocation['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
                     </td>
                 </tbody>
             </tr>

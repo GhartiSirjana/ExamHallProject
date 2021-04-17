@@ -25,7 +25,7 @@
                 <label> Name </label>
                 <input type="text" name="name" class="form-control" value="{{ $faculty->name }}" required>
                 @error('name')
-                    <div class="alert alert-danger">
+                  
                         <span class="text-danger">{{ $message }}</span>
                     </div>
                 @enderror
@@ -34,7 +34,7 @@
                 <label> Short Name </label>
                 <input type="text" name="short_name" class="form-control" value="{{ $faculty->short_name }}" required>
                 @error('short_name')
-                    <div class="alert alert-danger">
+                  
                         <span class="text-danger">{{ $message }}</span>
                     </div>
                 @enderror
@@ -48,7 +48,7 @@
                 </select>
 
                 @error('department_id')
-                <div class="alert alert-danger">
+              
                     <span class="text-danger">{{ $message }}</span>
                 </div>
                 @enderror

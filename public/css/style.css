@@ -19,3 +19,498 @@
     width: 100%;
     height: 100vh;
 }
+
+
+/* styles */
+
+@media(prefers-color-scheme:dark)
+{
+    body
+    {
+        background-color: #222f3e;
+        color: #fff;
+    }
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    /* overflow: hidden; */
+}
+
+h3
+{
+    text-align: center;
+    margin: 80px 0 0px 0;
+    padding: 40px 0 20px 0;
+}
+a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+img
+{
+    /* width: 100%; */
+    object-fit: cover;
+}
+.navbar-section{
+    background-color: rgb(41 46 62 / 53%);
+    padding: 20px;
+}
+li
+{
+    list-style: none;
+}
+
+.container-fluid
+{
+    background-color: rgba(5, 11, 15, 0.103);
+    box-shadow: 0px 10px 10px rgba(1, 10, 3, 0.5);
+    border-radius: 5px;
+}
+.header-section
+{
+    background-image: linear-gradient(to right, #26b57abf, #567ed3);
+    background-clip: border-box;
+    background-attachment: fixed;
+    position: fixed;
+    z-index: 2;
+}
+.header-section, .nav-list, .about-profile, .social-media
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-section .logo
+{
+    padding: 4px;
+}
+.header-section .logo h4
+{
+    background-image: linear-gradient(to bottom, #f3084e, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+li
+{
+    position: relative;
+}
+.nav-link:hover
+{
+    color: #eb0f46;
+}
+ .nav-link::before
+{
+    content: '';
+    position: absolute;
+    top:35px;
+    left: 0px;
+    width:0%;
+    height: 2px;
+    border-bottom: 2px solid #f3084e;
+    transition: all 0.4s linear;
+}
+
+ .nav-link:hover::before
+{
+    width: 95%;
+} 
+
+.sign, .log
+{
+    border: 0;
+    background-color: #f3084e;
+    border-radius: 5px;
+
+}
+a.small
+{
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+a.small:hover
+{
+    transition: all 0.5s linear;
+    border-radius: 5px;
+}
+
+
+
+.main-body-image
+{
+    width: 70%;
+    text-align: center;
+    /* height: 100vh; */
+}
+
+.carousel-item img
+{
+    margin-bottom: 50px;
+}
+
+/*  style of about section*/
+.about-image
+{
+    padding: 30px;
+}
+
+.about-image img
+{
+    border-radius: 5px;
+}
+
+.about-description h3
+{
+    text-transform: uppercase;
+    padding: 30px;
+    color: #ffffffa6;
+    font-size: 35px;
+}
+.about-description p
+{
+    padding: 30px;
+}
+
+
+
+/* ending of about section */
+
+
+/* style of student-allocation */
+
+
+
+.student-profiles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-images
+{
+    margin-bottom: 30px;
+}
+
+.profile-images img
+{
+    border-radius: 5px;
+}
+/* ending style of student-allocation */
+
+/* starting style of teachers-allocation */
+
+.teacher-profiles, .room
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(1, 250px);
+    /* grid-template-rows: auto; */
+    grid-gap: 20px;
+    grid-auto-rows: 200px;
+    padding: 0px 0 40px 0;
+}
+.teacher-profiles img
+{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    height: 100%;
+}
+
+
+/* ending style of teachers-allocation */
+
+
+/* starting style of room allocation  */
+.room img
+{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px; 
+    height: 100%;
+}
+
+
+/* ending style of room allocation  */
+
+/* starting style of group member */
+.member-profile
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+}
+.mem
+{
+    margin: 10px;
+    box-shadow: 0px 0px 12px rgba(10, 2, 2, 0.2),
+    15px 15px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+.mem-profile
+{
+    width: 150px;
+    /* height: 10px; */
+    text-align: center;
+
+}
+.mem img
+{
+    width: 50%;
+    object-fit: cover;
+    height: 50%;
+    border-radius:50%;  
+
+}
+h5
+{
+    padding: 10px 0;
+    font-size: 16px;
+}
+.mem-description p
+{
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+/* ending style of group member */
+
+/* starting style of contact */
+.form-group
+{
+    position: relative;
+}
+input
+{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 0 0;
+}
+input::placeholder
+{
+    color: #fff;
+}
+
+label
+{
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transition: 0.3s;
+    margin: 0;
+}
+.form-group input[type="submit"]
+{
+    /* width: 10%; */
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    /* margin: 10px 0 40px 0; */
+    background: #ea3241;
+    transition:0.5s;
+}
+input:focus
+{
+    border-bottom: 1px solid rgb(0, 183, 255);
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label
+{
+    position: absolute;
+    left: 0;
+    top: -10px;
+    color: rgba(19, 226, 233, 0.863);
+}
+
+/* ending of contact section */
+
+/* starting style of footer */
+footer
+{
+    margin: 30px 0 0 0;
+    /* background-color:rgba(5, 11, 15, 0.103); */
+}
+
+footer p
+{
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    padding: 20px;
+}
+
+.up
+{
+    position: relative;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+.fas
+{
+    position: absolute;
+    right: 0;
+    background: white;
+    color: #000;
+    padding: 10px 11px;
+    border-radius: 50%;
+}
+
+@keyframes pulse
+{
+    0%
+    {
+        box-shadow: 0 0 0 rgba(253, 87, 191, 0.99);
+    }
+    70%
+    {
+        box-shadow: 0 0 2rem rgba(253, 87, 191, 0);
+    } 
+    100%
+    {
+        box-shadow: 0 0 0 rgba(253, 87, 191, 0.99);
+    }
+}
+
+/* ending style of footer */
+
+
+
+/* style of registration.php */
+@media(prefers-color-scheme:dark)
+    {
+        body
+        {
+            background-color: #222f3e;
+            position: relative;
+        }
+        .main-div
+        {
+            background-color: #222f3e;
+            color: #fff;
+        }
+    }
+.main-div
+    {
+        background-color: #222f3e;
+        color: #fff;
+        width: 50%;
+        top: 5%;
+        left: 25%;
+        position: absolute;
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2),
+            15px 15px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+    .main-div h1
+    {
+        font-size: 20px;
+        padding: 20px 0 30px 0;
+        text-transform: uppercase;
+    }
+    .form-group
+    {
+        position: relative;
+        padding: 10px 0;
+    }
+
+    .form-group .form-control
+    {
+        border: 0;
+        background-color: transparent;
+        border-bottom: 1px solid #fff;
+        border-radius: 0;
+        font-size: 12px;
+        width: 100%;
+        outline: none;
+    }
+    .form-group .form-control::placeholder
+    {
+        color: #fff;
+    }
+
+    .form-group label
+    {
+        padding: -20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 14px;
+        transition: 0.5s;
+    }
+    .form-control[type="submit"]
+    {
+        border-bottom: 0;
+        width:30%;
+        background-color: #03a9f4;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    .form-control[type="submit"]:hover
+    {
+        background-image: linear-gradient(to right, yellow, red);
+        transition: 1s;
+        /* transform: skew(120deg); */
+        /* transform: scale(-1.2); */
+        
+    }
+
+
+    .form-group .form-control:focus~label,
+    .form-group .form-control:valid~label
+    {
+        position: absolute;
+        top: -22px;
+        left: 0;
+        color: #03a9f4;
+        font-size: 12px;
+    }
+.check
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* style of index.php  */
+nav
+{
+    background-color:rgba(18, 55, 177, 0.527);
+    padding: 20px;
+}
+.nav-heading h4
+{
+   background-image: linear-gradient(to top, #e321ad, #ead234);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent; 
+   font-size: 25px;
+}
+li
+{
+    display: inline-block;
+    width: 10%;
+    height: 30px;
+}

@@ -28,11 +28,11 @@
                         <div class="col-md-6">
                             <label for="room" class="form-label">Room No</label>
                             <input type="text" name="roomno" class="form-control form-control-sm" id="room">
-                            <!-- @error('roomno')
+                            @error('roomno')
                             <div>
                                 <span class="text-danger">{{$message}}</span>
                             </div>
-                            @enderror -->
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="room" class="form-label">Block</label>
@@ -65,29 +65,50 @@
                                 </div>
                                 @enderror -->
                             </select>
+<<<<<<< HEAD
 
                         </div>
 
     
+=======
+                        </div>
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
 
                         <div class="col-md-6">
                             <label for="roomcapacity" class="form-label">Room capacity</label>
                             <input type="number" name="capacity" class="form-control form-control-sm" id="roomcapacity">
+<<<<<<< HEAD
                             @error('capacity')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
+=======
+                            <!-- @error('capacity')
+                            <div>
+                                <span class="text-danger">{{$message}}</span>
+                            </div>
+                            @enderror -->
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                         </div>
                         <div class="col-md-6">
                             <label for="rows" class="form-label">No of rows</label>
                             <input type="number" name="rows" class="form-control form-control-sm" id="rows">
+<<<<<<< HEAD
                             @error('rows')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
+=======
+                            <!-- @error('rows')
+                            <div>
+                                <span class="text-danger">{{$message}}</span>
+                            </div>
+                            @enderror -->
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                         </div>
 
                         <div class="col-md-6">
                             <label for="column" class="form-label">No of column</label>
                             <input type="number" name="columns" class="form-control form-control-sm" id="column">
+<<<<<<< HEAD
                             @error('columns')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -95,14 +116,28 @@
                         <div class="col-md-12">
                             <label for="invigilator" class="form-label">Invigilator</label>
                             <select class="form-select form-control form-control-sm" name="staff_id" class="form-control" id="block">
+=======
+                            <!-- @error('columns')
+                            <div>
+                                <span class="text-danger">{{$message}}</span>
+                            </div>
+                            @enderror -->
+                        </div>
+                        <div class="col-md-12">
+                            <label for="invigilator" class="form-label">Invigilator</label>
+                            <select class="form-select form-control form-control-sm" name="staff_id" class="form-control" id="staff">
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                                 @foreach($staffs as $staff)
                                 <option value="{{$staff->id}}">{{$staff->staffname}}</option>
                                 @endforeach
                             </select>
+<<<<<<< HEAD
                             <!-- <input type="text" name="staff_id" class="form-control form-control-sm" id="invigilator"> -->
                             @error('invigilator')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
+=======
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                         </div>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary btn-sm">Add room</button>       

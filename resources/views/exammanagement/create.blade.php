@@ -41,6 +41,9 @@
                                 <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                 @endforeach
                             </select>
+                            @error('faculty_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Subject</label>
@@ -49,6 +52,9 @@
                                 <option value="{{$subject->id}}">{{$subject->subjectname}}</option>
                                 @endforeach
                             </select>
+                            @error('subject_id')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Semester</label>
@@ -58,6 +64,9 @@
                                 <option value="{{$subject->id}}">{{$subject->semester}}</option>
                                 @endforeach
                             </select>
+                            @error('semester')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label>Exam date</label>

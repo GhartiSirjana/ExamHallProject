@@ -27,6 +27,10 @@ class SubjectController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
         // dd($faculties);
         return view('subject.create', compact('departments', 'faculties'));
     }

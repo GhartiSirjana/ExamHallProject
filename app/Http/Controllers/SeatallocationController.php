@@ -24,6 +24,8 @@ class SeatallocationController extends Controller
         $blocks = Block::all();
         $rooms = roommanagment::all();
         return view('seatallocation.create', compact('exams', 'blocks', 'rooms'));
+
+
     }
 
     public function store(Request $request)

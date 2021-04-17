@@ -125,33 +125,33 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
+<<<<<<< HEAD
             <a href="{{ route('room.index') }}" class="nav-link">
             <i class="fas fa-person-booth"></i>
+=======
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+>>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
               <p>
                 Room Management
-                <!-- <i class="fas fa-angle-left right"></i> -->
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <!-- <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('room.create') }}" class="nav-link">
                 <i class="fas fa-plus"></i>
                   <p>Create</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('room.index') }}" class="nav-link">
                 <i class="fas fa-eye"></i>
                   <p>Show</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-edit"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-            </ul> -->
+              
+            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('student.index')}}" class="nav-link">
@@ -215,10 +215,16 @@
 
           <!-- <li class="nav-header">LABELS</li> -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}" id="logoutform">
+                            @csrf
+                             
+                        </form>
+                        <button class="nav-link" onclick="event.preventDefault();
+                                                document.getElementById('logoutform').submit();">
               <i class="nav-icon far fa-circle text-danger"></i>
               <p class="text">Logout</p>
-            </a>
+            </button>
           </li>
 
         </ul>
@@ -283,7 +289,9 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('dist/js/demo.js')}}"></script>
+<script src="{{asset('dist/js/demo.js')}}">
+  
+</script>
 
 @stack('scripts')
 </body>

@@ -21,8 +21,7 @@
                             <label>Faculty Name </label>
                             <input type="text" name="name" class="form-control form-control-sm">
                             @error('name')
-                            <div class="alert alert-danger">
-                                <span class="text-danger">{{ $message }}</span>
+                         <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
                         </div>
@@ -30,7 +29,7 @@
                             <label>Faculty Short Name </label>
                             <input type="text" name="short_name" class="form-control form-control-sm">
                             @error('short_name')
-                            <div class="alert alert-danger">
+                           
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror
@@ -44,7 +43,7 @@
                             </select>
 
                             @error('department_id')
-                            <div class="alert alert-danger">
+                         
                                 <span class="text-danger">{{ $message }}</span>
                             </div>
                             @enderror

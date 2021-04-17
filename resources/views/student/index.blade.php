@@ -28,7 +28,7 @@
                     <th>Parent Name</th>
                     <th>Mobile</th>
                     <th>Address</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </thead>
             </tr>
             @foreach($students as $student)
@@ -50,7 +50,15 @@
                     <td>{{$student->address}}</td>
                     <td>
                         <a href="{{route('student.edit', $student->id)}}" class="btn btn-info btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                        <a href="{{route('students.destroy')}}" class="btn btn-danger btn-sm">Delete</a>
+                        <td>
+                        <form action="{{route('students.destroy', $student['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
                     </td>
                 </tbody>
             </tr>
