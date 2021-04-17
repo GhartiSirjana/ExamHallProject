@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFloorsTable extends Migration
+class CreateExamsubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateFloorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('floors', function (Blueprint $table) {
+        Schema::create('examsubjects', function (Blueprint $table) {
             $table->id();
+            //examination_id
+            // subject_id
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateFloorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('floors');
+        Schema::dropIfExists('examsubjects');
     }
 }

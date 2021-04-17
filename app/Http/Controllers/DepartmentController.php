@@ -92,7 +92,7 @@ class DepartmentController extends Controller
         $department->save();
 
         $request->session()->flash('msg', 'data submitted');
-        return redirect('/departments');
+        return redirect('/departments.index');
     //    $department->update($request->all());
     //    return redirect('/departments');
     }
@@ -103,9 +103,10 @@ class DepartmentController extends Controller
      * @param  \App\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Department $department)
+    public function destroy($id)
     {
+        $department = Department::find($id);
         $department->delete();
-        return redirect()->route('/departments');
+        return redirect('/departments');
     }
 }

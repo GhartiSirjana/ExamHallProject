@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Block;
 use App\Models\Floor;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,13 @@ class FloorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        
         $floors = Floor::all();
-        $return view('')
+        $blocks = Block::all();
+        // dd($blocks);
+        return view('floor.index', compact('floors', 'blocks'));
     }
 
     /**
@@ -25,7 +29,7 @@ class FloorController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +40,12 @@ class FloorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'block_id'=>'required|string',
+            'floor'=>'required|string'
+        ]);
+        $roomfloor = Floor::create($data);
+        return redirect('/floor');
     }
 
     /**

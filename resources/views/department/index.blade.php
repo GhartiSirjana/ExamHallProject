@@ -12,7 +12,7 @@
                     <th>Code</th>
                     <th>Description</th>
                     <th>No of Faculties</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </thead>
             </tr>
             @foreach($department as $depart)
@@ -24,17 +24,25 @@
                     <td>{{ Str::limit($depart->description, $limit = 20)}}</td>
                     <td>{{$depart->faculties->count()}}</td>
                     <td>
-                        <a href="{{ route('departments.show', $depart->id) }}" class="btn btn-success btn-sm">View</a>
+                        <!-- <a href="{{ route('departments.show', $depart->id) }}" class="btn btn-success btn-sm">View</a> -->
                         <a href="{{ route('departments.edit', $depart->id) }}" class="btn btn-info btn-sm">Edit</a>
-                        <a href="{{ route('departments.destroy', $depart->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a>
+                    </td>
+                    <!-- <a href="{{ route('departments.destroy', $depart->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a> -->
+                    <td>
+                        <form action="{{route('departments.destroy', $depart['id'])}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="Delete">
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+
+                    </td>
                     </td>
                 </tbody>
             </tr>
             @endforeach
         </table>
         <style>
-            .w-5
-            {
+            .w-5 {
                 display: none;
             }
         </style>

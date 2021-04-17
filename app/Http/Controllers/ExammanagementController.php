@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use App\Models\exammanagement;
 use App\Models\Faculty;
+use App\Models\subject;
 use Illuminate\Http\Request;
 
 class ExammanagementController extends Controller
@@ -12,7 +13,8 @@ class ExammanagementController extends Controller
     
     public function index()
     {
-        $exams = exammanagement::all();
+        $exams = exammanagement::with('faculty')->get();
+        // dd($exams);
         return view('exammanagement.index', compact('exams'));
 
     }
@@ -22,32 +24,25 @@ class ExammanagementController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-        return view('exammanagement.create', compact('departments','faculties'));
+        $subjects = subject::all();
+        return view('exammanagement.create', compact('departments','faculties', 'subjects'));
     }
 
     
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'Name' => 'required|string|min:5|max:100',
-            'Faculty' => 'required|string',
+            'department_id' => 'required|string',
+            'faculty_id' => 'required|string',
             'semester' => 'required|string',
-            'subject' => 'required|string',
-            // 'Exam_Date' => 'required|date',
-            // 'Start_Time' => 'required|time',
-            // 'End_Time' => 'required|time'
+            'subject_id' => 'required|string',
+            'Exam_Date' => 'required',
+            'Start_Time' => 'required',
+            'End_Time' => 'required'
         ]);
 
-        $res = new exammanagement;
-        $res->name=$request->input('Name');
-        $res->faculty=$request->input('Faculty');
-        $res->semester=$request->input('semester');
-        $res->subject=$request->input('subject');
-        $res->Exam_Date=$request->input('Exam_Date');
-        $res->Start_Time=$request->input('Start_Time');
-        $res->End_Time=$request->input('End_Time');
-
-        $res->save();
+        $exammanagement = exammanagement::create($data);
         $request->session()->flash('msg' , 'data submitted');
         return redirect('/exam');
     }
@@ -55,51 +50,49 @@ class ExammanagementController extends Controller
     
     public function show(exammanagement $exammanagement)
     {
-        return view('exammanagement.index')->with('exammanagementarr' , exammanagement::all());
+        // return view('exammanagement.show', compact('exammanagement'));
     }
 
     
-    public function edit(exammanagement $exammanagement , $id)
+    public function edit(exammanagement $exammanagement)
     {
-        return view('exammanagement.edit')->with('exammanagementarr' , exammanagement::find($id));
+        return view('exammanagement.edit', compact('exammanagement'));
     }
 
     
     public function update(Request $request, exammanagement $exammanagement)
     {
-        $request->validate([
-            'examname' => 'required|string|min:5|max:100',
-            'faculty' => 'required|string',
-            'semester' => 'required|string',
-            'subject' => 'required|string',
-            'examdate' => 'required|date',
-            // 'starttime' => 'required|time',
-            // 'endtime' => 'required|time',
+        // $request->validate([
+        //     'name' => 'required|string|min:5|max:100',
+        //     'faculty' => 'required|string',
+        //     'semester' => 'required|string',
+        //     'subject' => 'required|string',
+        //     'examdate' => 'required|date',
+        //     // 'starttime' => 'required|time',
+        //     // 'endtime' => 'required|time',
 
             
 
-        ]);
-        $res = exammanagement::find($request->id);
-        $res->name=$request->input('examname');
-        $res->faculty=$request->input('faculty');
-        $res->semester=$request->input('semester');
-        $res->subject=$request->input('subject');
-        $res->Exam_Date=$request->input('examdate');
-        $res->Start_Time=$request->input('starttime');
-        $res->End_Time=$request->input('endtime');
+        // ]);
+        // $exammanagement->name = $request->input('name');
+        // $exammanagement->faculty = $request->input('faculty');
+        // $exammanagement->semester = $request->input('semester');
+        // $exammanagement->subject = $request->input('subject');
+        // $exammanagement->exam_date = $request->input('exam_date');
+        // $exammanagement->save();
 
 
-        $res->save();
+       
 
 
-        $request->session()->flash('msg' , 'data submitted');
-        return redirect('index');
+        // $request->session()->flash('msg' , 'data submitted');
+        // return redirect('/exam');
     }
 
     
-    public function destroy(exammanagement $exammanagement , $id)
+    public function destroy(exammanagement $exammanagement)
     {
-        exammanagement::destroy(array('id' , $id));
-        return redirect('/exam');
+        // $exammanagement->delete();
+        // return redirect('/exam');
     }
 }

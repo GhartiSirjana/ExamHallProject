@@ -12,7 +12,7 @@
                     <h4>Add New Subject</h4>
                 </div>
                 <div class="col-md-2">
-                    <a href="subject.index" class="btn btn-success btn-sm">Back</a>
+                    <a href="subjects.index" class="btn btn-success btn-sm">Back</a>
                 </div>
             </div>
             <div class="card">
@@ -21,7 +21,6 @@
                     <div class="form-wrapper">
                         <form action="{{ route('subjects.store') }}" method="post">
                             @csrf
-
 
                             <div class="form-group">
                                 <label>Select Department </label>
@@ -43,12 +42,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Select Semester </label>
-                                <select class="form-select" name="semester" class="form-control" aria-label="Default select example">
-                                    @foreach($exams as $exam)
-                                    <option value="{{$exam->id}}">{{$exam->semester}}</option>
-                                    @endforeach
-                                </select>
+                                <label> Semester </label>
+                                <input type="text" name="semester" class="form-control">
                             </div>
 
                             <div class="subject-input-group" x-data="{subjects : [{subjectName: '', code: ''}]}">

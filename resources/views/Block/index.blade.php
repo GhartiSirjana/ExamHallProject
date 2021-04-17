@@ -14,14 +14,18 @@
             <div class="card">
                 <div class="card-header">Manage Block</div>
                 <div class="card-body">
-                    <form method="POST" class="row g-3 mb-4" action="{{route('room.store')}}">
+                    <form method="POST" class="row g-3 mb-4" action="{{route('block.store')}}">
                         @csrf
-                        <div class="col-md-10">
+    
+                        <div class="col-md-12">
                             <label for="room" class="form-label">Block Name</label>
                             <input type="text" name="block" class="form-control form-control-sm" id="block">
+                            @error('block')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary btn-sm">Add Block</button>
+                        <div class="col-md-2 ml-auto">
+                            <button class="btn btn-primary btn-sm"> Block</button>
                         </div>
                     </form>
                     <table class="table table-boarder">
@@ -30,16 +34,18 @@
                             <th>Block Name</th>
                             <th>Action</th>
                         </tr>
+                        @foreach($blocks as $block)
                         <tr>
                             <tbody>
-                                <td>1</td>
-                                <td>Science</td>
+                                <td>{{$block->id}}</td>
+                                <td>{{$block->block}}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="{{route('block.edit', $block->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="{{route('block.destroy', $block->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tbody>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>

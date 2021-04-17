@@ -35,8 +35,8 @@ class AddcollegeController extends Controller
         // $res->save();
 
         $college = College::create($data);
-       
-        return redirect('/college');
+        $request->session()->flash('msg', 'data submitted');
+        return redirect('/colleges');
 
 
 
@@ -45,13 +45,13 @@ class AddcollegeController extends Controller
     
     public function show(College $College)
     {
-        // return view('college.showcollege')->with('addcollegearr' , College::all());
+        return view('college.show', compact('college'));
     }
 
     
-    public function edit(College $college , $id)
+    public function edit(College $college)
     {
-        // return view('college.edit')->with('addcollegearr' , College::find($id));
+        return view('college.edit', compact('college'));
     }
 
     
@@ -63,20 +63,26 @@ class AddcollegeController extends Controller
             'description' => 'required|string',
         ]);
 
-        $college = College::create($data);
+               
+        $college->name=$request->input('name');
+        $college->address=$request->input('address');
+        $college->description=$request->input('description');
+        $college->save();
+
+        // $college = College::create($data);
         // $res =  College::find($request->id);
         // $res->name=$request->input('college');
         // $res->address=$request->input('address');
         // $res->description=$request->input('description');
         // $res->save();
         $request->session()->flash('msg' , 'data submitted');
-        return redirect('college');
+        return redirect('colleges');
     }
 
     
-    public function destroy(College $college , $id)
+    public function destroy(College $college)
     {
-        // College::destroy(array('id' , $id));
-        // return redirect('college');
+        $college->delete();
+        return redirect('/colleges');
     }
 }
