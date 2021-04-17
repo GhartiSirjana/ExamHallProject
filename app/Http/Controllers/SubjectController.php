@@ -27,16 +27,9 @@ class SubjectController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-<<<<<<< HEAD
+     
         // dd($faculties);
         return view('subject.create', compact('departments', 'faculties'));
-=======
-        $exams = exammanagement::all();
-        return view('subject.create', compact('departments', 'faculties', 'exams'));
-       
-        
-
->>>>>>> a693c0bae89f37b59ad26bc6c6cd41e5e87f896b
     }
 
     public function store(Request $request)

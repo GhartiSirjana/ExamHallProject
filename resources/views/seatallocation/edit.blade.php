@@ -12,7 +12,7 @@
     <label> Name </label>
     <input type="text" name="name"  class="form-control" value="{{$seatallocation->name}}" required > 
     @error('name')
-            <div class="alert alert-danger">
+            
                 <span class="text-danger">{{ $message }}</span>
             </div>
             @enderror
@@ -27,7 +27,7 @@
             </select>
 
             @error('exams')
-            <div class="alert alert-danger">
+           
                 <span class="text-danger">{{ $message }}</span>
             </div>
             @enderror
@@ -43,7 +43,7 @@
             </select>
 
             @error('rooms')
-            <div class="alert alert-danger">
+         
                 <span class="text-danger">{{ $message }}</span>
             </div>
             @enderror

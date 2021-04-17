@@ -75,6 +75,9 @@
                                     <option>2nd</option>
                                     <option value="2">7th</option>
                                 </select>
+                                @error('semester')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="col-md-4">
                                 <label for="student regisno" class="form-label">Registration No.</label>

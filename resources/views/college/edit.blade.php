@@ -25,10 +25,16 @@
                 <div class="mb-3">
                     <label>Address</label>
                     <input type="text" name = "address" class="form-control" id="address"value="{{ $college->address}}" >
+                    @error('address')
+                    <span class = "text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                         <label>Description</label>
                         <input type="text" name="description" class="form-control" id="Desc" value="{{$college->description}}" >
+                        @error('description')
+                    <span class = "text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Update</button>
