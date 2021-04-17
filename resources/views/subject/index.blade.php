@@ -8,6 +8,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 =======
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
         {{session('msg')}}
@@ -24,7 +27,10 @@
                     <th>Faculty</th>
                     <th>Department</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <th>Created_at</th>
+=======
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 =======
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                     <th colspan="2">Action</th>
@@ -40,6 +46,7 @@
                     <td> {{$subject->semester}} </td>
                     <td> {{$subject->faculty->name}} </td>
                     <td> {{$subject->department->department_name}} </td>
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <td> {{$subject->created_at}} </td>
                     <td>
@@ -81,11 +88,16 @@
 <td>
 >>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
 =======
+=======
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                     <td>
                         <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-primary btn-sm"> edit</a>
                     </td>
 
                     <td>
+<<<<<<< HEAD
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
+=======
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         <form action="{{route('subjects.destroy', $subject['id'])}}" method="post">
                             {{csrf_field()}}
@@ -96,6 +108,9 @@
                     </td>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 =======
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                 </tbody>
@@ -104,6 +119,7 @@
         </table>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 </tbody>
 </tr>
@@ -111,6 +127,8 @@
 </table>
 </div>
 >>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
+=======
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 =======
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 </div>

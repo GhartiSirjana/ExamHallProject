@@ -70,7 +70,11 @@
                                         <div class="form-group col mb-0">
                                             <label> SubjectCode </label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <input type="number" name="code[]" class="form-control">
+=======
+                                            <input type="text" name="code[]" class="form-control">
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 =======
                                             <input type="text" name="code[]" class="form-control">
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b

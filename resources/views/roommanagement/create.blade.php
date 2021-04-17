@@ -50,18 +50,15 @@
                                 @endforeach
                             
                             </select>
-<<<<<<< HEAD
 
                         </div>
 
     
-=======
-                        </div>
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
 
                         <div class="col-md-6">
                             <label for="roomcapacity" class="form-label">Room capacity</label>
                             <input type="number" name="capacity" class="form-control form-control-sm" id="roomcapacity">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                             @error('capacity')
@@ -77,10 +74,14 @@
 =======
                           
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
+=======
+                          
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
                         <div class="col-md-6">
                             <label for="rows" class="form-label">No of rows</label>
                             <input type="number" name="rows" class="form-control form-control-sm" id="rows">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                             @error('rows')
@@ -96,11 +97,15 @@
 =======
                          
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
+=======
+                         
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
 
                         <div class="col-md-6">
                             <label for="column" class="form-label">No of column</label>
                             <input type="number" name="columns" class="form-control form-control-sm" id="column">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                             @error('columns')
@@ -116,6 +121,9 @@
                                 <span class="text-danger">{{$message}}</span>
                             </div>
                             @enderror -->
+=======
+                         
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
 =======
                          
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b

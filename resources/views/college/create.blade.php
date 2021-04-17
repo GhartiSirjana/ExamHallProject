@@ -40,11 +40,7 @@
                             <label for="productDesc" class="form-label">Description</label>
                             <input type="text" name="description" class="form-control form-control-sm" id="Desc">
                             @error('description')
-<<<<<<< HEAD
                             <div>
-=======
-                            
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                                 <span class="text-danger">{{ $message }}</span>
                            
                             @enderror
@@ -52,7 +48,10 @@
 
                         <button type="submit" class="btn btn-primary btn-sm">Add College</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                        
 
 >>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
