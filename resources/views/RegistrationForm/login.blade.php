@@ -34,7 +34,7 @@
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary btn-block btn-sm">Login</button>
-                            <span>Don't Have an Account?</span>
+                            <a href="{{route('register.index')}}">Don't Have an Account</a>
                         </form>
                 </div>
             </div>

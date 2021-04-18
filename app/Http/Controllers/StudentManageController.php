@@ -48,12 +48,12 @@ class StudentManageController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|min:5|max:15|string|regex:/^[a-zA-Z\s]+$/',
-            'college_id' => 'required|regex:/^[a-zA-Z\s]+$/',
-            'department_id' => 'required|regex:/^[a-zA-Z\s]+$/', 
-            'faculty_id' => 'required|regex:/^[a-zA-Z\s]+$/',
+            'college_id' => 'required',
+            'department_id' => 'required', 
+            'faculty_id' => 'required',
             'year' => 'required|numeric',
             'semester' => 'required|string',
-            'registerNumber'=> 'required|numeric',
+            'registerNumber'=> 'required|string',
             'symbolno' => 'required|numeric|unique:student_manages,symbolno',
             'dob' => 'required|date_format:Y-m-d',
             'email'=>'required|unique:users',

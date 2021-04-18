@@ -37,7 +37,8 @@ class ExammanagementController extends Controller
             'faculty_id' => 'required|string',
             'semester' => 'required|string',
             'subject_id' => 'required|string',
-            'subject_id' => 'required|date_format:Y-m-d',
+            'subject_id' => 'required',
+            'Exam_Date' => 'required',
             'Start_Time' => 'required|',
             'End_Time' => 'required|'
         ]);

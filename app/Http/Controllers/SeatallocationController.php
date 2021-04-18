@@ -6,6 +6,8 @@ use App\Models\exammanagement;
 use App\Models\seatallocation;
 use App\Models\Block;
 use App\Models\roommanagment;
+use App\Models\SeatAllocationExam;
+use App\Models\SeatAllocationRoom;
 use Illuminate\Http\Request;
 
 class SeatallocationController extends Controller
@@ -14,6 +16,7 @@ class SeatallocationController extends Controller
     public function index()
     {
         $seatallocations = seatallocation::all();
+        // dd("$seatallocations");
         return view('seatallocation.index', compact('seatallocations'));
     }
 
@@ -21,10 +24,9 @@ class SeatallocationController extends Controller
     public function create()
     {
         $exams = exammanagement::all();
-        $blocks = Block::all();
+        // $blocks = Block::all();
         $rooms = roommanagment::all();
-        return view('seatallocation.create', compact('exams', 'blocks', 'rooms'));
-
+        return view('seatallocation.create', compact('rooms', 'exams'));
 
     }
 
@@ -32,20 +34,20 @@ class SeatallocationController extends Controller
     {
        $data = $request->validate([
             'name' => 'required|string|min:4|max:100',
-            'room_id' => 'required|string',
-            'exam' => 'required|array|min:3',
-            'exam.*'=>'required|string',
-
+            'rooms' => 'required|array',
+            'rooms.*' => 'required|numeric',
+            'exams' => 'required|array',
+            'exams.*'=>'required|numeric',
         ]);
-        foreach($data['exam'] as $index => $seat){
-            $seatallocation = seatallocation::create([
-                'name' => $data['name'],
-                'room_id' => $data['room_id'],
-                'exam' => $seat
-            ]);
-        }
-      
-         $request->session()->flash('msg', 'data submitted');
+
+        // save seat allocation
+        $seatallocation = seatallocation::create(['name' => $data['name']]);
+
+        $seatallocation->selectedRooms()->attach($data['rooms']);
+        $seatallocation->selectedExams()->attach($data['exams']);
+
+        
+        $request->session()->flash('msg', 'data submitted');
         return redirect('/seatallocations');
     }
 
@@ -65,7 +67,7 @@ class SeatallocationController extends Controller
     {
         $request->validate([
             'name' => 'required|string|min:5|max:100|regex:/^[a-zA-Z\s]+$/',
-            'exam_id' => 'required|string|',
+            'exam' => 'required|string|',
             'room_id' => 'required|string',
            
         ]);
@@ -79,8 +81,6 @@ class SeatallocationController extends Controller
         $request->session()->flash('msg', 'data submitted');
         return redirect('seatallocations');
     }
-
-    
     public function destroy(seatallocation $seatallocation)
     {
         $seatallocation->delete();

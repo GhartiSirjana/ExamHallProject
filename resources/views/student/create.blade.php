@@ -3,96 +3,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+            <div>
+                <span class="text-danger">{{$error}}</span>
+            </div>
+            @endforeach
+            @endif
             <div class="row my-3">
                 <div class="col-md-10">
                     <h4>Add New Student</h4>
                 </div>
-<<<<<<< HEAD
-                <div class="card">
-                    <div class="card-header">Add Student</div>
-                    <div class="card-body">
-                        <form class="row g-3" method="POST" action="{{route('student.store')}}">
-                            @csrf
-
-                            <div class="col-md-12">
-                                <label for="student name" class="form-label">Student Name</label>
-                                <input type="text" class="form-control form-control-sm" name="name" id="studentname" value="">
-                                @error('name')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-6">
-                                <label for="student college" class="form-label">Student College</label>
-                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="college">
-                                    @foreach($colleges as $college)
-                                    <option value="{{$college->id}}">{{$college->name}}</option>
-                                    @endforeach
-                                </select>
-                            @error('college')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-6">
-                                <label for="student department" class="form-label">Student Department</label>
-                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="department">
-                                    @foreach($departments as $department)
-                                    <option value="{{$department->id}}">{{$department->department_name}}</option>
-                                    @endforeach
-
-                                </select>
-                                @error('department')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-5">
-                                <label for="student faculty" class="form-label">Student Faculty</label>
-                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="faculty">
-                                    @foreach($faculties as $faculty)
-                                    <option value="{{$faculty->id}}">{{$faculty->short_name}}</option>
-                                    @endforeach
-
-                                </select>
-                                @error('faculty')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-3">
-                                <label for="year" class="form-label">Year</label>
-                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="year">
-                                    <option selected>2070</option>
-                                    <option>2071</option>
-                                    <option value="2">2073</option>
-                                </select>
-                                @error('year')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-4">
-                                <label for="student semester" class="form-label">Semester</label>
-                                <select class="form-select form-control form-control-sm" aria-label="Default select example" name="semester">
-                                    <option selected>1<sup>st</sup></option>
-                                    <option>2nd</option>
-                                    <option value="2">7th</option>
-                                </select>
-                                @error('semester')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-4">
-                                <label for="student regisno" class="form-label">Registration No.</label>
-                                <input type="text" class="form-control form-control-sm" name="registerNumber" id="" value="">
-                                @error('registerNumber')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-                            <div class="col-md-4">
-                                <label for="student symbolno" class="form-label">Symbol No.</label>
-                                <input type="text" class="form-control form-control-sm" name="symbolno" id="" value="">
-                                @error('symbolno')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-=======
                 <div class="col-md-2">
                     <a href="{{ route('student.index') }}" class="btn btn-success btn-sm">Back</a>
                 </div>
@@ -138,11 +59,6 @@
                         <div class="col-md-4">
                             <label for="year" class="form-label">Year</label>
                             <input type="text" name="year" class="form-control form-control-sm">
-                            <!-- <select class="form-select form-control form-control-sm" aria-label="Default select example" name="year">
-                                    <option selected>2070</option>
-                                    <option>2071</option>
-                                    <option value="2">2073</option>
-                                </select> -->
                         </div>
                      
                         <div class="col-md-4">
@@ -168,7 +84,6 @@
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
 
                         <div class="col-md-4">
                             <label for="student dob" class="form-label">Date of Birth</label>

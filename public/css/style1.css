@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 
 * {
     margin: 0;
@@ -8,6 +9,14 @@
     /* color: #fff; */
 }
 
+.main-heading
+{
+    letter-spacing: 2px;
+    font-weight: bolder;
+    word-spacing: 1px;
+    font-size: 20px;
+    margin-top: -5px;
+}
 img {
     object-fit: cover;
     width: 100%;

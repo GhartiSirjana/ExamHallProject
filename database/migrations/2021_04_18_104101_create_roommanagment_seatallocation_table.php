@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegisterTable extends Migration
+class CreateRoommanagmentSeatallocationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateRegisterTable extends Migration
      */
     public function up()
     {
-        Schema::create('register', function (Blueprint $table) {
+        Schema::create('roommanagment_seatallocation', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('address');
-            $table->string('email');
-            $table->string('password');
-            $table->string('repeat_password');
-            $table->string('role');
+            $table->foreignId('roommanagment_id');
+            $table->foreignId('seatallocation_id');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateRegisterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('register');
+        Schema::dropIfExists('roommanagment_seatallocation');
     }
 }

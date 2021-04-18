@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeatallocationsTable extends Migration
+class CreateSeatArrangesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateSeatallocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('seatallocations', function (Blueprint $table) {
+        Schema::create('seat_arranges', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->timestamps();
         });
     }
-
-    // seatallocation_rooms
-    // seatallocation_exams
 
     /**
      * Reverse the migrations.
@@ -30,6 +26,6 @@ class CreateSeatallocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seatallocations');
+        Schema::dropIfExists('seat_arranges');
     }
 }

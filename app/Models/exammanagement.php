@@ -24,9 +24,9 @@ class exammanagement extends Model
         return $this->belongsTo(subject::class,'subject_id');
     }
     //has many examsubjects
-    public function seat()
+    public function seatallocations()
     {
-        return $this->belongsTo(seatallocation::class);
+        return $this->belongsToMany(seatallocation::class);
     }
 
 }

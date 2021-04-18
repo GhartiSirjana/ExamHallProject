@@ -9,12 +9,12 @@ class seatallocation extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function exam()
-    {
-        return $this->hasMany(exammanagement::class);
+
+    public function selectedRooms() {
+        return $this->belongsToMany(roommanagment::class);
     }
-    public function room()
-    {
-        return $this->hasMany(roommanagment::class);
+
+    public function selectedExams() {
+        return $this->belongsToMany(exammanagement::class);
     }
 }

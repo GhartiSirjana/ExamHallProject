@@ -86,8 +86,7 @@
                                 <label for="role" class="form-label">Role</label>
                                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="role">
                                     <option selected>Admin</option>
-                                    <option value="1">Employee</option>
-                                    <option value="2">Employer</option>
+                                    <option value="1">Student</option>
                                 </select>
                                 @error('role')
                                 <span class="text-danger">{{$message}}</span>
@@ -95,6 +94,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block btn-sm">Submit</button>
+                            <a href="{{route('form.loginhome')}}">If You Already have an Account</a>
                         </form>
                     </div>
                 </div>

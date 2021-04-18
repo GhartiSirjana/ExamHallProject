@@ -31,10 +31,6 @@
                 <td>{{$room->columns}}</td>
                 <td>{{$room->staff->staffname}}</td>
                 <td>
-<<<<<<< HEAD
-                   
-=======
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                     <a href="{{route('room.edit', $room->id)}}" class="btn btn-primary btn-sm">Edit</a>
                 </td>
                     <td>

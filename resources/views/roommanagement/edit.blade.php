@@ -58,11 +58,7 @@
                     <span class = "text-danger">{{$message}}</span>
                     @enderror
                 </div>
-
-
-                <button type="submit" class="btn btn-primary">Add room</button>
-              
-
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
                     

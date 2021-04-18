@@ -31,15 +31,11 @@
                         <div class="col-md-12">
                             <label> Name </label>
                             <input type="text" name="name" class="form-control form-control-sm">
-                            <!-- @error('name')
-                            <div>
-                                <span class="text-danger">{{ $message }}</span>
-                            </div>
-                            @enderror -->
+                            
                         </div>
                         <div class="col mb-12">
                             <label>Select Rooms </label>
-                            <select class="form-select" aria-label="Default select example" name="room_id" id="room">
+                            <select class="form-select" multiple aria-label="Default select example" name="rooms[]" id="room">
                                 @foreach($rooms as $room)
                                 <option value="{{$room->id}}" class="m-0">{{$room->roomno}}</option>
                                 @endforeach
@@ -51,67 +47,21 @@
                             </div>
                             @enderror
                         </div>
-                        <div class="exam-input-group" x-data="{seatallocations:[{exam:''}]}">
-                            <template x-for="(item, index) in seatallocations" :key="index">
-                                <div class="form-row mb-3 align-items-end">
-                                    <div class="form-group col mb-0">
-                                        <label for="">Select Exams</label>
-                                        <input type="text" name="exam[]" class="form-control">
+                        <div class="exam-input-group">
+                            <label for="">Select Exams</label>
+                            <div class="form-group col mb-0">
+                                        <select name="exams[]" multiple class="form-control">
+                                            @foreach($exams as $exam)
+                                            <option value="{{ $exam->id }}">{{  $exam->Name}}</option>
+                                            @endforeach
+                                        </select>
+
                                     </div>
-                                    <template x-if="index>0">
-                                        <button type="button" @click="seatallocations.splice(index, 1)" class="btn btn-danger btn-add-seatallocation"><i class="fa fa-minus"></i></button>
-                                    </template>
-                                    <template x-if="index==0">
-                                        <button type="button" @click="seatallocations.push({exam:''})" class="btn btn-primary btn-add-exam"><i class="fa fa-plus"></i></button>
-                                    </template>
-                                </div>
-                            </template>
                         </div>
-                        <!-- <div class="col-md-11">
-                            <label>Select Exams </label>
-                            <select class="form-select" name="exam_id" class="form-control" aria-label="Default select example">
-
-                                @foreach($exams as $exam)
-                                <option value="{{$exam->id}}">{{$exam->Name}}</option>
-                                @endforeach
-
-                                @foreach($exams as $exam)
-                                <option value="{{$exam->id}}">{{$exam->Name}}</option>
-                                @endforeach
-
-
-                                @foreach($exams as $exam)
-                                <option value="{{$exam->id}}">{{$exam->Name}}</option>
-                                @endforeach
-
-                                <option value=""></option>
-
-                                <option value=""></option>
-
-<<<<<<< HEAD
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-=======
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-                            </select>
-                            @error('exam_id')
-                            <div>
-                                <span class="text-danger">{{ $message }}</span>
-                            </div>
-                            @enderror
-                        </div> -->
-                        <!-- <div class="col-md-1 mt-5">
-                            <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-                        </div> -->
+                    
                         <div class="col-md-3">
                             <button type="submit" class="btn btn-primary"> Save </button>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-                           
 
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
                     </form>
                 </div>

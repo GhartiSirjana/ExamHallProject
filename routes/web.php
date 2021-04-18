@@ -52,13 +52,12 @@ Route::post('/store', [RegisterController::class, 'store'])->name('register.stor
 // Route for the Login
 Route::get('/loginindex', [RegisterController::class, 'loginIndex'])->name('form.loginhome');
 
-// Route for the layout Admin
+// Route for the lagout Admin
 Route::post('/adminlogin', [RegisterController::class, 'login'])->name('form.login');
 
 
 // Route for the Dashboard
 Route::resource('/dashboard', DashboardController::class);
-
 // Resource route for department
 Route::resource('departments', DepartmentController::class);
 
@@ -103,6 +102,6 @@ Route::get('seatarrangement', function(){
 
 
 
-Route::get('/frontend', function () {
+Route::get('/', function () {
     return view('homepage.frontend');
 });

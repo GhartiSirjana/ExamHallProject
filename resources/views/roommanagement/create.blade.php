@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 @section('content')
 
-@if($errors->any())
-@foreach($errors->all() as $error)
-<div>
-    <span class="text-danger">{{$error}}</span>
-</div>
-@endforeach
-@endif
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
+            @if($errors->any())
+            @foreach($errors->all() as $error)
+            <div>
+                <span class="text-danger">{{$error}}</span>
+            </div>
+            @endforeach
+            @endif
             <div class="row my-3">
                 <div class="col-md-10">
                     <h4>Add New Room</h4>
@@ -58,56 +58,25 @@
                         <div class="col-md-6">
                             <label for="roomcapacity" class="form-label">Room capacity</label>
                             <input type="number" name="capacity" class="form-control form-control-sm" id="roomcapacity">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                             @error('capacity')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
-=======
-                            <!-- @error('capacity')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
-=======
-                          
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-=======
-                          
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
+
                         </div>
                         <div class="col-md-6">
                             <label for="rows" class="form-label">No of rows</label>
                             <input type="number" name="rows" class="form-control form-control-sm" id="rows">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                             @error('rows')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
-=======
-                            <!-- @error('rows')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
-=======
-                         
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-=======
-                         
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
 
                         <div class="col-md-6">
                             <label for="column" class="form-label">No of column</label>
                             <input type="number" name="columns" class="form-control form-control-sm" id="column">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                             @error('columns')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -115,34 +84,20 @@
                         <div class="col-md-12">
                             <label for="invigilator" class="form-label">Invigilator</label>
                             <select class="form-select form-control form-control-sm" name="staff_id" class="form-control" id="block">
-=======
-                            <!-- @error('columns')
-                            <div>
-                                <span class="text-danger">{{$message}}</span>
-                            </div>
-                            @enderror -->
-=======
-                         
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-=======
-                         
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
+
                         </div>
                         <div class="col-md-12">
                             <label for="invigilator" class="form-label">Invigilator</label>
                             <select class="form-select form-control form-control-sm" name="staff_id" class="form-control" id="staff">
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                                 @foreach($staffs as $staff)
                                 <option value="{{$staff->id}}">{{$staff->staffname}}</option>
                                 @endforeach
                             </select>
-<<<<<<< HEAD
                             <!-- <input type="text" name="staff_id" class="form-control form-control-sm" id="invigilator"> -->
                             @error('invigilator')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
-=======
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
+
                         </div>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary btn-sm">Add room</button>       

@@ -27,6 +27,6 @@ class roommanagment extends Model
     }
     public function seat()
     {
-        return $this->belongsTo(seatallocation::class);
+        return $this->belongsToMany(seatallocation::class, "room_id");
     }
 }

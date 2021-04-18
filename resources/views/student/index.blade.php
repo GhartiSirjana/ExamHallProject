@@ -51,12 +51,13 @@
                     <td>
                         <a href="{{route('student.edit', $student->id)}}" class="btn btn-info btn-sm">Edit</a>
                     </td>
-                        <a href="{{route('students.destroy')}}" class="btn btn-danger btn-sm">Delete</a>
                         <td>
-                        <form action="{{route('students.destroy', $student['id'])}}" method="post">
-                            {{csrf_field()}}
+                        <form action="{{route('student.destroy', $student['id'] )}}" method="post">
+                            {{
+                                csrf_field()
+                            }}
                             <input type="hidden" name="_method" value="Delete">
-                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" name="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to Delete')">Delete</button>
                         </form>
 
                     </td>

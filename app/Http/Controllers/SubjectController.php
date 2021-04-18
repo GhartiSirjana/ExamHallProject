@@ -27,23 +27,12 @@ class SubjectController extends Controller
     {
         $departments = Department::all();
         $faculties = Faculty::all();
-<<<<<<< HEAD
-=======
-     
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
         // dd($faculties);
         return view('subject.create', compact('departments', 'faculties'));
     }
 
     public function store(Request $request)
     {
-        // $res = new subject;
-        // $res->department=$request->input('department');
-        // $res->subjectname=$request->input('subjectname');
-        // $res->subjectcode=$request->input('code');
-        // $res->semester=$request->input('semester');
-        // $res->faculty=$request->input('faculty');
-        // $res->save();
         $data = $request->validate([
             'department_id' => 'required|numeric|exists:departments,id',
             'subjectname' => 'required|array|min:1', // ['Physics', 'Calculus', 'IT']
@@ -53,6 +42,7 @@ class SubjectController extends Controller
             'semester' => 'required|string', 
             'faculty_id' => 'required|numeric|exists:faculties,id',
         ]);
+        // dd($data['code']);
         foreach($data['subjectname'] as $index => $sub) {
             
             $subject = subject::create([

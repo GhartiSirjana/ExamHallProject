@@ -47,14 +47,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-sm">Add College</button>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-                       
 
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                     </form>
                 </div>
 
