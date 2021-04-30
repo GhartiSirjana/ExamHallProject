@@ -31,17 +31,14 @@
                 <td>{{$room->columns}}</td>
                 <td>{{$room->staff->staffname}}</td>
                 <td>
-<<<<<<< HEAD
                    
-=======
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
                     <a href="{{route('room.edit', $room->id)}}" class="btn btn-primary btn-sm">Edit</a>
                 </td>
                     <td>
                         <form action="{{route('room.destroy', $room['id'])}}" method="post">
                             {{csrf_field()}}
                             <input type="hidden" name="_method" value="Delete">
-                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" name="submit" onclick="return confirm('Are you Sure')" class="btn btn-danger btn-sm">Delete</button>
                         </form>
 
                     </td>

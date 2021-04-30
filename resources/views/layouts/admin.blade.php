@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('css/style.css')}}"> -->
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -124,34 +124,15 @@
               </p>
             </a>
           </li>
+       
           <li class="nav-item has-treeview">
-<<<<<<< HEAD
-            <a href="{{ route('room.index') }}" class="nav-link">
-            <i class="fas fa-person-booth"></i>
-=======
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
->>>>>>> 4607777bcc7a4429a51fe800fe9acaf224e24083
+            <a href="{{ route('subjects.index') }}" class="nav-link">
+            <i class="fas fa-book"></i>
               <p>
-                Room Management
-                <i class="fas fa-angle-left right"></i>
+                Subject Management
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('room.create') }}" class="nav-link">
-                <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('room.index') }}" class="nav-link">
-                <i class="fas fa-eye"></i>
-                  <p>Show</p>
-                </a>
-              </li>
-              
-            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="{{route('student.index')}}" class="nav-link">
@@ -162,15 +143,25 @@
               </p>
             </a>
           </li>
-        
           <li class="nav-item has-treeview">
-            <a href="{{ route('subjects.index') }}" class="nav-link">
-            <i class="fas fa-book"></i>
+            <a href="{{route('exam.index')}}" class="nav-link">
+            <i class="fas fa-book-open"></i>
               <p>
-                Subject Management
+                Exam Management
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('room.index') }}" class="nav-link">
+            <i class="fas fa-person-booth"></i>
+              <p>
+                Room Management
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+         
           </li>
 
           <!-- <li class="nav-header">EXAMPLES</li> -->
@@ -193,16 +184,6 @@
               </p>
             </a>
           </li>
-
-          <li class="nav-item has-treeview">
-            <a href="{{route('exam.index')}}" class="nav-link">
-            <i class="fas fa-book-open"></i>
-              <p>
-                Exam Management
-                <!-- <i class="fas fa-angle-left right"></i> -->
-              </p>
-            </a>
-          </li>
           <li class="nav-item has-treeview">
             <a href="{{route('staff.index')}}" class="nav-link">
             <i class="fas fa-male"></i>
@@ -212,6 +193,9 @@
               </p>
             </a>
           </li>
+
+         
+      
 
           <!-- <li class="nav-header">LABELS</li> -->
           <li class="nav-item">

@@ -23,12 +23,12 @@
                         
                         <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-info btn-sm">Edit</a>
                     </td>
-                        <a href="{{ route('staff.destroy', $staff->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a>
+                        <!-- <a href="{{ route('staff.destroy', $staff->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure')">Delete</a> -->
                         <td>
                         <form action="{{route('staff.destroy', $staff['id'])}}" method="post">
                             {{csrf_field()}}
                             <input type="hidden" name="_method" value="Delete">
-                            <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" name="submit" onclick="return confirm('Are you Sure')" class="btn btn-danger btn-sm">Delete</button>
                         </form>
 
                     </td>

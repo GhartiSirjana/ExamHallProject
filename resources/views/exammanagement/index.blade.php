@@ -39,7 +39,7 @@
             <form action="{{route('exam.destroy', $exammanagement['id'])}}" method="post">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="Delete">
-                <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                <button type="submit" name="submit" onclick="return confirm('Are you Sure')" class="btn btn-danger btn-sm">Delete</button>
             </form>
 
         </td>

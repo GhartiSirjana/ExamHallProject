@@ -29,7 +29,7 @@
                     </div>
                     @endif
                     <div class="card-body">
-                        <form action="{{ route('staff.update', $staffManage->id) }}" method="POST">     
+                        <form action="{{ route('staff.update', $staff->id) }}" method="POST">     
                             @csrf
                             @method('put')
                             <div class="mb-3">

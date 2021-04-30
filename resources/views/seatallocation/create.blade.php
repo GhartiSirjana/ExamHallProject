@@ -88,10 +88,7 @@
 
                                 <option value=""></option>
 
-<<<<<<< HEAD
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-=======
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
+
                             </select>
                             @error('exam_id')
                             <div>
@@ -104,14 +101,7 @@
                         </div> -->
                         <div class="col-md-3">
                             <button type="submit" class="btn btn-primary"> Save </button>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
-                           
 
->>>>>>> 958ecf3acdf1771f3a0230c6bf92f80ee035651b
                         </div>
                     </form>
                 </div>

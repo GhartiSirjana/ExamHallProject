@@ -37,9 +37,7 @@ class StaffManageController extends Controller
             'department_id'=>'required'
         ]);
 
-        // return redirect()->back()->with('error', 'Something went wrong.');
-
-        // return redirect()->back()->with('success', 'Staff Added Successfully');
+        
         StaffManage::create($data);
         return redirect('/staff');
     }
@@ -51,33 +49,33 @@ class StaffManageController extends Controller
     }
 
    
-    public function edit(StaffManage $staffManage, $id)
+    public function edit(StaffManage $staffManage)
     {
         $departments = Department::all();
         return view('staff.edit', compact( 'staffManage', 'departments'));
   
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StaffManage  $staffManage
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request,  $id)
+   
+    public function update(Request $request, StaffManage $staffManage )
     {
-      
+        $request->validate([
+            'staffname'=>'required|string|min:5|regex:/^[a-zA-Z\s]+$/',
+            'department_id'=>'required'
+        ]);
+        $staffManage->staffname = $request->input('staffname');
+        $staffManage->department_id = $request->input('department_id');
+        $staffManage->save();
+
+        $request->session()->flash('msg', 'data submitted');
+        return redirect('/staff');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\StaffManage  $staffManage
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(StaffManage $staffManage, $id)
+   
+    public function destroy($id)
     {
-     
+        $staffManage = StaffManage ::find($id);
+        $staffManage->delete();
+        return redirect('/staff');
     }
 }
